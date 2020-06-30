@@ -1,0 +1,15 @@
+﻿################################################################################
+# Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
+################################################################################
+
+/libopengl/Debug
+/LibGpGpu/Debug
+/libdialog/Debug
+/libcomobject/Debug
+/libbitmap/Debug
+/libaspi/Debug
+/iexplorer/debug
+/filtreeffet/debug
+/Debug
+/datastructure/Debug
+/.vs/splitter/v15
