@@ -1,0 +1,181 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+#if defined(APSTUDIO_INVOKED) || defined(ENGLISH)
+#if defined(APSTUDIO_INVOKED)
+DLG_SCRNSAVECONFIGURE$(ENGLISH) DIALOG DISCARDABLE  0, 0, 273, 119
+#else
+DLG_SCRNSAVECONFIGURE DIALOG DISCARDABLE  0, 0, 273, 119
+#endif
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "Configure Screen Saver"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            "SSAVERICON",IDC_STATIC,8,7,20,20,SS_SUNKEN
+    PUSHBUTTON      "E&xit",IDC_EXIT,83,97,72,14
+    LTEXT           "Time :",IDC_STATIC,74,14,20,8
+    EDITTEXT        IDC_INTERVAL,109,11,98,14,ES_AUTOHSCROLL
+    LTEXT           "Select Album :",IDC_STATIC,48,31,46,8
+    PUSHBUTTON      "...",IDC_BTLISTEREP,212,71,22,16
+    LTEXT           "MP3 directory :",IDC_STATIC,46,73,48,8
+    EDITTEXT        IDC_MP3REP,109,71,98,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ALBUMREP,109,48,98,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTLISTEREP2,212,46,22,16
+    LTEXT           "Album directory :",IDC_STATIC,41,49,53,8
+    COMBOBOX        IDC_CBLIST,109,28,124,82,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+#endif
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+SSAVERICON              ICON    DISCARDABLE     "icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDS_DESCRIPTION         "Regards screen saver"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    idsIsPassword           "PWProtected"
+    idsIniFile              "control.ini"
+    idsScreenSaver          "ScreenSaver"
+    idsPassword             "Password"
+    idsDifferentPW          "The values for New Password and Retype New Password do not match.\n\nTry again."
+    idsChangePW             "Change Password"
+    idsBadOldPW             "The value for Old Password is not correct.\n\nCheck your screen-saver password, and then try again."
+    idsAppName              "Simple Saver"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    idsNoHelpMemory         "Not enough memory to start Help.\n\nQuit one or more applications to increase available memory, and then try again."
+    idsHelpFile             "control.hlp"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// French (France) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)
+#ifdef _WIN32
+LANGUAGE LANG_FRENCH, SUBLANG_FRENCH
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+#if defined(APSTUDIO_INVOKED) || defined(FRENCH)
+#if defined(APSTUDIO_INVOKED)
+DLG_SCRNSAVECONFIGURE$(FRENCH) DIALOG DISCARDABLE  0, 0, 273, 119
+#else
+DLG_SCRNSAVECONFIGURE DIALOG DISCARDABLE  0, 0, 273, 119
+#endif
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "Configure Screen Saver"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            "SSAVERICON",IDC_STATIC,8,7,21,20,SS_SUNKEN
+    PUSHBUTTON      "E&xit",IDC_EXIT,83,97,72,14
+    LTEXT           "Durée diaporama :",IDC_STATIC,41,14,64,11
+    EDITTEXT        IDC_INTERVAL,109,11,98,14,ES_AUTOHSCROLL
+    LTEXT           "Choix de l'album :",IDC_STATIC,37,31,65,12
+    PUSHBUTTON      "...",IDC_BTLISTEREP,212,71,22,16
+    LTEXT           "Répertoire MP3 :",IDC_STATIC,46,73,56,12
+    EDITTEXT        IDC_MP3REP,109,71,98,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ALBUMREP,109,48,98,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTLISTEREP2,212,46,22,16
+    LTEXT           "Répertoire de l'album :",IDC_STATIC,29,49,73,11
+    COMBOBOX        IDC_CBLIST,109,28,124,82,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+#endif
+
+#endif    // French (France) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
