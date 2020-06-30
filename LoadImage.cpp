@@ -305,19 +305,22 @@ HBITMAP CLoadImage::ChargementIconeStatic(const char *szFileName, const int &iIc
 						GetTempPath(MAX_PATH,cTempPath);
 						sprintf_s(cTempPath,MAX_PATH,"%s%s.bmp",cTempPath,fname);
 
-						UINT m_iWidth = 640;
-						UINT m_iHeight = 480;
+						LONG m_iWidth = 640;
+						LONG m_iHeight = 480;
 
 						//GetDimensionImageStatic(szFileName,&m_iWidth,&m_iHeight);
 
 						if(m_iWidth > 0 && m_iHeight > 0)
 						{
+							/*
 							m_cLoadVideo->VideoToBmp(szFileName,cTempPath,1,m_iWidth,m_iHeight);
 							CIBitmap m_ciBitmap;
 							ChargementImageStatic(&m_ciBitmap,cTempPath);
 							HBITMAP hBitmapVideo;
 							m_ciBitmap.GetBitmap(hBitmapVideo);
 							remove(cTempPath);
+							*/
+							HBITMAP hBitmapVideo = m_cLoadVideo->DoExtractVideoFrame(szFileName, m_iWidth, m_iHeight);
 
 							if(hBitmapVideo != NULL)
 							{

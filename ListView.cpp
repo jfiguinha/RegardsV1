@@ -753,6 +753,7 @@ while((S_OK == pEnum->Next(1,&pidlTemp, &dwFetched)) && (dwFetched) == 1)
 
 		if(m_bAfficheImage)
 		{
+			char * filename = pItem->GetParseName();
 			if(m_bShowFolder)
 			{
 				if(!(dwAttr & SFGAO_FOLDER) && m_cObjet.TestImageFormat(pItem->GetParseName()) == 0  && m_cObjet.TestVideoFormat(pItem->GetParseName()) == 0)

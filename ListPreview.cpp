@@ -703,10 +703,11 @@ ULONG CListPreview::List_CreatePicture(int &iNumImage, int nItem, HWND hWnd, HWN
 				if(lNumIcone == -1)
 				{
 					
+					char * filename = pItem->GetParseName();
 					CMiniatureGenData * m_pMiniatureGenData = CreateHandleData();
 					m_pMiniatureGenData->SetItemInfo(pItem);
 					m_pMiniatureGenData->SetNumItemInfo(nItem);
-					m_pMiniatureGenData->SetFilename(pItem->GetParseName());
+					m_pMiniatureGenData->SetFilename(filename);
 					if(m_cObjet.TestVideoFormat(pItem->GetParseName()) > 0)
 						SendMessage(pMiniatureGenVideo->GetWindowHandle(),WM_COMMAND,MAKEWPARAM(IDC_TRAITEMENTDATA,0),(LPARAM)m_pMiniatureGenData);
 					else

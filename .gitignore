@@ -13,3 +13,13 @@
 /Debug
 /datastructure/Debug
 /.vs/splitter/v15
+/mp3/debug
+/Matrix/Debug
+/libWindow/Debug
+/libvideo/Debug
+/libutility/Debug
+/libSqlServerCE/Debug
+/LibRawDll/Debug
+/importpic/importpic.vcxproj.user
+/lib
+*.user

@@ -244,7 +244,7 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="GrabberCallback.cpp" />
+    <ClCompile Include="sprite.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -253,15 +253,17 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Thumbnail.cpp" />
     <ClCompile Include="Video.cpp" />
     <ClCompile Include="VideoAPI.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\libbitmap\Qedit.h" />
-    <ClInclude Include="GrabberCallback.h" />
+    <ClInclude Include="sprite.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Thumbnail.h" />
     <ClInclude Include="Video.h" />
     <ClInclude Include="VideoAPI.h" />
+    <ClInclude Include="videothumbnail.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />

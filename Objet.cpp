@@ -617,6 +617,12 @@ int CObjet::TestMultimediaFormat(const char *szFileName)
 	if(strcmp(ext,".mpeg") == 0)
 		return 3;
 
+	if (strcmp(ext, ".mp4") == 0)
+		return 3;
+
+	if (strcmp(ext, ".mov") == 0)
+		return 3;
+
 	if(strcmp(ext,".wav") == 0)
 		return 4;
 
@@ -661,6 +667,12 @@ int CObjet::TestVideoFormat(const char *szFileName)
 
 	if(strcmp(ext,".wmv") == 0)
 		return 106;
+
+	if (strcmp(ext, ".mp4") == 0)
+		return 107;
+
+	if (strcmp(ext, ".mov") == 0)
+		return 108;
 
 	return m_iValue;
 }

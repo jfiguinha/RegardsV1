@@ -1,8 +1,9 @@
 #include "stdafx.h"
 #include ".\video.h"
-#include <Qedit.h>
-#include ".\grabbercallback.h"
+#include "Thumbnail.h"
 
+ID2D1HwndRenderTarget * CVideo::g_pRT = NULL;
+extern HWND mainWindow;
 
 CVideo::CVideo(void)
 {
@@ -16,20 +17,52 @@ CVideo::~CVideo(void)
 {
 }
 
-void CVideo::MyFreeMediaType(AM_MEDIA_TYPE& mt)
+void CVideo::Cleanup()
 {
-    if (mt.cbFormat != 0)
-    {
-        CoTaskMemFree((PVOID)mt.pbFormat);
-        mt.cbFormat = 0;
-        mt.pbFormat = NULL;
-    }
-    if (mt.pUnk != NULL)
-    {
-        // Unecessary because pUnk should not be used, but safest.
-        mt.pUnk->Release();
-        mt.pUnk = NULL;
-    }
+	SafeRelease(&g_pRT);
+}
+
+//-------------------------------------------------------------------
+// CreateDrawingResources: Creates Direct2D resources.
+//-------------------------------------------------------------------
+
+HRESULT CVideo::CreateDrawingResources(HWND hwnd)
+{
+	HRESULT hr = S_OK;
+	RECT rcClient = { 0 };
+
+	ID2D1Factory *pFactory = NULL;
+	ID2D1HwndRenderTarget *pRenderTarget = NULL;
+
+	GetClientRect(hwnd, &rcClient);
+
+	hr = D2D1CreateFactory(
+		D2D1_FACTORY_TYPE_SINGLE_THREADED,
+		&pFactory
+	);
+
+
+	if (SUCCEEDED(hr))
+	{
+		hr = pFactory->CreateHwndRenderTarget(
+			D2D1::RenderTargetProperties(),
+			D2D1::HwndRenderTargetProperties(
+				hwnd,
+				D2D1::SizeU(rcClient.right, rcClient.bottom)
+			),
+			&pRenderTarget
+		);
+	}
+
+	if (SUCCEEDED(hr))
+	{
+		g_pRT = pRenderTarget;
+		g_pRT->AddRef();
+	}
+
+	SafeRelease(&pFactory);
+	SafeRelease(&pRenderTarget);
+	return hr;
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -38,354 +71,95 @@ void CVideo::MyFreeMediaType(AM_MEDIA_TYPE& mt)
 
 HBITMAP CVideo::DoExtractVideoFrame(const char *szFileName,long &Width, long &Height)
 {
-
-	CoInitializeEx(NULL, COINIT_MULTITHREADED);
-	CComPtr< IMediaDet > pDet;
-	CComPtr< ISampleGrabber > pGrabber;
-	USES_CONVERSION;
 	HBITMAP hBitmap;
-	try
+	ThumbnailGenerator thumbnail;
+	Sprite  g_pSprites[1];
+
+	const WCHAR *pwcsName;
+	// required size
+	int nChars = MultiByteToWideChar(CP_ACP, 0, szFileName, -1, NULL, 0);
+	// allocate it
+	pwcsName = new WCHAR[nChars];
+	MultiByteToWideChar(CP_ACP, 0, szFileName, -1, (LPWSTR)pwcsName, nChars);
+	// use it....
+	HRESULT hr = thumbnail.OpenFile(pwcsName);
+	if (FAILED(hr))
 	{
-		HRESULT hr;
-		WCHAR wFile[MAX_PATH];
-		MultiByteToWideChar( CP_ACP, 0, szFileName, -1, wFile, MAX_PATH );
-
-		hr = CoCreateInstance( CLSID_MediaDet, NULL, CLSCTX_INPROC_SERVER, 
-		                       IID_IMediaDet, (void**) &pDet );
-
-		if (FAILED(hr))
-			return NULL;
-		
-		
-
-		long Streams = 0;
-		BOOL bFoundVideo = FALSE;
-
-		if(pDet == NULL)
-			return NULL;
-
-		hr = pDet->put_Filename( T2W( szFileName ));
-		if (FAILED(hr))
-		{
-			pDet.Release();
-			return NULL;
-		}
-
-		hr = pDet->get_OutputStreams( &Streams );
-		if (FAILED(hr))
-		{
-			pDet.Release();
-			return NULL;
-		}
-
-		hr = pDet->EnterBitmapGrabMode( 0.0 );
-		if (FAILED(hr))
-		{
-			pDet.Release();
-			return NULL;
-		}
-
-		hr = pDet->GetSampleGrabber( &pGrabber );
-		if (FAILED(hr))
-		{
-			pDet.Release();
-			return NULL;
-		}
-
-		// set the callback (our COM object callback)
-		//
-		CComQIPtr< IBaseFilter, &IID_IBaseFilter > pFilter( pGrabber );
-		if(pFilter == NULL)
-		{
-			pGrabber.Release();
-			pDet.Release();
-			return NULL;
-		}
-
-
-		// Find the current bit depth.
-		HDC hdc = GetDC(NULL);
-		int iBitDepth = GetDeviceCaps(hdc, BITSPIXEL);
-		ReleaseDC(NULL, hdc);
-
-		AM_MEDIA_TYPE mt;
-		ZeroMemory(&mt, sizeof(AM_MEDIA_TYPE));
-		mt.majortype = MEDIATYPE_Video;
-		mt.formattype = FORMAT_VideoInfo; 
-
-		// Set the media type.
-		mt.majortype = MEDIATYPE_Video;
-		switch (iBitDepth)
-		{
-		case 8:
-			mt.subtype = MEDIASUBTYPE_RGB8;
-			break;
-		case 16:
-			mt.subtype = MEDIASUBTYPE_RGB555;
-			break;
-		case 24:
-			mt.subtype = MEDIASUBTYPE_RGB24;
-			break;
-		case 32:
-			mt.subtype = MEDIASUBTYPE_RGB32;
-			break;
-		default:
-			{
-				pGrabber.Release();
-				pDet.Release();
-				return NULL;
-			}
-		}
-
-
-		hr = pGrabber->SetMediaType(&mt);        
-		if (FAILED(hr))
-			{
-				pGrabber.Release();
-				pDet.Release();
-				return NULL;
-			}
-
-		// Set up one-shot mode.
-		hr = pGrabber->SetBufferSamples(TRUE);
-		if (FAILED(hr))
-			{
-				pGrabber.Release();
-				pDet.Release();
-				return NULL;
-			}
-
-		hr = pGrabber->SetOneShot(TRUE);
-		if (FAILED(hr))
-			{
-				pGrabber.Release();
-				pDet.Release();
-				return NULL;
-			}
-
-		
-		// The graph will have been paused by entering bitmap grab mode.
-		// We'll need to seek back to 0 to get it to deliver correctly.
-		//
-
-		FILTER_INFO fi;
-		memset( &fi, 0, sizeof( fi ) );
-		hr = pFilter->QueryFilterInfo( &fi );
-		if (FAILED(hr))
-			{
-				pGrabber.Release();
-				pDet.Release();
-				return NULL;
-			}
-		// Release the filter's graph reference
-		if( fi.pGraph ) 
-			fi.pGraph->Release( );
-
-		if(fi.pGraph != NULL)
-		{
-			IFilterGraph * pGraph = fi.pGraph;
-
-			/*
-			CComQIPtr< IMediaSeeking, &IID_IMediaSeeking > pSeeking( pGraph );
-			if (pSeeking == NULL)
-			{
-				pGrabber.Release();
-				pDet.Release();
-				return NULL;
-			}
-
-			REFERENCE_TIME Start = 60;
-			REFERENCE_TIME Duration = 30;
-			hr = pSeeking->GetDuration( &Duration );
-			if (FAILED(hr))
-			{
-				pGrabber.Release();
-				pDet.Release();
-				return NULL;
-			}
-			hr = pSeeking->SetPositions( &Start,    AM_SEEKING_AbsolutePositioning, 
-										 &Duration, AM_SEEKING_AbsolutePositioning );
-			if (FAILED(hr))
-			{
-				pGrabber.Release();
-				pDet.Release();
-				return NULL;
-			}
-			*/
-
-			// run the graph
-			//
-			CComQIPtr< IMediaEvent, &IID_IMediaEvent > pEvent( pGraph );
-			CComQIPtr< IMediaControl, &IID_IMediaControl > pControl( pGraph );
-			hr = pControl->Run( );
-			if (FAILED(hr))
-			{
-				pGrabber.Release();
-				pDet.Release();
-				return NULL;
-			}
-
-			long evCode;
-			hr = pEvent->WaitForCompletion(INFINITE, &evCode);
-			if (FAILED(hr))
-			{
-				pGrabber.Release();
-				pDet.Release();
-				return NULL;
-			}
-						
-			// Find the required buffer size.
-			long cbBuffer = 0;
-			hr = pGrabber->GetCurrentBuffer(&cbBuffer, NULL);
-
-			char *pBuffer = new char[cbBuffer];
-			if (!pBuffer) 
-			{
-				pGrabber.Release();
-				pDet.Release();
-				return NULL;
-			}
-			hr = pGrabber->GetCurrentBuffer(&cbBuffer, (long*)pBuffer);
-			if (FAILED(hr))
-			{
-				pGrabber.Release();
-				pDet.Release();
-				delete[] pBuffer;
-				return NULL;
-			}
-			//AM_MEDIA_TYPE mt;
-
-			hr = pGrabber->GetConnectedMediaType(&mt);
-			if (FAILED(hr))
-			{
-				pGrabber.Release();
-				pDet.Release();
-				delete[] pBuffer;
-				return NULL;
-			}
-			// Examine the format block.
-			VIDEOINFOHEADER *pVih;
-			if ((mt.formattype == FORMAT_VideoInfo) && 
-				(mt.cbFormat >= sizeof(VIDEOINFOHEADER)) &&
-				(mt.pbFormat != NULL) ) 
-			{
-				pVih = (VIDEOINFOHEADER*)mt.pbFormat;
-			}
-			else 
-			{
-				// Wrong format. Free the format block and return an error.
-				MyFreeMediaType(mt);
-				pGrabber.Release();
-				pDet.Release();
-				delete[] pBuffer;
-				return NULL; 
-			}
-
-			hBitmap = CreateDIBitmap(GetDC(NULL),              
-						&pVih->bmiHeader,
-						CBM_INIT,
-						pBuffer,
-						(BITMAPINFO*)&pVih->bmiHeader,
-						DIB_RGB_COLORS) ;
-
-
-			// Free the format block when you are done:
-			MyFreeMediaType(mt);
-			delete[] pBuffer;
-		}
-	}
-	catch(...)
-	{
-		pGrabber.Release();
-		pDet.Release();
 		return NULL;
 	}
 
-	pGrabber.Release();
-	pDet.Release();
-	CoUninitialize();
+	if (g_pRT == NULL)
+	{
+		// Create the Direct2D resources.
+		hr = CreateDrawingResources(mainWindow);
+	}
+
+	// Generate new sprites.
+	if (SUCCEEDED(hr))
+	{
+		assert(g_pRT != NULL);
+
+		hr = thumbnail.CreateBitmaps(g_pRT, 1, g_pSprites);
+	}
+
+	if (SUCCEEDED(hr))
+	{
+		hBitmap = g_pSprites->GetBitmap();
+	}
+
+	// delete it
+	delete[] pwcsName;
+
+	g_pSprites[0].Clear();
+	
 	return hBitmap;
 }
 
 HRESULT CVideo::GetVideoSize(const char *szFileName,long &Width, long &Height)
 {
-	CoInitializeEx(NULL, COINIT_MULTITHREADED);
-	CComPtr< IMediaDet > pDet;
-    USES_CONVERSION;
-    HRESULT hr;
+	HBITMAP hBitmap;
+	ThumbnailGenerator thumbnail;
+	Sprite  g_pSprites[1];
 
-	hr = CoCreateInstance( CLSID_MediaDet, NULL, CLSCTX_INPROC_SERVER, 
-	                       IID_IMediaDet, (void**) &pDet );
-
+	const WCHAR *pwcsName;
+	// required size
+	int nChars = MultiByteToWideChar(CP_ACP, 0, szFileName, -1, NULL, 0);
+	// allocate it
+	pwcsName = new WCHAR[nChars];
+	MultiByteToWideChar(CP_ACP, 0, szFileName, -1, (LPWSTR)pwcsName, nChars);
+	// use it....
+	HRESULT hr = thumbnail.OpenFile(pwcsName);
 	if (FAILED(hr))
+	{
 		return NULL;
+	}
 
-    //printf("Frame extraction from %s.\r\n", pVideoName);
+	if (g_pRT == NULL)
+	{
+		// Create the Direct2D resources.
+		hr = CreateDrawingResources(mainWindow);
+	}
 
-    // create a media detector
-    //
+	// Generate new sprites.
+	if (SUCCEEDED(hr))
+	{
+		assert(g_pRT != NULL);
 
-	if(pDet == NULL)
-		return -1;
+		hr = thumbnail.CreateBitmaps(g_pRT, 1, g_pSprites);
+	}
 
-    // set filename and look for a video stream
-    //
-    long Streams = 0;
-    BOOL bFoundVideo = FALSE;
-    hr = pDet->put_Filename( T2W( szFileName ));
-	if (FAILED(hr))
-		return NULL;
+	// Generate new sprites.
+	if (SUCCEEDED(hr))
+	{
+		Width = g_pSprites[0].m_width;
+		Height = g_pSprites[0].m_height;
+	}
 
-    hr = pDet->get_OutputStreams( &Streams );
-	if (FAILED(hr))
-		return NULL;
+	// delete it
+	delete[] pwcsName;
 
-	bFoundVideo = TRUE;
+	g_pSprites[0].Clear();
 
-    if( !bFoundVideo )
-    {
-        //printf( "Couldn't find a video stream\r\n" );
-        return -1;
-    }
-
-    // this method will change the MediaDet to go into 
-    // "sample grabbing mode" at time 0.
-    //
-    hr = pDet->EnterBitmapGrabMode( 0.0 );
-	if (FAILED(hr))
-		return NULL;
-    // ask for the sample grabber filter that we know lives inside the
-    // graph made by the MediaDet
-    //
-    CComPtr< ISampleGrabber > pGrabber;
-    hr = pDet->GetSampleGrabber( &pGrabber );
-
-	if(pGrabber == NULL)
-		return 0;
-
-    // set the callback (our COM object callback)
-    //
-    //CComQIPtr< IBaseFilter, &IID_IBaseFilter > pFilter( pGrabber );
-
-    // ask for the connection media type so we know how big the images
-    // are, so we can write out bitmaps
-    //
-    AM_MEDIA_TYPE mt;
-    hr = pGrabber->GetConnectedMediaType( &mt );
-    
-    VIDEOINFOHEADER * vih = (VIDEOINFOHEADER*) mt.pbFormat;
-    Width    = vih->bmiHeader.biWidth;
-    Height   = vih->bmiHeader.biHeight;
-
-    // Set the output bmp file names and output range
-    //
-    MyFreeMediaType( mt );
-
-	pGrabber.Release();
-	pDet.Release();
-
-	CoUninitialize();
-    //printf("Frame extraction complete.\r\n");
     return 0;
 }
 
@@ -398,52 +172,116 @@ HRESULT CVideo::GetVideoSize(const char *szFileName,long &Width, long &Height)
 //   end        : Ending frame number
 //   dFrameRate : Framerate of output images
 //
-HRESULT CVideo::VideoToBmp( const char * pVideoName, const char * pBmpName, double start, int iWidth, int iHeight)
+HRESULT CVideo::VideoToBmp(const char * pVideoName, const char * pBmpName, double start, int iWidth, int iHeight)
 {
-	CoInitializeEx(NULL, COINIT_MULTITHREADED);
-	CComPtr< IMediaDet > pDet;
-	CComPtr< ISampleGrabber > pGrabber;
-	USES_CONVERSION;
 	HBITMAP hBitmap;
-	try
+	ThumbnailGenerator thumbnail;
+	Sprite  g_pSprites[1];
+
+	const WCHAR *pwcsName;
+	// required size
+	int nChars = MultiByteToWideChar(CP_ACP, 0, pVideoName, -1, NULL, 0);
+	// allocate it
+	pwcsName = new WCHAR[nChars];
+	MultiByteToWideChar(CP_ACP, 0, pVideoName, -1, (LPWSTR)pwcsName, nChars);
+	// use it....
+	HRESULT hr = thumbnail.OpenFile(pwcsName);
+	if (FAILED(hr))
 	{
-		HRESULT hr;
-
-		hr = CoCreateInstance( CLSID_MediaDet, NULL, CLSCTX_INPROC_SERVER, 
-		                       IID_IMediaDet, (void**) &pDet );
-
-		if (FAILED(hr))
-			return NULL;
-		
-		
-
-		long Streams = 0;
-		BOOL bFoundVideo = FALSE;
-
-		if(pDet == NULL)
-			return NULL;
-
-		hr = pDet->put_Filename( T2W( pVideoName ));
-		if (FAILED(hr))
-		{
-			pDet.Release();
-			return NULL;
-		}
-
-		hr = pDet->get_OutputStreams( &Streams );
-		if (FAILED(hr))
-		{
-			pDet.Release();
-			return NULL;
-		}
-		hr = pDet->WriteBitmapBits(start,iWidth,iHeight,T2W(pBmpName));
-	}
-	catch(...)
-	{
+		return NULL;
 	}
 
-	pDet.Release();
-	CoUninitialize();
+	if (g_pRT == NULL)
+	{
+		// Create the Direct2D resources.
+		hr = CreateDrawingResources(mainWindow);
+	}
+
+	// Generate new sprites.
+	if (SUCCEEDED(hr))
+	{
+		assert(g_pRT != NULL);
+
+		hr = thumbnail.CreateBitmaps(g_pRT, 1, g_pSprites);
+	}
+
+	if (SUCCEEDED(hr))
+	{
+		hBitmap = g_pSprites->GetBitmap();
+
+		HDC hDC = GetDC(nullptr);
+		WORD wBitCount;
+		DWORD dwPaletteSize = 0, dwBmBitsSize = 0, dwDIBSize = 0, dwWritten = 0;
+		BITMAP Bitmap0;
+		BITMAPFILEHEADER bmfHdr;
+		BITMAPINFOHEADER bi;
+		LPBITMAPINFOHEADER lpbi;
+		HANDLE fh, hDib, hPal, hOldPal2 = nullptr;
+		wBitCount = 24;
+		GetObject(hBitmap, sizeof(Bitmap0), (LPSTR)&Bitmap0);
+		bi.biSize = sizeof(BITMAPINFOHEADER);
+		bi.biWidth = Bitmap0.bmWidth;
+		bi.biHeight = -Bitmap0.bmHeight;
+		bi.biPlanes = 1;
+		bi.biBitCount = wBitCount;
+		bi.biCompression = BI_RGB;
+		bi.biSizeImage = 0;
+		bi.biXPelsPerMeter = 0;
+		bi.biYPelsPerMeter = 0;
+		bi.biClrImportant = 0;
+		bi.biClrUsed = 256;
+		dwBmBitsSize = ((Bitmap0.bmWidth * wBitCount + 31) & ~31) / 8
+			* Bitmap0.bmHeight;
+		hDib = GlobalAlloc(GHND, dwBmBitsSize + dwPaletteSize + sizeof(BITMAPINFOHEADER));
+		lpbi = (LPBITMAPINFOHEADER)GlobalLock(hDib);
+		*lpbi = bi;
+
+		hPal = GetStockObject(DEFAULT_PALETTE);
+		if (hPal)
+		{
+			hDC = GetDC(nullptr);
+			hOldPal2 = SelectPalette(hDC, (HPALETTE)hPal, FALSE);
+			RealizePalette(hDC);
+		}
+
+
+		GetDIBits(hDC, hBitmap, 0, (UINT)Bitmap0.bmHeight, (LPSTR)lpbi + sizeof(BITMAPINFOHEADER)
+			+ dwPaletteSize, (BITMAPINFO *)lpbi, DIB_RGB_COLORS);
+
+		if (hOldPal2)
+		{
+			SelectPalette(hDC, (HPALETTE)hOldPal2, TRUE);
+			RealizePalette(hDC);
+			ReleaseDC(nullptr, hDC);
+		}
+
+		fh = CreateFile(pBmpName, GENERIC_WRITE, 0, nullptr, CREATE_ALWAYS,
+			FILE_ATTRIBUTE_NORMAL | FILE_FLAG_SEQUENTIAL_SCAN, nullptr);
+
+		if (fh == INVALID_HANDLE_VALUE)
+			return NULL;
+
+		bmfHdr.bfType = 0x4D42; // "BM"
+		dwDIBSize = sizeof(BITMAPFILEHEADER) + sizeof(BITMAPINFOHEADER) + dwPaletteSize + dwBmBitsSize;
+		bmfHdr.bfSize = dwDIBSize;
+		bmfHdr.bfReserved1 = 0;
+		bmfHdr.bfReserved2 = 0;
+		bmfHdr.bfOffBits = (DWORD)sizeof(BITMAPFILEHEADER) + (DWORD)sizeof(BITMAPINFOHEADER) + dwPaletteSize;
+
+		::WriteFile(fh, (LPSTR)&bmfHdr, sizeof(BITMAPFILEHEADER), &dwWritten, nullptr);
+
+		::WriteFile(fh, (LPSTR)lpbi, dwDIBSize, &dwWritten, nullptr);
+		GlobalUnlock(hDib);
+		GlobalFree(hDib);
+		CloseHandle(fh);
+	}
+
+	// delete it
+	delete[] pwcsName;
+
+	g_pSprites[0].Clear();
+
+
 	return 0;
 }
 
@@ -453,153 +291,3 @@ HRESULT CVideo::VideoToBmp( const char * pVideoName, const char * pBmpName, doub
 //   length     : the frame number of the output video
 //   dFrameRate  : the frame rate of the video
 //
-HRESULT CVideo::BmpToVideo( const char * firstImage, const char * outAvi, int length, double dFrameRate)
-{
-    HRESULT hr;
-	CComPtr< IMediaDet > pDet;
-    // Start by making an empty timeline.
-    //
-    IAMTimeline    *pTL = NULL;
-    CoInitializeEx(NULL, COINIT_MULTITHREADED);
-    CoCreateInstance(CLSID_AMTimeline, NULL, CLSCTX_INPROC_SERVER, 
-        IID_IAMTimeline, (void**)&pTL);
-
-    // GROUP: Add a video group to the timeline. 
-    //
-    IAMTimelineGroup    *pGroup = NULL;
-    IAMTimelineObj      *pGroupObj = NULL;
-    pTL->CreateEmptyNode(&pGroupObj, TIMELINE_MAJOR_TYPE_GROUP);
-    pGroupObj->QueryInterface(IID_IAMTimelineGroup, (void **)&pGroup);
-
-	if(pDet == NULL)
-		return -1;
-    // set group properties (width and height to the image width and height)
-    //
-    hr = pDet->put_Filename( T2BSTR(firstImage) );
-    AM_MEDIA_TYPE mtGroup;
-    hr = pDet->get_StreamMediaType(&mtGroup);
-    // Now use this media type for the group.
-    hr = pGroup->SetMediaType(&mtGroup);
-    hr = pGroup->SetOutputFPS(dFrameRate);
-
-    hr = pTL->AddGroup(pGroupObj);
-    pGroupObj->Release();
-
-    // TRACK: Add a track to the group. 
-
-    IAMTimelineObj      *pTrackObj;
-    IAMTimelineTrack    *pTrack;
-    IAMTimelineComp     *pComp = NULL;
-
-    hr = pTL->CreateEmptyNode(&pTrackObj, TIMELINE_MAJOR_TYPE_TRACK);
-    hr = pGroup->QueryInterface(IID_IAMTimelineComp, (void **)&pComp);
-    hr = pComp->VTrackInsBefore(pTrackObj, 0);
-    hr = pTrackObj->QueryInterface(IID_IAMTimelineTrack, (void **)&pTrack);
-
-    pTrackObj->Release();
-    pComp->Release();    
-    pGroup->Release();
-
-    // SOURCE: Add a source to the track.
-
-    IAMTimelineSrc *pSource = NULL;
-    IAMTimelineObj *pSourceObj;
-    hr = pTL->CreateEmptyNode(&pSourceObj, TIMELINE_MAJOR_TYPE_SOURCE);
-    hr = pSourceObj->QueryInterface(IID_IAMTimelineSrc, (void **)&pSource);
-
-    // Set the times and the file name.
-    REFERENCE_TIME duration = REFERENCE_TIME(10000000. * length / dFrameRate);
-    hr = pSourceObj->SetStartStop(0, duration);
-    hr = pSource->SetMediaName( T2BSTR(firstImage));
-    hr = pSource->SetDefaultFPS(dFrameRate);
-    hr = pTrack->SrcAdd(pSourceObj);
-
-    pSourceObj->Release();
-    pSource->Release();
-    pTrack->Release();
-
-    // Preview the timeline.
-    IRenderEngine       *pRenderEngine = NULL;
-    CoCreateInstance(CLSID_RenderEngine, NULL, CLSCTX_INPROC_SERVER,
-        IID_IRenderEngine, (void**) &pRenderEngine);
-
-    ICaptureGraphBuilder2 *pBuilder = NULL; 
-    IGraphBuilder         *pGraph = NULL;
-    IMediaControl         *pControl = NULL;
-    IMediaEvent           *pEvent = NULL;
-
-    // Build the graph.
-    hr = pRenderEngine->SetTimelineObject(pTL);
-    hr = pRenderEngine->ConnectFrontEnd();
-
-    if (outAvi) {  // capture to file
-        hr = CoCreateInstance(CLSID_CaptureGraphBuilder2, NULL, CLSCTX_INPROC, 
-            IID_ICaptureGraphBuilder2, (void **)&pBuilder);
-
-        // Get a pointer to the graph front end.
-        hr = pRenderEngine->GetFilterGraph(&pGraph);
-        hr = pBuilder->SetFiltergraph(pGraph);
-
-        // Create the file-writing section.
-        IBaseFilter *pMux;
-        hr = pBuilder->SetOutputFileName(&MEDIASUBTYPE_Avi, 
-            T2BSTR(outAvi), &pMux, NULL);
-
-        long NumGroups;
-        hr = pTL->GetGroupCount(&NumGroups);
-
-        // Loop through the groups and get the output pins.
-        for (int i = 0; i < NumGroups; i++)
-        {
-            IPin *pPin;
-            if (pRenderEngine->GetGroupOutputPin(i, &pPin) == S_OK) 
-            {
-                // Connect the pin.
-                hr = pBuilder->RenderStream(NULL, NULL, pPin, NULL, pMux);
-                pPin->Release();
-            }
-        }
-    }
-    else { // preview on screen
-        hr = pRenderEngine->RenderOutputPins( );
-        hr = pRenderEngine->GetFilterGraph(&pGraph);
-    }
-
-    // Run the graph.
-    hr = pGraph->QueryInterface(IID_IMediaControl, (void **)&pControl);
-    hr = pGraph->QueryInterface(IID_IMediaEvent, (void **)&pEvent);
-    hr = pControl->Run();
-    
-    // wait and print out the progress
-    //
-    CComQIPtr< IMediaSeeking, &IID_IMediaSeeking > pSeeking( pGraph );
-    long evCode = 0;
-    if (pSeeking)  // IMediaSeeking is supported
-    {
-        REFERENCE_TIME rtTotal, rtNow = 0;
-        hr = pSeeking->GetDuration(&rtTotal);
-        while ((pEvent->WaitForCompletion(500, &evCode)) == E_ABORT)
-        {
-            hr = pSeeking->GetCurrentPosition(&rtNow);
-            //printf("%d%% finished\n", (rtNow * 100)/rtTotal);
-        }
-    }
-    else  // Cannot update the progress.
-    {
-        pEvent->WaitForCompletion(INFINITE, &evCode);
-    }
-
-    // Clean up.
-    pEvent->Release();
-    pControl->Release();
-    pGraph->Release();
-
-    // Clean up.
-    pRenderEngine->ScrapIt();
-    pTL->ClearAllGroups();
-    pRenderEngine->Release();
-    pTL->Release();
-   CoUninitialize();
-
-    return S_OK;
-}

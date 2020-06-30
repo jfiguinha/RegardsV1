@@ -132,7 +132,7 @@
       <Culture>0x040c</Culture>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>Comdlg32.lib;Shlwapi.lib;Advapi32.lib;vfw32.lib;odbc32.lib;odbccp32.lib;comctl32.lib;Winmm.lib;Winspool.lib;Urlmon.lib;crypt32.lib;opengl32.lib;glu32.lib;Ws2_32.lib;Wininet.lib;Strmiids.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>mfplat.lib;mfreadwrite.lib;mfuuid.lib;Comdlg32.lib;Shlwapi.lib;Advapi32.lib;vfw32.lib;odbc32.lib;odbccp32.lib;comctl32.lib;Winmm.lib;Winspool.lib;Urlmon.lib;crypt32.lib;opengl32.lib;glu32.lib;Ws2_32.lib;Wininet.lib;Strmiids.lib;d2d1.lib;Propsys.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>Debug/regards.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalManifestDependencies>type=%27Win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27X86%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>

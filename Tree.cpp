@@ -1090,17 +1090,16 @@ HTREEITEM CTreePrv::InsertItem(HWND hwndParent, LPSTR lpszFileName, int iSize, i
 	//Recherche du nom à afficher
 
 	SpecialFolderVector::const_iterator fit;
-
-	for (fit = pTreeData.m_SpFolder.begin(); fit!= pTreeData.m_SpFolder.end(); fit++)
+	for (SpecialFolder SpecialFolderTemp : pTreeData.m_SpFolder)
 	{
-		SpecialFolder SpecialFolderTemp = *fit;
-		if(_stricmp(lpszFileName,SpecialFolderTemp.m_szRealName.c_str()) == 0)
+		if (_stricmp(lpszFileName, SpecialFolderTemp.m_szRealName.c_str()) == 0)
 		{
 			//strcpy(lpszFileName,SpecialFolderTemp.m_szAffichageName.c_str());
-			StringCchCopy(lpszFileName,iSize,SpecialFolderTemp.m_szAffichageName.c_str());
+			StringCchCopy(lpszFileName, iSize, SpecialFolderTemp.m_szAffichageName.c_str());
 			break;
 		}
 	}
+
 
 	CItemInfo * pItem = new CItemInfo();
 		
@@ -1334,7 +1333,15 @@ string CTreePrv::GetItemText(HWND hwndTree, HTREEITEM hItem)
 	if(sValue != "" && hParent == NULL)
 	{
 		SpecialFolderVector::const_iterator fit;
-
+		for (SpecialFolder  SpecialFolderTemp : pTreeData.m_SpFolder)
+		{
+			if (sValue == SpecialFolderTemp.m_szAffichageName.c_str())
+			{
+				sValue = SpecialFolderTemp.m_szRealName;
+				break;
+			}
+		}
+		/*
 		for (fit = pTreeData.m_SpFolder.begin(); fit!= pTreeData.m_SpFolder.end(); fit++)
 		{
 			SpecialFolder SpecialFolderTemp = *fit;
@@ -1343,7 +1350,7 @@ string CTreePrv::GetItemText(HWND hwndTree, HTREEITEM hItem)
 				sValue = SpecialFolderTemp.m_szRealName;
 				break;
 			}
-		}			
+		}	*/		
 	}
 
 	return sValue;
@@ -1954,16 +1961,16 @@ HTREEITEM CTree::AddItem(HTREEITEM hParent, LPCTSTR strPath)
 int CTree::SpecialFolderToPath(const char * cSpecialFolder, char *Path, int iSize)
 {
 	CTreePrv::SpecialFolderVector::const_iterator fit;
-
-	for (fit = pimpl_->pTreeData.m_SpFolder.begin(); fit!= pimpl_->pTreeData.m_SpFolder.end(); fit++)
+	for (CTreePrv::SpecialFolder SpecialFolderTemp : pimpl_->pTreeData.m_SpFolder)
 	{
-		CTreePrv::SpecialFolder SpecialFolderTemp = *fit;
-		if(strcmp(cSpecialFolder,SpecialFolderTemp.m_szAffichageName.c_str()) == 0)
+		if (strcmp(cSpecialFolder, SpecialFolderTemp.m_szAffichageName.c_str()) == 0)
 		{
 			//strcpy(Path,SpecialFolderTemp.m_szRealName.c_str());
-			StringCchCopy(Path,MAX_PATH,SpecialFolderTemp.m_szRealName.c_str());
+			StringCchCopy(Path, MAX_PATH, SpecialFolderTemp.m_szRealName.c_str());
 			return 1;
 		}
 	}
+
+
 	return 0;
 }

@@ -1044,9 +1044,9 @@ bool CFiltre::Filter2Pass(HWND hwnd, CIBitmap * m_ciBitmap, short * kernel,const
 	DWORD LasttickCount = GetTickCount();				// Get The Tick Count
 	DWORD Result = LasttickCount - tickCount;
 
-	char Temp[10];
-	sprintf(Temp,"%d",Result);
-	::MessageBox(NULL,Temp,"Temps d'execution",0);
+	//char Temp[10];
+	//sprintf(Temp,"%d",Result);
+	//::MessageBox(NULL,Temp,"Temps d'execution",0);
 #endif
 	return 0;
 

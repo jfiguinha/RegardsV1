@@ -1298,9 +1298,9 @@ int JpegFile::ReadJpeg_Intel(CIBitmap * m_ciBitmap,const char * szFileName)
 	DWORD LasttickCount = GetTickCount();				// Get The Tick Count
 	DWORD Result = LasttickCount - tickCount;
 
-	char Temp[10];
-	sprintf(Temp,"%d",Result);
-	::MessageBox(NULL,Temp,"Temps d'execution",0);
+	//char Temp[10];
+	//sprintf(Temp,"%d",Result);
+	//::MessageBox(NULL,Temp,"Temps d'execution",0);
 #endif
 
 	return 0;
@@ -1387,9 +1387,9 @@ int JpegFile::ReadJpeg_Std(CIBitmap * m_ciBitmap,const char * szFileName)
 	DWORD LasttickCount = GetTickCount();				// Get The Tick Count
 	DWORD Result = LasttickCount - tickCount;
 
-	char Temp[10];
-	sprintf(Temp,"%d",Result);
-	::MessageBox(NULL,Temp,"Temps d'execution",0);
+	//char Temp[10];
+	//sprintf(Temp,"%d",Result);
+	//::MessageBox(NULL,Temp,"Temps d'execution",0);
 #endif
 
 	}

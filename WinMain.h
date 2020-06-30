@@ -30,6 +30,7 @@ public:
 	{
 		return m_bExplorer;
 	}
+	HWND GetWnd();
 
 private:
 

@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "WinMain.h"
+#include <Video.h>
 //#include "floattoint.h"
 #include "AffichageBitmap.h"
 #include "WndIntro.h"
@@ -8,7 +9,11 @@
 #include <iefunction.h>
 #include <JpegFile.h>
 #include <ibitmap.h>
-
+// Media Foundation 
+#include <mfapi.h>
+#include <mfidl.h>
+#include <mfreadwrite.h>
+#include <mferror.h>
 #ifdef SQLSERVERCE
 #include <SqlEngine.h>
 using namespace LIBSQLSERVERCE;
@@ -27,6 +32,7 @@ END_OBJECT_MAP()
 
 HINSTANCE hInstance;
 INT NBSCREEN = 0;
+HWND mainWindow = NULL;
 /////////////////////////////////////////////////////////////////////////////////////////
 ///
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -97,7 +103,9 @@ int CreateWinMainWindow(int iShowIntro, HINSTANCE hInst, HWND hWndIntro,char * s
 	if(bCommandLine)
 		m_CWinMain->SetCommandLine(szCommandLine);
 	m_CWinMain->CreateEx(NULL,hInst,dwWndStyle,dwStyle,0,"Regards",IDM_REGARDS,IDM_REGARDS,IDC_ARROW,rc);
+	mainWindow = m_CWinMain->GetWnd();
 	m_CWinMain->Run(IDR_REGARDS);
+	//
 	bExplorer = m_CWinMain->GetExplorer();
 	delete m_CWinMain;
 
@@ -181,6 +189,17 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmdLine, int nShowC
 
     // Initialize COM library
     OleInitialize(NULL);
+
+
+	// Initialize COM
+	HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+
+	if (SUCCEEDED(hr))
+	{
+		// Initialize Media Foundation.
+		hr = MFStartup(MF_VERSION);
+	}
+
 
 	INITCOMMONCONTROLSEX iccex;
 
@@ -278,8 +297,11 @@ FIN:
 
 	OleUninitialize();
 
-	//Setx87ControlWord(OldCtrlWord);
+	CVideo::Cleanup();
 
+	//Setx87ControlWord(OldCtrlWord);
+	MFShutdown();
+	CoUninitialize();
 
 
 	return 0;

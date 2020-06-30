@@ -827,6 +827,11 @@ void CWinMain::SetIntroWindow(HWND hWnd)
 	m_cWinMainData->SetIntroWindow(hWnd);
 }
 
+HWND CWinMain::GetWnd()
+{
+	return this->m_hWnd;
+}
+
 void CWinMain::SetCommandLine(char * szCommandLine)
 {
 	m_cWinMainData->SetFile(szCommandLine);
