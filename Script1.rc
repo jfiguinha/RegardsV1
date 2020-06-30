@@ -15,10 +15,8 @@
 // Neutre resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
-#ifdef _WIN32
 LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
 #pragma code_page(1252)
-#endif //_WIN32
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -26,12 +24,19 @@ LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
 //
 
 IDC_PTPLUS              CURSOR                  "res\\cursor\\arrow.cur"
+
 IDC_NODROP              CURSOR                  "res\\cursor\\nodrop.cur"
+
 IDC_PTMOINS             CURSOR                  "res\\cursor\\pointer.cur"
+
 IDC_CURSELECT           CURSOR                  "res\\cursor\\cursor2.cur"
+
 IDC_CURSOR1             CURSOR                  "res\\cursor\\hmove.cur"
+
 IDC_ZOOMON              CURSOR                  "res\\cursor\\cur00001.cur"
+
 IDC_ZOOMOUT             CURSOR                  "res\\cursor\\cur00002.cur"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -39,31 +44,57 @@ IDC_ZOOMOUT             CURSOR                  "res\\cursor\\cur00002.cur"
 //
 
 IDB_BORDER              BITMAP                  "res\\bitmap\\bmp00003.bmp"
+
 IDB_PICTBORDER          BITMAP                  "res\\bitmap\\bmp00004.bmp"
+
 IDB_CATALOGUE           BITMAP                  "res\\bitmap\\catalogue.bmp"
+
 IDB_FONT                BITMAP                  "res\\bitmap\\Font.bmp"
+
 IDB_DLGINTRO            BITMAP                  "res\\bitmap\\regards intro.bmp"
+
 IDB_PICTURE             BITMAP                  "res\\bitmap\\picture.bmp"
+
 IDB_FOLDER              BITMAP                  "res\\bitmap\\folder.bmp"
+
 IDB_ALBUM               BITMAP                  "res\\bitmap\\album.bmp"
+
 IDB_ALBUMWIZARD         BITMAP                  "res\\bitmap\\album2.bmp"
+
 IDB_PROPWIZARD          BITMAP                  "res\\bitmap\\propriete.bmp"
+
 IDB_RECHERCHEWIZARD     BITMAP                  "res\\bitmap\\recherche.bmp"
+
 IDB_PLUS                BITMAP                  "res\\bitmap\\bmp00001.bmp"
+
 IDB_MOINS               BITMAP                  "res\\bitmap\\bmp00002.bmp"
+
 IDB_BANNER256           BITMAP                  "res\\bitmap\\baner256.bmp"
+
 IDB_WATERMARK256        BITMAP                  "res\\bitmap\\bitmap_gauche.bmp"
+
 IDB_MAINHOT             BITMAP                  "res\\bitmap\\main_hot.bmp"
+
 IDB_MENUBMP             BITMAP                  "res\\bitmap\\bitmap1.bmp"
+
 IDB_ICONEZIP            BITMAP                  "res\\bitmap\\iconezip.bmp"
+
 IDB_SELECTED            BITMAP                  "res\\skin\\Selected.bmp"
+
 IDB_MAIN                BITMAP                  "res\\skin\\Main.bmp"
+
 IDB_MASK                BITMAP                  "res\\skin\\Mask.bmp"
+
 IDB_BTPLAYER            BITMAP                  "res\\player\\icone_player.bmp"
+
 IDB_PHOTO               BITMAP                  "res\\bitmap\\appareilphoto.bmp"
+
 IDB_TRAITEMENTMENU      BITMAP                  "res\\bitmap\\traitement2.bmp"
+
 IDR_MAINFRAME           BITMAP                  "res\\bitmap\\mainfram.bmp"
+
 IDB_FOLDERBIG           BITMAP                  "res\\bitmap\\bmp00005.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -821,6 +852,7 @@ END
 
 ONGLET.GIF              GIF                     "res\\gif\\onglet.gif"
 
+
 /////////////////////////////////////////////////////////////////////////////
 //
 // Icon
@@ -829,16 +861,20 @@ ONGLET.GIF              GIF                     "res\\gif\\onglet.gif"
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
 IDM_REGARDS             ICON                    "res\\ico\\logoregard.ico"
+
 IDI_CATALOGUE           ICON                    "res\\ico\\catalogue.ico"
+
 IDI_ALBUM               ICON                    "res\\ico\\album.ico"
+
 IDI_SMALL               ICON                    "res\\ico\\logoregard_small.ico"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // Toolbar
 //
 
-IDR_MAINFRAME TOOLBAR  16, 15
+IDR_MAINFRAME TOOLBAR 16, 15
 BEGIN
     BUTTON      ID_FILE_NEW
     BUTTON      ID_FILE_OPEN
@@ -858,7 +894,7 @@ END
 // Accelerator
 //
 
-IDC_AFFICHAGEBITMAP ACCELERATORS 
+IDC_AFFICHAGEBITMAP ACCELERATORS
 BEGIN
     "C",            ID_EDITION_COPIER,      VIRTKEY, CONTROL, NOINVERT
     VK_F5,          ID_EDITION_MISEJOUR,    VIRTKEY, NOINVERT
@@ -893,12 +929,12 @@ BEGIN
     VK_F4,          IDM_QUITTER,            VIRTKEY, ALT, NOINVERT
 END
 
-IDR_REGARDS ACCELERATORS 
+IDR_REGARDS ACCELERATORS
 BEGIN
     "P",            IDM_AFFICHAGE_CONTROL_PREVIEWAREA, VIRTKEY, SHIFT, CONTROL, NOINVERT
 END
 
-IDR_TRTBITMAP ACCELERATORS 
+IDR_TRTBITMAP ACCELERATORS
 BEGIN
     "Z",            ID_EDITION_ANNULER,     VIRTKEY, CONTROL, NOINVERT
     "C",            ID_EDITION_COPIER,      VIRTKEY, CONTROL, NOINVERT
@@ -925,7 +961,7 @@ END
 // Dialog
 //
 
-IDD_INTRO DIALOG  0, 0, 276, 87
+IDD_INTRO DIALOG 0, 0, 276, 87
 STYLE DS_SETFONT | DS_CENTER | WS_CHILD | WS_VISIBLE | WS_BORDER
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -955,7 +991,7 @@ END
 // String Table
 //
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_FIRSTCOLUMN         "Nom"
     IDS_SECONDCOLUMN        "Taille"
@@ -974,7 +1010,7 @@ BEGIN
     IDS_STGENDTHE           "Création terminée le : "
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDC_AFFICHAGEBITMAP     "Affichage Bitmap"
     IDC_TRTBITMAP           "Traitement d'image"
@@ -994,7 +1030,7 @@ BEGIN
     IDS_REVERT              "Rechargement de l'image"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_PLEINECRAN          "Image en plein écran"
     IDS_ROTATE90CW          "Rotation à 90°"
@@ -1014,7 +1050,7 @@ BEGIN
     IDS_ZIPEXTRAIRE         "Extraire le ou les fichiers"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_ZIPVOIR             "Voir le fichier"
     IDS_ZIPSELECTALL        "Tout sélectionner"
@@ -1034,7 +1070,7 @@ BEGIN
     IDS_SUPPONEFILE         "Etes-vous sur de vouloir supprimer ce fichier ?"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_MENUPHOTONUMERIQUE  "Gestion des appareils photos numériques"
     IDS_RENSFORM            "Veuillez renseigner correctement le formulaire !"
@@ -1054,7 +1090,7 @@ BEGIN
     IDS_NEWCRITERE          "Entrée une valeur"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_CATEGORYLIBELLE     "Libelle"
     IDS_HANDTOOLS           "Bouger l'image"
@@ -1074,7 +1110,7 @@ BEGIN
     IDS_CATALOGUENAME       "Nom du Catalogue"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_CRITERELIST         "Liste des critères"
     IDS_CRITERECATALOGUE    "Nom du Fichier;Date du Fichier;Taille du Fichier;Signature du fichier;Hauteur et Largeur;Format;"
@@ -1084,7 +1120,7 @@ BEGIN
     IDS_ENTETEHTMLCATALGOUE "<html>\n\n<head>\n<meta http-equiv=""Content-Language"" content=""fr"">\n<meta name=""GENERATOR"" content=""Microsoft FrontPage 5.0"">\n<meta name=""ProgId"" content=""FrontPage.Editor.Document"">\n<meta http-equiv=""Content-Type"" content=""text/html; charset=windows-1252"">\n<title>Rapport sur les résultats de recherche</title>\n</head>\n\n<style>\nbody\n{\n\tfont-family: Verdana, Arial, Helvetica;\n\tfont-size: 10pt;\n\tbackground-color: rgb(255,255,255);\n\tcolor: rgb(0,0,0);\n}\n</style>\n\n<body>\n\n<p style=""text-align: center""><b>Rapport sur les résultats de recherche :</b></p>\n<p><b>Liste des fichiers trouvés :</b></p>"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_STGINITBURNING      "Initialisation de la gravure ..."
     IDS_STGBURNBEGIN        "Debut de la gravure dans %d secondes."
@@ -1104,7 +1140,7 @@ BEGIN
     IDS_STGHEADINFOFILE     "<html><head><title>Informations sur le fichier</title></head><body><table border=""0"" cellpadding=""2"" bordercolor=""#111111"" width=""100%"">"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_STGAFFINFOFILE      "<tr><td width=""150""><font face=""Verdana"" size=""2"">%s</font></td><td><font face=""Verdana"" size=""2"">%s</font></td></tr>"
     IDS_STGNOMFICHIER       "Nom du fichier"
@@ -1124,7 +1160,7 @@ BEGIN
     IDS_STGCREATIONFENETRE  "Creation des fenêtres"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_STGCREATIONMENU     "Creation des menus"
     IDS_SGINITPARAM         "Initialisation des paramètres"
@@ -1133,14 +1169,14 @@ BEGIN
     IDS_STGINFOSDOWNLOAD    "Une nouvelle version est disponible \n Souhaitez-vous la télécharger ?"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_STGIMPORTPICTURE    ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.mpg;.avi;.mp2;.divx;.mpeg;.mv2;.mpv;.3ds;.ppm;.crw;.pgm;.md2;.nef;.raf;.orf;.mrw;.dcr;.mos;.pef;.srf;.dng;.x3f;.cr2;.erf;.sr2;.kdc;.mfw;.mef;.arw;.psd;.wmv;.wav;"
     IDS_STGRAWFILE          ".nef;.raf;.orf;.mrw;.dcr;.mos;.pef;.srf;.dng;.x3f;.cr2;.erf;.sr2;.kdc;.mfw;.mef;.arw;.crw;"
     IDS_PICTUREFORMATWITHOUTRAW 
                             ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.ppm;.pgm;.psd;"
     IDS_PICTUREFORMATMULTIWITHOUTRAW 
-                            ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.mpg;.avi;.mp2;.divx;.mpeg;.mv2;.mpv;.3ds;.ppm;.pgm;.md2;.psd;.wmv;.wav;"
+                            ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.mpg;.avi;.mp2;.divx;.mpeg;.mv2;.mpv;.3ds;.ppm;.pgm;.md2;.psd;.wmv;.wav;.mov;.mp4"
     IDS_COMPACTDATAREADY    "Compactage de la base de donnée effectuée !"
     IDS_ADRESSEWEBVERSION   "http://jacques.figuinha.free.fr/regards/zip/version.txt"
     IDS_ADRESSEWEB          "http://www.figuinha.com/regards/index.htm"
@@ -1150,7 +1186,7 @@ BEGIN
     IDS_PREVIEW             "Prévisualisation :"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SAVEPICTURE         "Souhaitez-vous sauver l'image modifiée ?"
     IDS_VIDEOFORMAT         ".avi;.mpg;.wmv;.divx;.mpeg;"
@@ -1170,7 +1206,7 @@ BEGIN
     IDS_SADEARMSG2          "Acquisition des fichiers"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_INSERTALBUMMSG1     "Insertion des images dans l'album"
     IDS_INSERTALBUMMSG2     "Sélection de toutes les images"
@@ -1189,10 +1225,8 @@ END
 // Anglais (États-Unis) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-#ifdef _WIN32
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
-#endif //_WIN32
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -1805,7 +1839,7 @@ STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMEN
 CAPTION "Files copy ..."
 FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
-    CONTROL         "Progress1",IDC_PRGFILE,"msctls_progress32",WS_BORDER | 0x1,17,96,274,14
+    CONTROL         "Progress1",IDC_PRGFILE,"msctls_progress32",PBS_SMOOTH | WS_BORDER,17,96,274,14
     LTEXT           "",IDC_FILEIN,17,32,275,24
     LTEXT           "",IDC_FILEOUT,17,69,271,21
     LTEXT           "From :",IDC_TXTDE,17,19,279,11
@@ -1825,7 +1859,7 @@ CAPTION "Regards WIZARD"
 FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
     LTEXT           "Operation was successfull.",IDC_STATIC,192,98,110,11
-    CONTROL         155,IDC_STATIC,"Static",SS_BITMAP,232,63,23,22
+    CONTROL         IDB_ALBUMWIZARD,IDC_STATIC,"Static",SS_BITMAP,232,63,23,22
 END
 #endif
 
@@ -1953,13 +1987,13 @@ EXSTYLE WS_EX_CONTROLPARENT
 CAPTION "Regards WIZARD"
 FONT 8, "MS Sans Serif", 0, 0, 0x1
 BEGIN
-    CONTROL         155,IDC_STATIC,"Static",SS_BITMAP,61,28,23,22
+    CONTROL         IDB_ALBUMWIZARD,IDC_STATIC,"Static",SS_BITMAP,61,28,23,22
     CONTROL         "Manage Album",IDC_RDALBUM,"Button",BS_AUTORADIOBUTTON,100,32,73,16
-    CONTROL         156,IDC_STATIC,"Static",SS_BITMAP,58,96,23,26
+    CONTROL         IDB_PROPWIZARD,IDC_STATIC,"Static",SS_BITMAP,58,96,23,26
     CONTROL         "Manage keyword",IDC_RDATTRIBUTS,"Button",BS_AUTORADIOBUTTON,98,96,69,23
-    CONTROL         157,IDC_STATIC,"Static",SS_BITMAP,200,96,23,22
+    CONTROL         IDB_RECHERCHEWIZARD,IDC_STATIC,"Static",SS_BITMAP,200,96,23,22
     CONTROL         "Search",IDC_RDRECHERCHE,"Button",BS_AUTORADIOBUTTON,236,96,89,18
-    CONTROL         214,IDC_STATIC,"Static",SS_BITMAP,196,29,31,25
+    CONTROL         IDB_PHOTO,IDC_STATIC,"Static",SS_BITMAP,196,29,31,25
     CONTROL         "Photo acquisition",IDC_RDPHOTO,"Button",BS_AUTORADIOBUTTON,236,32,94,16
 END
 #endif
@@ -2249,15 +2283,19 @@ END
 #if defined(APSTUDIO_INVOKED) || defined(ENGLISH)
 #if defined(APSTUDIO_INVOKED)
 AGENT.JS$(ENGLISH)      JS                      "res\\js\\en\\agent.js"
+
 #else
 AGENT.JS                JS                      "res\\js\\en\\agent.js"
+
 #endif
 #endif
 #if defined(APSTUDIO_INVOKED) || defined(ENGLISH)
 #if defined(APSTUDIO_INVOKED)
 GST_DATE.JS$(ENGLISH)   JS                      "res\\js\\en\\gs_date.js"
+
 #else
 GST_DATE.JS             JS                      "res\\js\\en\\gs_date.js"
+
 #endif
 #endif
 
@@ -2267,7 +2305,7 @@ GST_DATE.JS             JS                      "res\\js\\en\\gs_date.js"
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO 
+GUIDELINES DESIGNINFO
 BEGIN
     "IDD_ASSOCIATE$(ENGLISH)", DIALOG
     BEGIN
@@ -2620,9 +2658,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(ENGLISH)
 #if defined(APSTUDIO_INVOKED)
-IDM_AFFICHAGEBITMAP$(ENGLISH) MENU 
+IDM_AFFICHAGEBITMAP$(ENGLISH) MENU
 #else
-IDM_AFFICHAGEBITMAP MENU 
+IDM_AFFICHAGEBITMAP MENU
 #endif
 BEGIN
     POPUP "&File"
@@ -2726,9 +2764,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(ENGLISH)
 #if defined(APSTUDIO_INVOKED)
-IDM_ALBUM$(ENGLISH) MENU 
+IDM_ALBUM$(ENGLISH) MENU
 #else
-IDM_ALBUM MENU 
+IDM_ALBUM MENU
 #endif
 BEGIN
     POPUP "Album"
@@ -2764,9 +2802,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(ENGLISH)
 #if defined(APSTUDIO_INVOKED)
-IDM_MENULISTE$(ENGLISH) MENU 
+IDM_MENULISTE$(ENGLISH) MENU
 #else
-IDM_MENULISTE MENU 
+IDM_MENULISTE MENU
 #endif
 BEGIN
     POPUP "Liste"
@@ -2836,9 +2874,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(ENGLISH)
 #if defined(APSTUDIO_INVOKED)
-IDM_MENUZIP$(ENGLISH) MENU 
+IDM_MENUZIP$(ENGLISH) MENU
 #else
-IDM_MENUZIP MENU 
+IDM_MENUZIP MENU
 #endif
 BEGIN
     POPUP "Action"
@@ -2860,9 +2898,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(ENGLISH)
 #if defined(APSTUDIO_INVOKED)
-IDM_REGARDS$(ENGLISH) MENU 
+IDM_REGARDS$(ENGLISH) MENU
 #else
-IDM_REGARDS MENU 
+IDM_REGARDS MENU
 #endif
 BEGIN
     POPUP "File"
@@ -2955,9 +2993,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(ENGLISH)
 #if defined(APSTUDIO_INVOKED)
-IDM_TRAITEMENTIMAGE$(ENGLISH) MENUEX 
+IDM_TRAITEMENTIMAGE$(ENGLISH) MENUEX
 #else
-IDM_TRAITEMENTIMAGE MENUEX 
+IDM_TRAITEMENTIMAGE MENUEX
 #endif
 BEGIN
     POPUP "File",                           65535,MFT_STRING,MFS_ENABLED
@@ -3072,15 +3110,19 @@ END
 #if defined(APSTUDIO_INVOKED) || defined(ENGLISH)
 #if defined(APSTUDIO_INVOKED)
 IDR_HTML_EXIF_EN$(ENGLISH) HTML                    "res\\html\\en\\htmlexif2.htm"
+
 #else
 IDR_HTML_EXIF_EN        HTML                    "res\\html\\en\\htmlexif2.htm"
+
 #endif
 #endif
 #if defined(APSTUDIO_INVOKED) || defined(ENGLISH)
 #if defined(APSTUDIO_INVOKED)
 IDR_HTML_SEARCH$(ENGLISH) HTML                    "res\\html\\en\\recherche.htm"
+
 #else
 IDR_HTML_SEARCH         HTML                    "res\\html\\en\\recherche.htm"
+
 #endif
 #endif
 #endif    // Anglais (États-Unis) resources
@@ -3091,10 +3133,8 @@ IDR_HTML_SEARCH         HTML                    "res\\html\\en\\recherche.htm"
 // Français (France) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)
-#ifdef _WIN32
 LANGUAGE LANG_FRENCH, SUBLANG_FRENCH
 #pragma code_page(1252)
-#endif //_WIN32
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -3127,7 +3167,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO 
+GUIDELINES DESIGNINFO
 BEGIN
     "IDD_DLG_HISTOGRAMME$(FRENCH)", DIALOG
     BEGIN
@@ -3212,6 +3252,7 @@ END
 //
 
 1                       RT_MANIFEST             "res\\xptheme.bin"
+
 #endif    // Français (France) resources
 /////////////////////////////////////////////////////////////////////////////
 
@@ -3220,10 +3261,8 @@ END
 // Neutre (Par défaut système) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEUSD)
-#ifdef _WIN32
 LANGUAGE LANG_NEUTRAL, SUBLANG_SYS_DEFAULT
 #pragma code_page(1252)
-#endif //_WIN32
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -3250,9 +3289,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDD_BRIGHTCONT$(FRENCH) DIALOG  0, 0, 275, 83
+IDD_BRIGHTCONT$(FRENCH) DIALOG 0, 0, 275, 83
 #else
-IDD_BRIGHTCONT DIALOG  0, 0, 275, 83
+IDD_BRIGHTCONT DIALOG 0, 0, 275, 83
 #endif
 STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 CAPTION "Luminosité et contraste"
@@ -3365,7 +3404,7 @@ STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMEN
 CAPTION "Copie des fichiers ..."
 FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
-    CONTROL         "Progress1",IDC_PRGFILE,"msctls_progress32",WS_BORDER | 0x1,17,96,274,14
+    CONTROL         "Progress1",IDC_PRGFILE,"msctls_progress32",PBS_SMOOTH | WS_BORDER,17,96,274,14
     LTEXT           "",IDC_FILEIN,17,32,275,24
     LTEXT           "",IDC_FILEOUT,17,69,271,21
     LTEXT           "De :",IDC_TXTDE,17,19,279,11
@@ -3420,22 +3459,22 @@ EXSTYLE WS_EX_CONTROLPARENT
 CAPTION "Regards WIZARD"
 FONT 8, "MS Sans Serif", 0, 0, 0x1
 BEGIN
-    CONTROL         155,IDC_STATIC,"Static",SS_BITMAP,61,28,23,22
+    CONTROL         IDB_ALBUMWIZARD,IDC_STATIC,"Static",SS_BITMAP,61,28,23,22
     CONTROL         "Gérer les albums",IDC_RDALBUM,"Button",BS_AUTORADIOBUTTON,100,32,73,16
-    CONTROL         156,IDC_STATIC,"Static",SS_BITMAP,58,96,23,26
+    CONTROL         IDB_PROPWIZARD,IDC_STATIC,"Static",SS_BITMAP,58,96,23,26
     CONTROL         "Gérer les attributs",IDC_RDATTRIBUTS,"Button",BS_AUTORADIOBUTTON,98,96,69,23
-    CONTROL         157,IDC_STATIC,"Static",SS_BITMAP,200,96,23,22
+    CONTROL         IDB_RECHERCHEWIZARD,IDC_STATIC,"Static",SS_BITMAP,200,96,23,22
     CONTROL         "Faire une recherche",IDC_RDRECHERCHE,"Button",BS_AUTORADIOBUTTON,236,96,89,18
-    CONTROL         214,IDC_STATIC,"Static",SS_BITMAP,196,29,31,25
+    CONTROL         IDB_PHOTO,IDC_STATIC,"Static",SS_BITMAP,196,29,31,25
     CONTROL         "Acquisition d'images",IDC_RDPHOTO,"Button",BS_AUTORADIOBUTTON,236,32,94,16
 END
 #endif
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDD_MENUALBUM$(FRENCH) DIALOG  0, 0, 376, 123
+IDD_MENUALBUM$(FRENCH) DIALOG 0, 0, 376, 123
 #else
-IDD_MENUALBUM DIALOG  0, 0, 376, 123
+IDD_MENUALBUM DIALOG 0, 0, 376, 123
 #endif
 STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Regards WIZARD"
@@ -3449,9 +3488,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDD_GSTALBUM$(FRENCH) DIALOG  0, 0, 366, 195
+IDD_GSTALBUM$(FRENCH) DIALOG 0, 0, 366, 195
 #else
-IDD_GSTALBUM DIALOG  0, 0, 366, 195
+IDD_GSTALBUM DIALOG 0, 0, 366, 195
 #endif
 STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Regards WIZARD"
@@ -3475,9 +3514,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDD_AJOUTCRITEREALBUM$(FRENCH) DIALOG  0, 0, 337, 185
+IDD_AJOUTCRITEREALBUM$(FRENCH) DIALOG 0, 0, 337, 185
 #else
-IDD_AJOUTCRITEREALBUM DIALOG  0, 0, 337, 185
+IDD_AJOUTCRITEREALBUM DIALOG 0, 0, 337, 185
 #endif
 STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Regards WIZARD"
@@ -3492,24 +3531,24 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDD_FIN$(FRENCH) DIALOG  0, 0, 318, 175
+IDD_FIN$(FRENCH) DIALOG 0, 0, 318, 175
 #else
-IDD_FIN DIALOG  0, 0, 318, 175
+IDD_FIN DIALOG 0, 0, 318, 175
 #endif
 STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Regards WIZARD"
 FONT 8, "MS Sans Serif"
 BEGIN
     LTEXT           "Opération terminée avec succés.",IDC_STATIC,192,98,110,11
-    CONTROL         155,IDC_STATIC,"Static",SS_BITMAP,232,63,23,22
+    CONTROL         IDB_ALBUMWIZARD,IDC_STATIC,"Static",SS_BITMAP,232,63,23,22
 END
 #endif
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDD_SELECTALBUMWIZARD$(FRENCH) DIALOG  0, 0, 371, 169
+IDD_SELECTALBUMWIZARD$(FRENCH) DIALOG 0, 0, 371, 169
 #else
-IDD_SELECTALBUMWIZARD DIALOG  0, 0, 371, 169
+IDD_SELECTALBUMWIZARD DIALOG 0, 0, 371, 169
 #endif
 STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Regards WIZARD"
@@ -3561,9 +3600,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDD_ZIPDLG$(FRENCH) DIALOG  0, 0, 308, 183
+IDD_ZIPDLG$(FRENCH) DIALOG 0, 0, 308, 183
 #else
-IDD_ZIPDLG DIALOG  0, 0, 308, 183
+IDD_ZIPDLG DIALOG 0, 0, 308, 183
 #endif
 STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 CAPTION "Fichiers Zip"
@@ -3575,9 +3614,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDD_RGB$(FRENCH) DIALOG  0, 0, 317, 258
+IDD_RGB$(FRENCH) DIALOG 0, 0, 317, 258
 #else
-IDD_RGB DIALOG  0, 0, 317, 258
+IDD_RGB DIALOG 0, 0, 317, 258
 #endif
 STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Balance des couleurs"
@@ -3674,9 +3713,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDD_JPGSAVE$(FRENCH) DIALOG  0, 0, 186, 95
+IDD_JPGSAVE$(FRENCH) DIALOG 0, 0, 186, 95
 #else
-IDD_JPGSAVE DIALOG  0, 0, 186, 95
+IDD_JPGSAVE DIALOG 0, 0, 186, 95
 #endif
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 CAPTION "Sauvegarde en JPEG"
@@ -3728,9 +3767,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDD_FINGRAVURE$(FRENCH) DIALOG  0, 0, 289, 126
+IDD_FINGRAVURE$(FRENCH) DIALOG 0, 0, 289, 126
 #else
-IDD_FINGRAVURE DIALOG  0, 0, 289, 126
+IDD_FINGRAVURE DIALOG 0, 0, 289, 126
 #endif
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Assistant Creation CD-R"
@@ -3742,9 +3781,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDD_DEBUTGRAVURE$(FRENCH) DIALOG  0, 0, 280, 188
+IDD_DEBUTGRAVURE$(FRENCH) DIALOG 0, 0, 280, 188
 #else
-IDD_DEBUTGRAVURE DIALOG  0, 0, 280, 188
+IDD_DEBUTGRAVURE DIALOG 0, 0, 280, 188
 #endif
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Assistant Creation CD-R"
@@ -3756,9 +3795,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDD_GRAVURE$(FRENCH) DIALOG  0, 0, 389, 158
+IDD_GRAVURE$(FRENCH) DIALOG 0, 0, 389, 158
 #else
-IDD_GRAVURE DIALOG  0, 0, 389, 158
+IDD_GRAVURE DIALOG 0, 0, 389, 158
 #endif
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Assistant Creation CD-R"
@@ -3772,9 +3811,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDD_APPLITRAITEMENT$(FRENCH) DIALOG  0, 0, 186, 90
+IDD_APPLITRAITEMENT$(FRENCH) DIALOG 0, 0, 186, 90
 #else
-IDD_APPLITRAITEMENT DIALOG  0, 0, 186, 90
+IDD_APPLITRAITEMENT DIALOG 0, 0, 186, 90
 #endif
 STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 CAPTION "Traitement en cours ..."
@@ -3885,9 +3924,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDD_DLGCATASEARCH$(FRENCH) DIALOG  0, 0, 505, 326
+IDD_DLGCATASEARCH$(FRENCH) DIALOG 0, 0, 505, 326
 #else
-IDD_DLGCATASEARCH DIALOG  0, 0, 505, 326
+IDD_DLGCATASEARCH DIALOG 0, 0, 505, 326
 #endif
 STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 CAPTION "Moteur de recherche pour les catalogues"
@@ -3923,9 +3962,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDD_DLGLISTFIND$(FRENCH) DIALOG  0, 0, 259, 66
+IDD_DLGLISTFIND$(FRENCH) DIALOG 0, 0, 259, 66
 #else
-IDD_DLGLISTFIND DIALOG  0, 0, 259, 66
+IDD_DLGLISTFIND DIALOG 0, 0, 259, 66
 #endif
 STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 CAPTION "Rechercher"
@@ -4267,15 +4306,19 @@ END
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
 AGENT.JS$(FRENCH)       JS                      "res\\js\\agent.js"
+
 #else
 AGENT.JS                JS                      "res\\js\\agent.js"
+
 #endif
 #endif
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
 GST_DATE.JS$(FRENCH)    JS                      "res\\js\\gst_date.js"
+
 #else
 GST_DATE.JS             JS                      "res\\js\\gst_date.js"
+
 #endif
 #endif
 
@@ -4285,7 +4328,7 @@ GST_DATE.JS             JS                      "res\\js\\gst_date.js"
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO 
+GUIDELINES DESIGNINFO
 BEGIN
     "IDD_BRIGHTCONT$(FRENCH)", DIALOG
     BEGIN
@@ -4638,9 +4681,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDM_REGARDS$(FRENCH) MENU 
+IDM_REGARDS$(FRENCH) MENU
 #else
-IDM_REGARDS MENU 
+IDM_REGARDS MENU
 #endif
 BEGIN
     POPUP "Fichier"
@@ -4733,9 +4776,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDM_AFFICHAGEBITMAP$(FRENCH) MENU 
+IDM_AFFICHAGEBITMAP$(FRENCH) MENU
 #else
-IDM_AFFICHAGEBITMAP MENU 
+IDM_AFFICHAGEBITMAP MENU
 #endif
 BEGIN
     POPUP "&Fichier"
@@ -4839,9 +4882,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDM_TRAITEMENTIMAGE$(FRENCH) MENUEX 
+IDM_TRAITEMENTIMAGE$(FRENCH) MENUEX
 #else
-IDM_TRAITEMENTIMAGE MENUEX 
+IDM_TRAITEMENTIMAGE MENUEX
 #endif
 BEGIN
     POPUP "Fichier",                        65535,MFT_STRING,MFS_ENABLED
@@ -4954,9 +4997,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDM_MENULISTE$(FRENCH) MENU 
+IDM_MENULISTE$(FRENCH) MENU
 #else
-IDM_MENULISTE MENU 
+IDM_MENULISTE MENU
 #endif
 BEGIN
     POPUP "Liste"
@@ -5026,9 +5069,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDM_ALBUM$(FRENCH) MENU 
+IDM_ALBUM$(FRENCH) MENU
 #else
-IDM_ALBUM MENU 
+IDM_ALBUM MENU
 #endif
 BEGIN
     POPUP "Album"
@@ -5064,9 +5107,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
-IDM_MENUZIP$(FRENCH) MENU 
+IDM_MENUZIP$(FRENCH) MENU
 #else
-IDM_MENUZIP MENU 
+IDM_MENUZIP MENU
 #endif
 BEGIN
     POPUP "Action"
@@ -5095,16 +5138,21 @@ END
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
 IDR_HTML_RECHERCHE$(FRENCH) HTML                    "res\\html\\recherche.htm"
+
 #else
 IDR_HTML_RECHERCHE      HTML                    "res\\html\\recherche.htm"
+
 #endif
 #endif
 IDR_HTML_INFOS          HTML                    "res\\html\\htmlinfos.htm"
+
 #if defined(APSTUDIO_INVOKED) || defined(FRENCH)
 #if defined(APSTUDIO_INVOKED)
 IDR_HTML_EXIF2$(FRENCH) HTML                    "res\\html\\htmlexif2.htm"
+
 #else
 IDR_HTML_EXIF2          HTML                    "res\\html\\htmlexif2.htm"
+
 #endif
 #endif
 #endif    // Neutre (Par défaut système) resources
@@ -5112,13 +5160,11 @@ IDR_HTML_EXIF2          HTML                    "res\\html\\htmlexif2.htm"
 
 
 /////////////////////////////////////////////////////////////////////////////
-// Espagnol resources
+// Espagnol (International) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ESN)
-#ifdef _WIN32
 LANGUAGE LANG_SPANISH, SUBLANG_SPANISH_MODERN
 #pragma code_page(1252)
-#endif //_WIN32
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -5708,7 +5754,7 @@ STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMEN
 CAPTION "Copia de los archivos ..."
 FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
-    CONTROL         "Progress1",IDC_PRGFILE,"msctls_progress32",WS_BORDER | 0x1,17,96,274,14
+    CONTROL         "Progress1",IDC_PRGFILE,"msctls_progress32",PBS_SMOOTH | WS_BORDER,17,96,274,14
     LTEXT           "",IDC_FILEIN,17,32,275,24
     LTEXT           "",IDC_FILEOUT,17,69,271,21
     LTEXT           "De :",IDC_TXTDE,17,19,279,11
@@ -5728,7 +5774,7 @@ CAPTION "Regards WIZARD"
 FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
     LTEXT           "La operacion se ha bien terminado",IDC_STATIC,192,98,110,27
-    CONTROL         155,IDC_STATIC,"Static",SS_BITMAP,232,63,23,22
+    CONTROL         IDB_ALBUMWIZARD,IDC_STATIC,"Static",SS_BITMAP,232,63,23,22
 END
 #endif
 
@@ -5856,13 +5902,13 @@ EXSTYLE WS_EX_CONTROLPARENT
 CAPTION "Regards WIZARD"
 FONT 8, "MS Sans Serif", 0, 0, 0x1
 BEGIN
-    CONTROL         155,IDC_STATIC,"Static",SS_BITMAP,61,28,23,22
+    CONTROL         IDB_ALBUMWIZARD,IDC_STATIC,"Static",SS_BITMAP,61,28,23,22
     CONTROL         "Administrar los albumes",IDC_RDALBUM,"Button",BS_AUTORADIOBUTTON,100,32,95,16
-    CONTROL         156,IDC_STATIC,"Static",SS_BITMAP,58,96,23,26
+    CONTROL         IDB_PROPWIZARD,IDC_STATIC,"Static",SS_BITMAP,58,96,23,26
     CONTROL         "Administrar las criterias",IDC_RDATTRIBUTS,"Button",BS_AUTORADIOBUTTON,98,96,88,23
-    CONTROL         157,IDC_STATIC,"Static",SS_BITMAP,200,96,23,22
+    CONTROL         IDB_RECHERCHEWIZARD,IDC_STATIC,"Static",SS_BITMAP,200,96,23,22
     CONTROL         "Buscar una foto",IDC_RDRECHERCHE,"Button",BS_AUTORADIOBUTTON,236,96,89,18
-    CONTROL         214,IDC_STATIC,"Static",SS_BITMAP,196,29,31,25
+    CONTROL         IDB_PHOTO,IDC_STATIC,"Static",SS_BITMAP,196,29,31,25
     CONTROL         "Acquisicion de imagenes",IDC_RDPHOTO,"Button",BS_AUTORADIOBUTTON,236,32,94,16
 END
 #endif
@@ -6153,15 +6199,19 @@ END
 #if defined(APSTUDIO_INVOKED) || defined(SPANISH)
 #if defined(APSTUDIO_INVOKED)
 AGENT.JS$(SPANISH)      JS                      "res\\js\\es\\agent.js"
+
 #else
 AGENT.JS                JS                      "res\\js\\es\\agent.js"
+
 #endif
 #endif
 #if defined(APSTUDIO_INVOKED) || defined(SPANISH)
 #if defined(APSTUDIO_INVOKED)
 GST_DATE.JS$(SPANISH)   JS                      "res\\js\\es\\gs_date.js"
+
 #else
 GST_DATE.JS             JS                      "res\\js\\es\\gs_date.js"
+
 #endif
 #endif
 
@@ -6171,7 +6221,7 @@ GST_DATE.JS             JS                      "res\\js\\es\\gs_date.js"
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO 
+GUIDELINES DESIGNINFO
 BEGIN
     "IDD_ASSOCIATE$(SPANISH)", DIALOG
     BEGIN
@@ -6524,9 +6574,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(SPANISH)
 #if defined(APSTUDIO_INVOKED)
-IDM_AFFICHAGEBITMAP$(SPANISH) MENU 
+IDM_AFFICHAGEBITMAP$(SPANISH) MENU
 #else
-IDM_AFFICHAGEBITMAP MENU 
+IDM_AFFICHAGEBITMAP MENU
 #endif
 BEGIN
     POPUP "&Archivo"
@@ -6630,9 +6680,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(SPANISH)
 #if defined(APSTUDIO_INVOKED)
-IDM_ALBUM$(SPANISH) MENU 
+IDM_ALBUM$(SPANISH) MENU
 #else
-IDM_ALBUM MENU 
+IDM_ALBUM MENU
 #endif
 BEGIN
     POPUP "Album"
@@ -6668,9 +6718,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(SPANISH)
 #if defined(APSTUDIO_INVOKED)
-IDM_MENULISTE$(SPANISH) MENU 
+IDM_MENULISTE$(SPANISH) MENU
 #else
-IDM_MENULISTE MENU 
+IDM_MENULISTE MENU
 #endif
 BEGIN
     POPUP "Liste"
@@ -6740,9 +6790,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(SPANISH)
 #if defined(APSTUDIO_INVOKED)
-IDM_MENUZIP$(SPANISH) MENU 
+IDM_MENUZIP$(SPANISH) MENU
 #else
-IDM_MENUZIP MENU 
+IDM_MENUZIP MENU
 #endif
 BEGIN
     POPUP "Accion"
@@ -6764,9 +6814,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(SPANISH)
 #if defined(APSTUDIO_INVOKED)
-IDM_REGARDS$(SPANISH) MENU 
+IDM_REGARDS$(SPANISH) MENU
 #else
-IDM_REGARDS MENU 
+IDM_REGARDS MENU
 #endif
 BEGIN
     POPUP "Archivo"
@@ -6859,9 +6909,9 @@ END
 
 #if defined(APSTUDIO_INVOKED) || defined(SPANISH)
 #if defined(APSTUDIO_INVOKED)
-IDM_TRAITEMENTIMAGE$(SPANISH) MENUEX 
+IDM_TRAITEMENTIMAGE$(SPANISH) MENUEX
 #else
-IDM_TRAITEMENTIMAGE MENUEX 
+IDM_TRAITEMENTIMAGE MENUEX
 #endif
 BEGIN
     POPUP "Archivo",                        65535,MFT_STRING,MFS_ENABLED
@@ -6976,18 +7026,22 @@ END
 #if defined(APSTUDIO_INVOKED) || defined(SPANISH)
 #if defined(APSTUDIO_INVOKED)
 IDR_HTML_BUSCAR$(SPANISH) HTML                    "res\\html\\es\\recherche.htm"
+
 #else
 IDR_HTML_BUSCAR         HTML                    "res\\html\\es\\recherche.htm"
+
 #endif
 #endif
 #if defined(APSTUDIO_INVOKED) || defined(SPANISH)
 #if defined(APSTUDIO_INVOKED)
 IDR_HTML_EXIF_ES$(SPANISH) HTML                    "res\\html\\es\\htmlexif2.htm"
+
 #else
 IDR_HTML_EXIF_ES        HTML                    "res\\html\\es\\htmlexif2.htm"
+
 #endif
 #endif
-#endif    // Espagnol resources
+#endif    // Espagnol (International) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
@@ -6995,17 +7049,15 @@ IDR_HTML_EXIF_ES        HTML                    "res\\html\\es\\htmlexif2.htm"
 // Anglais (Afrique du Sud) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENS)
-#ifdef _WIN32
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_SOUTH_AFRICA
 #pragma code_page(1252)
-#endif //_WIN32
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // String Table
 //
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_FIRSTCOLUMN         "Name"
     IDS_SECONDCOLUMN        "Site"
@@ -7024,7 +7076,7 @@ BEGIN
     IDS_STGENDTHE           "Creation finished the : "
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDC_AFFICHAGEBITMAP     "View Bitmap"
     IDC_TRTBITMAP           "Processing Picture"
@@ -7044,7 +7096,7 @@ BEGIN
     IDS_REVERT              "Refresh Picture"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_PLEINECRAN          "FullScreen"
     IDS_ROTATE90CW          "Rotate to 90°"
@@ -7064,7 +7116,7 @@ BEGIN
     IDS_ZIPEXTRAIRE         "Extract file(s)"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_ZIPVOIR             "View this file"
     IDS_ZIPSELECTALL        "Select all"
@@ -7084,7 +7136,7 @@ BEGIN
     IDS_SUPPONEFILE         "Do you want delete this file ?"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_MENUPHOTONUMERIQUE  "Manage digital camera"
     IDS_RENSFORM            "You must complete correctly this form !"
@@ -7104,7 +7156,7 @@ BEGIN
     IDS_NEWCRITERE          "Put a value"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_CATEGORYLIBELLE     "Name"
     IDS_HANDTOOLS           "Move Picture"
@@ -7124,7 +7176,7 @@ BEGIN
     IDS_CATALOGUENAME       "Catalogue Name"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_CRITERELIST         "Criteria List"
     IDS_CRITERECATALOGUE    "File name;Date;Size;Hash file;Width and Height;Format;"
@@ -7134,7 +7186,7 @@ BEGIN
     IDS_ENTETEHTMLCATALGOUE "<html>\n\n<head>\n<meta http-equiv=""Content-Language"" content=""fr"">\n<meta name=""GENERATOR"" content=""Microsoft FrontPage 5.0"">\n<meta name=""ProgId"" content=""FrontPage.Editor.Document"">\n<meta http-equiv=""Content-Type"" content=""text/html; charset=windows-1252"">\n<title>Rapport sur les résultats de recherche</title>\n</head>\n\n<style>\nbody\n{\n\tfont-family: Verdana, Arial, Helvetica;\n\tfont-size: 10pt;\n\tbackground-color: rgb(255,255,255);\n\tcolor: rgb(0,0,0);\n}\n</style>\n\n<body>\n\n<p style=""text-align: center""><b>Rapport sur les résultats de recherche :</b></p>\n<p><b>Liste des fichiers trouvés :</b></p>"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_STGINITBURNING      "Burning initialisation ..."
     IDS_STGBURNBEGIN        "Burning start in %d seconds."
@@ -7154,7 +7206,7 @@ BEGIN
     IDS_STGHEADINFOFILE     "<html><head><title>File information</title></head><body><table border=""0"" cellpadding=""2"" bordercolor=""#111111"" width=""100%"">"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_STGAFFINFOFILE      "<tr><td width=""150""><font face=""Verdana"" size=""2"">%s</font></td><td><font face=""Verdana"" size=""2"">%s</font></td></tr>"
     IDS_STGNOMFICHIER       "File Name :"
@@ -7174,7 +7226,7 @@ BEGIN
     IDS_STGCREATIONFENETRE  "Window in creation"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_STGCREATIONMENU     "Menu in creation"
     IDS_SGINITPARAM         "Parameter Initialisation"
@@ -7183,7 +7235,7 @@ BEGIN
     IDS_STGINFOSDOWNLOAD    "A new version is available.\nDo you want download it ?"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_STGIMPORTPICTURE    ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.mpg;.avi;.mp2;.divx;.mpeg;.mv2;.mpv;.3ds;.ppm;.crw;.pgm;.md2;.nef;.raf;.orf;.mrw;.dcr;.mos;.pef;.srf;.dng;.x3f;.cr2;.erf;.sr2;.kdc;.mfw;.mef;.arw;.psd;.wmv;.wav;"
     IDS_STGRAWFILE          ".nef;.raf;.orf;.mrw;.dcr;.mos;.pef;.srf;.dng;.x3f;.cr2;.erf;.sr2;.kdc;.mfw;.mef;.arw;.crw;"
@@ -7200,7 +7252,7 @@ BEGIN
     IDS_PREVIEW             "Preview :"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SAVEPICTURE         "Do you want to save the modification ?"
     IDS_VIDEOFORMAT         ".avi;.mpg;.wmv;.divx;"
@@ -7220,7 +7272,7 @@ BEGIN
     IDS_SADEARMSG2          "Files acquisition"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_INSERTALBUMMSG1     "Insert picture into the album"
     IDS_INSERTALBUMMSG2     "Select all picture"
@@ -7239,17 +7291,15 @@ END
 // Espagnol (Argentine) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ESS)
-#ifdef _WIN32
 LANGUAGE LANG_SPANISH, SUBLANG_SPANISH_ARGENTINA
 #pragma code_page(1252)
-#endif //_WIN32
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // String Table
 //
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_FIRSTCOLUMN         "Apellido"
     IDS_SECONDCOLUMN        "Tamaño"
@@ -7268,7 +7318,7 @@ BEGIN
     IDS_STGENDTHE           "Créacion acabado el : "
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDC_AFFICHAGEBITMAP     "Visualizacion del Bitmap"
     IDC_TRTBITMAP           "Tratamiento del imagen"
@@ -7288,7 +7338,7 @@ BEGIN
     IDS_REVERT              "Recargar la imagen"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_PLEINECRAN          "Imagen sobre la pantalla"
     IDS_ROTATE90CW          "Rotacion a 90°"
@@ -7308,7 +7358,7 @@ BEGIN
     IDS_ZIPEXTRAIRE         "Extraer los archivos"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_ZIPVOIR             "Ver el archivo"
     IDS_ZIPSELECTALL        "Selectionar todo"
@@ -7328,7 +7378,7 @@ BEGIN
     IDS_SUPPONEFILE         "Usted esta seguro de suprimir este archivo ?"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_MENUPHOTONUMERIQUE  "Gestion de las cameras digitales"
     IDS_RENSFORM            "Usted tiene que informar correctamente el formulario !"
@@ -7348,7 +7398,7 @@ BEGIN
     IDS_NEWCRITERE          "Entrar una valor"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_CATEGORYLIBELLE     "Apelido"
     IDS_HANDTOOLS           "Mover la imagen"
@@ -7368,7 +7418,7 @@ BEGIN
     IDS_CATALOGUENAME       "Nombre del Catalogo"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_CRITERELIST         "Lista de los criterios"
     IDS_CRITERECATALOGUE    "Nombre del archivo;Fetcha;Tamano;Firma del archivo;altura y anchura;Format;"
@@ -7378,7 +7428,7 @@ BEGIN
     IDS_ENTETEHTMLCATALGOUE "<html>\n\n<head>\n<meta http-equiv=""Content-Language"" content=""fr"">\n<meta name=""GENERATOR"" content=""Microsoft FrontPage 5.0"">\n<meta name=""ProgId"" content=""FrontPage.Editor.Document"">\n<meta http-equiv=""Content-Type"" content=""text/html; charset=windows-1252"">\n<title>Rapport sur les résultats de recherche</title>\n</head>\n\n<style>\nbody\n{\n\tfont-family: Verdana, Arial, Helvetica;\n\tfont-size: 10pt;\n\tbackground-color: rgb(255,255,255);\n\tcolor: rgb(0,0,0);\n}\n</style>\n\n<body>\n\n<p style=""text-align: center""><b>Rapport sur les résultats de recherche :</b></p>\n<p><b>Liste des fichiers trouvés :</b></p>"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_STGINITBURNING      "Inicialisacion del grabadore ..."
     IDS_STGBURNBEGIN        "Inicio de la grabado desde %d secundos."
@@ -7398,7 +7448,7 @@ BEGIN
     IDS_STGHEADINFOFILE     "<html><head><title>Informaciones sobre el archivo</title></head><body><table border=""0"" cellpadding=""2"" bordercolor=""#111111"" width=""100%"">"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_STGAFFINFOFILE      "<tr><td width=""150""><font face=""Verdana"" size=""2"">%s</font></td><td><font face=""Verdana"" size=""2"">%s</font></td></tr>"
     IDS_STGNOMFICHIER       "Nombre del archivo"
@@ -7418,7 +7468,7 @@ BEGIN
     IDS_STGCREATIONFENETRE  "Creacion de las ventanas"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_STGCREATIONMENU     "Creacion de los menus"
     IDS_SGINITPARAM         "Initialisacion de los parametros"
@@ -7427,7 +7477,7 @@ BEGIN
     IDS_STGINFOSDOWNLOAD    "Una nueva version esta disponible.\n Quiere usted descargar-la ?"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_STGIMPORTPICTURE    ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.mpg;.avi;.mp2;.divx;.mpeg;.mv2;.mpv;.3ds;.ppm;.crw;.pgm;.md2;.nef;.raf;.orf;.mrw;.dcr;.mos;.pef;.srf;.dng;.x3f;.cr2;.erf;.sr2;.kdc;.mfw;.mef;.arw;.psd;.wmv;.wav;"
     IDS_STGRAWFILE          ".nef;.raf;.orf;.mrw;.dcr;.mos;.pef;.srf;.dng;.x3f;.cr2;.erf;.sr2;.kdc;.mfw;.mef;.arw;.crw;"
@@ -7444,7 +7494,7 @@ BEGIN
     IDS_PREVIEW             "Previsualisacion :"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_SAVEPICTURE         "Quiere salvar las modificaciones ?"
     IDS_VIDEOFORMAT         ".avi;.mpg;.wmv;.divx;"
@@ -7464,7 +7514,7 @@ BEGIN
     IDS_SADEARMSG2          "Adquisición de los archivos"
 END
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_INSERTALBUMMSG1     "Inserción de las imágenes en el álbum"
     IDS_INSERTALBUMMSG2     "Selección de todas las imágenes"

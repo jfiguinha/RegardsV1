@@ -621,7 +621,7 @@ int CObjet::TestMultimediaFormat(const char *szFileName)
 		return 3;
 
 	if (strcmp(ext, ".mov") == 0)
-		return 3;
+ 		return 3;
 
 	if(strcmp(ext,".wav") == 0)
 		return 4;
