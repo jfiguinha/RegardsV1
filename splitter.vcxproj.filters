@@ -1,0 +1,738 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="AffichageBitmap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AffichageBitmapWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Album.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AlbumWizard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalogue1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CoolMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Crop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Fichier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GestionTraitementWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GraveurISOFunction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GraveurISOWizard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageCalalogueRecherche.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageCatalogue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InfosFichierProc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InitDlgProcAlbumWizard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="List.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListPreview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListPreviewAffWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListPreviewData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListWindowData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadImage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MiniatureGen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MiniatureGenData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MP3Dialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NavigueData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Objet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PageCritereAlbumDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PageModifyAlbumDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Parameter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PhotoDigital.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Preview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PreviewData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Print.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PrintPreviewDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scroll.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StatusBar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Toolbar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TraitementBitmap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TraitementData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeWindowData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WebBrowser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WebInfoFichier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WinMain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WinMainData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WndAfficheBitmap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WndBitmap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WndIntro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WndNavigueBitmap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ShareWizDataGrav.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\js\agent.js">
+      <Filter>Resource\JS</Filter>
+    </None>
+    <None Include="res\js\es\agent.js">
+      <Filter>Resource\JS</Filter>
+    </None>
+    <None Include="res\js\en\agent.js">
+      <Filter>Resource\JS</Filter>
+    </None>
+    <None Include="res\album.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\album.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\ico\album.ico">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\album.ico">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\album2.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\album2.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\appareilphoto.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\appareilphoto.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\recherche\avance_on.gif">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\baner256.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\baner256.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\recherche\barre_options.gif">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\recherche\barre_recherche.gif">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\bitmap_gauche.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap_gauche.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap1.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\bitmap1.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bmp00001.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\bmp00001.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\bmp00002.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bmp00002.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\bmp00003.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bmp00003.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bmp00004.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\bmp00004.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\bmp00005.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bmp00005.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\border1.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\recherche\bouton_gris.gif">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\recherche\bouton_gris_inv.gif">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\recherche\bouton_on.gif">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\catalogue.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\catalogue.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\cursor\arrow.cur">
+      <Filter>Resource\Cursor</Filter>
+    </None>
+    <None Include="arrow.cur">
+      <Filter>Resource\Cursor</Filter>
+    </None>
+    <None Include="res\AffichageBitmap.ICO">
+      <Filter>Resource\Icon</Filter>
+    </None>
+    <None Include="res\ico\catalogue.ico">
+      <Filter>Resource\Icon</Filter>
+    </None>
+    <None Include="res\catalogue.ico">
+      <Filter>Resource\Icon</Filter>
+    </None>
+    <None Include="res\cur00001.cur">
+      <Filter>Resource\Cursor</Filter>
+    </None>
+    <None Include="res\cursor\cur00001.cur">
+      <Filter>Resource\Cursor</Filter>
+    </None>
+    <None Include="res\cursor\cur00002.cur">
+      <Filter>Resource\Cursor</Filter>
+    </None>
+    <None Include="res\cur00002.cur">
+      <Filter>Resource\Cursor</Filter>
+    </None>
+    <None Include="res\cursor2.cur">
+      <Filter>Resource\Cursor</Filter>
+    </None>
+    <None Include="res\cursor\cursor2.cur">
+      <Filter>Resource\Cursor</Filter>
+    </None>
+    <None Include="res\bitmap\folder.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\folder.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\Font.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\Font.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\js\en\gs_date.js">
+      <Filter>Resource\JS</Filter>
+    </None>
+    <None Include="res\js\es\gs_date.js">
+      <Filter>Resource\JS</Filter>
+    </None>
+    <None Include="res\js\gst_date.js">
+      <Filter>Resource\JS</Filter>
+    </None>
+    <None Include="res\cursor\hmove.cur">
+      <Filter>Resource\Cursor</Filter>
+    </None>
+    <None Include="res\hmove.cur">
+      <Filter>Resource\Cursor</Filter>
+    </None>
+    <None Include="res\skin\Disabled.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\html\es\htmlexif2.htm">
+      <Filter>Resource\HTML</Filter>
+    </None>
+    <None Include="res\html\htmlexif2.htm">
+      <Filter>Resource\HTML</Filter>
+    </None>
+    <None Include="res\html\en\htmlexif2.htm">
+      <Filter>Resource\HTML</Filter>
+    </None>
+    <None Include="res\html\htmlinfos.htm">
+      <Filter>Resource\HTML</Filter>
+    </None>
+    <None Include="res\ico00001.ico">
+      <Filter>Resource\Icon</Filter>
+    </None>
+    <None Include="res\icon1.ico">
+      <Filter>Resource\Icon</Filter>
+    </None>
+    <None Include="res\icone.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\recherche\icone.gif">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\recherche\icone_assistant.gif">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\recherche\icone_date.gif">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\recherche\icone_fermer.gif">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\recherche\icone_manuel.gif">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\player\icone_player.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\recherche\icone_recherche.gif">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\iconezip.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\iconezip.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\images_n.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\ico\logoregard.ico">
+      <Filter>Resource\Icon</Filter>
+    </None>
+    <None Include="res\logoregard.ico">
+      <Filter>Resource\Icon</Filter>
+    </None>
+    <None Include="res\logoregard_small.ico">
+      <Filter>Resource\Icon</Filter>
+    </None>
+    <None Include="res\ico\logoregard_small.ico">
+      <Filter>Resource\Icon</Filter>
+    </None>
+    <None Include="res\skin\Main.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\main_cold.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\main_hot.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\main_hot.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\mainfram.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\mainfram.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\skin\Mask.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="nodrop.cur">
+      <Filter>Resource\Cursor</Filter>
+    </None>
+    <None Include="res\cursor\nodrop.cur">
+      <Filter>Resource\Cursor</Filter>
+    </None>
+    <None Include="res\cursor\pointer.cur">
+      <Filter>Resource\Cursor</Filter>
+    </None>
+    <None Include="res\pointer.cur">
+      <Filter>Resource\Cursor</Filter>
+    </None>
+    <None Include="res\gif\onglet.gif">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\player\pause.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\picture.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\picture.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\player\play.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\propriete.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\propriete.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\puce_kotio.gif">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\recherche.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\recherche.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\regards copier.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\regards intro.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\regards intro.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\skin\Selected.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\SMALL.ICO">
+      <Filter>Resource\Icon</Filter>
+    </None>
+    <None Include="res\water256.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\player\stop.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\toolbar1.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\traitement.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\traitement2.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\bitmap\traitement2.bmp">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\recherche\transp.gif">
+      <Filter>Resource\Bitmap</Filter>
+    </None>
+    <None Include="res\html\en\recherche.htm">
+      <Filter>Resource\HTML</Filter>
+    </None>
+    <None Include="res\html\es\recherche.htm">
+      <Filter>Resource\HTML</Filter>
+    </None>
+    <None Include="res\html\recherche.htm">
+      <Filter>Resource\HTML</Filter>
+    </None>
+    <None Include="res\xptheme.bin">
+      <Filter>Resource\Theme</Filter>
+    </None>
+    <None Include="res\src1.bin">
+      <Filter>Resource\Theme</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4a1f5a3d-f1f1-4c18-b135-790332a0ba75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{719386e9-0e4a-45fa-97ae-591b2bbc8873}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{0814339e-8c76-42fc-be7f-e742a4d63bba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{3b9ab5ef-f491-4d46-82d2-07cc40065eb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\JS">
+      <UniqueIdentifier>{ae029beb-a41d-4780-8fb1-ee181d040ac4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Bitmap">
+      <UniqueIdentifier>{b472c69f-560a-4ad9-b1af-a936c1459e22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Cursor">
+      <UniqueIdentifier>{49b68251-cc21-45cb-b66a-a668042beedf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Icon">
+      <UniqueIdentifier>{16c5279d-91d6-4d29-b652-8a3337a33617}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\HTML">
+      <UniqueIdentifier>{88d4b1c1-2420-4eee-8593-2fc86e8fd9b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Theme">
+      <UniqueIdentifier>{335c52b4-8192-43e7-a5bc-5f405a818f9c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Script1.rc">
+      <Filter>Resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AffichageBitmap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AffichageBitmapWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Album.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AlbumWizard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AlbumWizardInternal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalogue1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CoolMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Crop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Fichier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GestionTraitementWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GraveurISOFunction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GraveurISOWizard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageCalalogueRecherche.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageCatalogue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InfosFichierProc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InitDlgProcAlbumWizard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="List.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListPreview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListPreviewAffWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListPreviewData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListWindowData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadImage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MiniatureGen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MiniatureGenData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MP3Dialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NavigueData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Objet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PageCritereAlbumDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PageModifyAlbumDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Parameter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PhotoDigital.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Preview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PreviewData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Print.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PrintPreviewDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scroll.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShareWizDataGrav.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="splittermain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StatusBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Toolbar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TraitementBitmap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TraitementData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeWindowData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WebBrowser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WebInfoFichier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMainData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WndAfficheBitmap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WndBitmap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WndIntro.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WndNavigueBitmap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="lib\mp3dec.lib">
+      <Filter>lib</Filter>
+    </Library>
+    <Library Include="otherlib\glew-1.13.0\lib\Release\Win32\glew32.lib">
+      <Filter>lib</Filter>
+    </Library>
+    <Library Include="lib\ijl15l.lib">
+      <Filter>lib</Filter>
+    </Library>
+  </ItemGroup>
+</Project>

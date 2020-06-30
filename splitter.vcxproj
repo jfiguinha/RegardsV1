@@ -1,0 +1,675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release en-US|Win32">
+      <Configuration>Release en-US</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release es-ES|Win32">
+      <Configuration>Release es-ES</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E314627E-EB18-436A-BB39-CF84BEE25868}</ProjectGuid>
+    <RootNamespace>splitter</RootNamespace>
+    <WindowsTargetPlatformVersion>7.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release es-ES|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>Intel C++ Compiler XE 12.0</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release en-US|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>Intel C++ Compiler XE 12.0</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141_xp</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release es-ES|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release en-US|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release en-US|Win32'">.\ReleaseUs\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release en-US|Win32'">.\ReleaseUs\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release en-US|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release es-ES|Win32'">.\ReleaseEs\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release es-ES|Win32'">.\ReleaseEs\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release es-ES|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>otherlib\glew-1.13.0\include;C:\Program Files (x86)\Microsoft SQL Server Compact Edition\v3.1\SDK\Includes;$(IncludePath)</IncludePath>
+    <TargetName>Regards</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>C:\Program Files (x86)\Microsoft SQL Server Compact Edition\v3.1\SDK\Includes;$(VC_IncludePath);$(WindowsSdk_71A_IncludePath);</IncludePath>
+    <TargetName>Regards</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/splitter.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>importpic;include;otherlib\ijl;otherlib\JpegLib;otherlib\libtiff;otherlib\libungif\lib\;otherlib\libpng;otherlib\zlib;tools;otherlib\ziplib;otherlib\skin;mp3;filtreeffet;iexplorer;datastructure;matrix;otherlib\wmp;libopengl;libaspi;libdialog;libvideo;libSqlServerCE;libutility;libbitmap;libcomobject;libwindow;$(CG_INC_PATH);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;WMP9;_WIN32_DCOM;FRENCH;SQLSERVERCE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <OpenMPSupport>true</OpenMPSupport>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <OpenMP>GenerateParallelCode</OpenMP>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;FRENCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x040c</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>Comdlg32.lib;Shlwapi.lib;Advapi32.lib;vfw32.lib;odbc32.lib;odbccp32.lib;comctl32.lib;Winmm.lib;Winspool.lib;Urlmon.lib;crypt32.lib;opengl32.lib;glu32.lib;Ws2_32.lib;Wininet.lib;Strmiids.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>Debug/regards.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalManifestDependencies>type=%27Win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27X86%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>LIBCMT;MSVCRT;LIBCD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\Debug/regards.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release en-US|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Release/splitter.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/Qwd1684 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeedHighLevel</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <AdditionalIncludeDirectories>otherlib\ijl;otherlib\JpegLib;otherlib\libtiff;otherlib\libungif\lib\;otherlib\libpng;otherlib\zlib;tools;otherlib\ziplib;otherlib\skin;include;mp3;filtreeffet;importpic;iexplorer;datastructure;matrix;otherlib\wmp;libopengl;amd;mapi;libaspi;otherlib\FFTW3st;libbitmap;libdialog;libvideo;libSqlServerCE;libutility;libcomobject;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;OMP_DYNAMIC;WMP9;_WIN32_DCOM;ENGLISH;SQLSERVERCE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <OpenMPSupport>true</OpenMPSupport>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\ReleaseUs\</AssemblerListingLocation>
+      <ObjectFileName>.\ReleaseUs\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <CompileAs>Default</CompileAs>
+      <GlobalOptimizations>true</GlobalOptimizations>
+      <OptimizeForWindowsApplication>true</OptimizeForWindowsApplication>
+      <FlushDenormalResultsToZero>true</FlushDenormalResultsToZero>
+      <FloatingPointSpeculation>Safe</FloatingPointSpeculation>
+      <Parallelization>true</Parallelization>
+      <OpenMP>GenerateParallelCode</OpenMP>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG; ENGLISH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;shell32.lib;Shlwapi.lib;wsock32.lib;glu32.lib;OpenGL32.Lib;Advapi32.lib;vfw32.lib;comctl32.lib;Winmm.lib;Winspool.lib;Urlmon.lib;libmmt.lib;oldnames.lib;libirc.lib;libm.lib;crypt32.lib;ole32.lib;Wininet.lib;Strmiids.lib;cg.lib;cggl.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\ReleaseUs/regards.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalManifestDependencies>type=%27Win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27X86%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>libcmtd.lib;msvcrt.lib;libcpmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ProgramDatabaseFile>.\Release/regards.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release es-ES|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Release/splitter.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/Qwd1684 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeedHighLevel</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <AdditionalIncludeDirectories>otherlib\ijl;otherlib\JpegLib;otherlib\libtiff;otherlib\libungif\lib\;otherlib\libpng;otherlib\zlib;tools;otherlib\ziplib;otherlib\skin;include;mp3;filtreeffet;importpic;iexplorer;datastructure;matrix;otherlib\wmp;libopengl;amd;mapi;libaspi;otherlib\FFTW3st;libbitmap;libdialog;libvideo;libSqlServerCE;libutility;libcomobject;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;OMP_DYNAMIC;WMP9;_WIN32_DCOM;SPANISH;SQLSERVERCE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <OpenMPSupport>true</OpenMPSupport>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\ReleaseEs\</AssemblerListingLocation>
+      <ObjectFileName>.\ReleaseEs\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <CompileAs>Default</CompileAs>
+      <GlobalOptimizations>true</GlobalOptimizations>
+      <OptimizeForWindowsApplication>true</OptimizeForWindowsApplication>
+      <FlushDenormalResultsToZero>true</FlushDenormalResultsToZero>
+      <FloatingPointSpeculation>Safe</FloatingPointSpeculation>
+      <Parallelization>true</Parallelization>
+      <OpenMP>GenerateParallelCode</OpenMP>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG; SPANISH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x040a</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;shell32.lib;Shlwapi.lib;wsock32.lib;glu32.lib;OpenGL32.Lib;Advapi32.lib;vfw32.lib;comctl32.lib;Winmm.lib;Winspool.lib;Urlmon.lib;libmmt.lib;oldnames.lib;libirc.lib;libm.lib;crypt32.lib;ole32.lib;Wininet.lib;Strmiids.lib;cg.lib;cggl.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>ReleaseEs/regards.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalManifestDependencies>type=%27Win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27X86%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>libcmtd.lib;msvcrt.lib;libcpmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ProgramDatabaseFile>.\ReleaseEs/regards.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/splitter.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <AdditionalIncludeDirectories>otherlib\glew-1.13.0\include;importpic;include;otherlib\ijl;otherlib\JpegLib;otherlib\libtiff;otherlib\libungif\lib\;otherlib\libpng;otherlib\zlib;tools;otherlib\ziplib;otherlib\skin;mp3;filtreeffet;iexplorer;datastructure;matrix;otherlib\wmp;libopengl;libaspi;libdialog;libvideo;libSqlServerCE;libutility;libbitmap;libcomobject;libwindow;$(CG_INC_PATH);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;WMP9;_WIN32_DCOM;FRENCH;SQLSERVERCE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <StructMemberAlignment>16Bytes</StructMemberAlignment>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <OpenMPSupport>true</OpenMPSupport>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\$(Configuration)/</AssemblerListingLocation>
+      <ObjectFileName>.\$(Configuration)/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <GlobalOptimizations>true</GlobalOptimizations>
+      <InterproceduralOptimization>No</InterproceduralOptimization>
+      <FlushDenormalResultsToZero>true</FlushDenormalResultsToZero>
+      <FloatingPointSpeculation>Fast</FloatingPointSpeculation>
+      <GenerateAlternateCodePaths>None</GenerateAlternateCodePaths>
+      <UseProcessorExtensions>None</UseProcessorExtensions>
+      <Parallelization>true</Parallelization>
+      <FloatingPointExpressionEvaluation>Extended</FloatingPointExpressionEvaluation>
+      <DisableFunctionSplitting>true</DisableFunctionSplitting>
+      <C99Support>true</C99Support>
+      <Cpp0xSupport>true</Cpp0xSupport>
+      <OpenMP>GenerateParallelCode</OpenMP>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;FRENCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x040c</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>Comdlg32.lib;Shlwapi.lib;wsock32.lib;glu32.lib;OpenGL32.Lib;Advapi32.lib;vfw32.lib;comctl32.lib;Winmm.lib;Winspool.lib;Urlmon.lib;oldnames.lib;crypt32.lib;ole32.lib;Wininet.lib;Strmiids.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)regards.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalManifestDependencies>type=%27Win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27X86%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>libcmtd.lib;msvcrt.lib;libcpmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\Debug/regards.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="AffichageBitmap.h" />
+    <ClInclude Include="AffichageBitmapWindow.h" />
+    <ClInclude Include="Album.h" />
+    <ClInclude Include="AlbumWizard.h" />
+    <ClInclude Include="Catalogue1.h" />
+    <ClInclude Include="CoolMenu.h" />
+    <ClInclude Include="Crop.h" />
+    <ClInclude Include="Fichier.h" />
+    <ClInclude Include="GestionTraitementWindow.h" />
+    <ClInclude Include="GraveurISOFunction.h" />
+    <ClInclude Include="GraveurISOWizard.h" />
+    <ClInclude Include="ImageCalalogueRecherche.h" />
+    <ClInclude Include="ImageCatalogue.h" />
+    <ClInclude Include="InfosFichierProc.h" />
+    <ClInclude Include="InitDlgProcAlbumWizard.h" />
+    <ClInclude Include="List.h" />
+    <ClInclude Include="ListPreview.h" />
+    <ClInclude Include="ListPreviewAffWindow.h" />
+    <ClInclude Include="ListPreviewData.h" />
+    <ClInclude Include="ListView.h" />
+    <ClInclude Include="ListWindow.h" />
+    <ClInclude Include="ListWindowData.h" />
+    <ClInclude Include="LoadImage.h" />
+    <ClInclude Include="MiniatureGen.h" />
+    <ClInclude Include="MiniatureGenData.h" />
+    <ClInclude Include="MP3Dialog.h" />
+    <ClInclude Include="NavigueData.h" />
+    <ClInclude Include="Objet.h" />
+    <ClInclude Include="PageCritereAlbumDlg.h" />
+    <ClInclude Include="PageModifyAlbumDlg.h" />
+    <ClInclude Include="Parameter.h" />
+    <ClInclude Include="PhotoDigital.h" />
+    <ClInclude Include="Preview.h" />
+    <ClInclude Include="PreviewData.h" />
+    <ClInclude Include="Print.h" />
+    <ClInclude Include="PrintPreviewDialog.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Scroll.h" />
+    <ClInclude Include="ShareWizDataGrav.h" />
+    <ClInclude Include="StatusBar.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Toolbar.h" />
+    <ClInclude Include="TraitementBitmap.h" />
+    <ClInclude Include="TraitementData.h" />
+    <ClInclude Include="Tree.h" />
+    <ClInclude Include="TreeWindow.h" />
+    <ClInclude Include="TreeWindowData.h" />
+    <ClInclude Include="WebBrowser.h" />
+    <ClInclude Include="WebInfoFichier.h" />
+    <ClInclude Include="WinMain.h" />
+    <ClInclude Include="WinMainData.h" />
+    <ClInclude Include="WndAfficheBitmap.h" />
+    <ClInclude Include="WndBitmap.h" />
+    <ClInclude Include="WndIntro.h" />
+    <ClInclude Include="WndNavigueBitmap.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\AffichageBitmap.ICO" />
+    <None Include="res\album.bmp" />
+    <None Include="res\bitmap\album.bmp" />
+    <None Include="res\ico\album.ico" />
+    <None Include="res\album.ico" />
+    <None Include="res\bitmap\album2.bmp" />
+    <None Include="res\album2.bmp" />
+    <None Include="res\bitmap\appareilphoto.bmp" />
+    <None Include="res\appareilphoto.bmp" />
+    <None Include="res\cursor\arrow.cur" />
+    <None Include="arrow.cur" />
+    <None Include="res\recherche\avance_on.gif" />
+    <None Include="res\baner256.bmp" />
+    <None Include="res\bitmap\baner256.bmp" />
+    <None Include="res\recherche\barre_options.gif" />
+    <None Include="res\recherche\barre_recherche.gif" />
+    <None Include="res\bitmap1.bmp" />
+    <None Include="res\bitmap\bitmap1.bmp" />
+    <None Include="res\bitmap\bitmap_gauche.bmp" />
+    <None Include="res\bitmap_gauche.bmp" />
+    <None Include="res\bmp00001.bmp" />
+    <None Include="res\bitmap\bmp00001.bmp" />
+    <None Include="res\bitmap\bmp00002.bmp" />
+    <None Include="res\bmp00002.bmp" />
+    <None Include="res\bmp00003.bmp" />
+    <None Include="res\bitmap\bmp00003.bmp" />
+    <None Include="res\bitmap\bmp00004.bmp" />
+    <None Include="res\bmp00004.bmp" />
+    <None Include="res\bmp00005.bmp" />
+    <None Include="res\bitmap\bmp00005.bmp" />
+    <None Include="res\border1.bmp" />
+    <None Include="res\recherche\bouton_gris.gif" />
+    <None Include="res\recherche\bouton_gris_inv.gif" />
+    <None Include="res\recherche\bouton_on.gif" />
+    <None Include="res\bitmap\catalogue.bmp" />
+    <None Include="res\catalogue.bmp" />
+    <None Include="res\catalogue.ico" />
+    <None Include="res\ico\catalogue.ico" />
+    <None Include="res\cur00001.cur" />
+    <None Include="res\cursor\cur00001.cur" />
+    <None Include="res\cur00002.cur" />
+    <None Include="res\cursor\cur00002.cur" />
+    <None Include="res\cursor2.cur" />
+    <None Include="res\cursor\cursor2.cur" />
+    <None Include="res\skin\Disabled.bmp" />
+    <None Include="res\folder.bmp" />
+    <None Include="res\bitmap\folder.bmp" />
+    <None Include="res\bitmap\Font.bmp" />
+    <None Include="res\Font.bmp" />
+    <None Include="res\hmove.cur" />
+    <None Include="res\cursor\hmove.cur" />
+    <None Include="res\ico00001.ico" />
+    <None Include="res\icon1.ico" />
+    <None Include="res\icone.bmp" />
+    <None Include="res\recherche\icone.gif" />
+    <None Include="res\recherche\icone_assistant.gif" />
+    <None Include="res\recherche\icone_date.gif" />
+    <None Include="res\recherche\icone_fermer.gif" />
+    <None Include="res\recherche\icone_manuel.gif" />
+    <None Include="res\player\icone_player.bmp" />
+    <None Include="res\recherche\icone_recherche.gif" />
+    <None Include="res\iconezip.bmp" />
+    <None Include="res\bitmap\iconezip.bmp" />
+    <None Include="res\images_n.bmp" />
+    <None Include="res\logoregard.ico" />
+    <None Include="res\ico\logoregard.ico" />
+    <None Include="res\logoregard_small.ico" />
+    <None Include="res\ico\logoregard_small.ico" />
+    <None Include="res\skin\Main.bmp" />
+    <None Include="res\main_cold.bmp" />
+    <None Include="res\main_hot.bmp" />
+    <None Include="res\bitmap\main_hot.bmp" />
+    <None Include="res\bitmap\mainfram.bmp" />
+    <None Include="res\mainfram.bmp" />
+    <None Include="res\skin\Mask.bmp" />
+    <None Include="res\cursor\nodrop.cur" />
+    <None Include="nodrop.cur" />
+    <None Include="res\gif\onglet.gif" />
+    <None Include="res\player\pause.bmp" />
+    <None Include="res\picture.bmp" />
+    <None Include="res\bitmap\picture.bmp" />
+    <None Include="res\player\play.bmp" />
+    <None Include="res\pointer.cur" />
+    <None Include="res\cursor\pointer.cur" />
+    <None Include="res\propriete.bmp" />
+    <None Include="res\bitmap\propriete.bmp" />
+    <None Include="res\puce_kotio.gif" />
+    <None Include="res\recherche.bmp" />
+    <None Include="res\bitmap\recherche.bmp" />
+    <None Include="res\regards copier.bmp" />
+    <None Include="res\regards intro.bmp" />
+    <None Include="res\bitmap\regards intro.bmp" />
+    <None Include="res\skin\Selected.bmp" />
+    <None Include="res\SMALL.ICO" />
+    <None Include="res\src1.bin" />
+    <None Include="res\player\stop.bmp" />
+    <None Include="res\toolbar1.bmp" />
+    <None Include="res\traitement.bmp" />
+    <None Include="res\bitmap\traitement2.bmp" />
+    <None Include="res\traitement2.bmp" />
+    <None Include="res\recherche\transp.gif" />
+    <None Include="res\water256.bmp" />
+    <None Include="res\xptheme.bin" />
+    <None Include="res\js\en\agent.js" />
+    <None Include="res\js\es\agent.js" />
+    <None Include="res\js\agent.js" />
+    <None Include="res\js\en\gs_date.js" />
+    <None Include="res\js\es\gs_date.js" />
+    <None Include="res\js\gst_date.js" />
+    <None Include="res\html\htmlexif2.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="res\html\en\htmlexif2.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="res\html\es\htmlexif2.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="res\html\htmlinfos.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="res\html\es\recherche.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="res\html\recherche.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="res\html\en\recherche.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Script1.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AffichageBitmap.cpp" />
+    <ClCompile Include="AffichageBitmapWindow.cpp" />
+    <ClCompile Include="Album.cpp" />
+    <ClCompile Include="AlbumWizard.cpp" />
+    <ClCompile Include="AlbumWizardInternal.cpp" />
+    <ClCompile Include="Catalogue1.cpp" />
+    <ClCompile Include="CoolMenu.cpp" />
+    <ClCompile Include="Crop.cpp" />
+    <ClCompile Include="Fichier.cpp" />
+    <ClCompile Include="GestionTraitementWindow.cpp" />
+    <ClCompile Include="GraveurISOFunction.cpp" />
+    <ClCompile Include="GraveurISOWizard.cpp" />
+    <ClCompile Include="ImageCalalogueRecherche.cpp" />
+    <ClCompile Include="ImageCatalogue.cpp" />
+    <ClCompile Include="InfosFichierProc.cpp" />
+    <ClCompile Include="InitDlgProcAlbumWizard.cpp" />
+    <ClCompile Include="List.cpp" />
+    <ClCompile Include="ListPreview.cpp" />
+    <ClCompile Include="ListPreviewAffWindow.cpp" />
+    <ClCompile Include="ListPreviewData.cpp" />
+    <ClCompile Include="ListView.cpp" />
+    <ClCompile Include="ListWindow.cpp" />
+    <ClCompile Include="ListWindowData.cpp" />
+    <ClCompile Include="LoadImage.cpp" />
+    <ClCompile Include="MiniatureGen.cpp" />
+    <ClCompile Include="MiniatureGenData.cpp" />
+    <ClCompile Include="MP3Dialog.cpp" />
+    <ClCompile Include="NavigueData.cpp" />
+    <ClCompile Include="Objet.cpp" />
+    <ClCompile Include="PageCritereAlbumDlg.cpp" />
+    <ClCompile Include="PageModifyAlbumDlg.cpp" />
+    <ClCompile Include="Parameter.cpp" />
+    <ClCompile Include="PhotoDigital.cpp" />
+    <ClCompile Include="Preview.cpp" />
+    <ClCompile Include="PreviewData.cpp" />
+    <ClCompile Include="Print.cpp" />
+    <ClCompile Include="PrintPreviewDialog.cpp" />
+    <ClCompile Include="Scroll.cpp" />
+    <ClCompile Include="ShareWizDataGrav.cpp" />
+    <ClCompile Include="splittermain.cpp" />
+    <ClCompile Include="StatusBar.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Toolbar.cpp" />
+    <ClCompile Include="TraitementBitmap.cpp" />
+    <ClCompile Include="TraitementData.cpp" />
+    <ClCompile Include="Tree.cpp" />
+    <ClCompile Include="TreeWindow.cpp" />
+    <ClCompile Include="TreeWindowData.cpp" />
+    <ClCompile Include="WebBrowser.cpp" />
+    <ClCompile Include="WebInfoFichier.cpp" />
+    <ClCompile Include="WinMain.cpp" />
+    <ClCompile Include="WinMainData.cpp" />
+    <ClCompile Include="WndAfficheBitmap.cpp" />
+    <ClCompile Include="WndBitmap.cpp" />
+    <ClCompile Include="WndIntro.cpp" />
+    <ClCompile Include="WndNavigueBitmap.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="lib\ijl15l.lib" />
+    <Library Include="lib\mp3dec.lib" />
+    <Library Include="otherlib\glew-1.13.0\lib\Release\Win32\glew32.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="datastructure\datastructure.vcxproj">
+      <Project>{f30ae15c-24c2-7a67-a81a-527e46cf7a85}</Project>
+    </ProjectReference>
+    <ProjectReference Include="filtreeffet\filtreeffet.vcxproj">
+      <Project>{7e4e477a-0e8f-7653-16c0-cab69817877e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="iexplorer\IEXPLORER.vcxproj">
+      <Project>{d9808e75-2ae0-8e9c-65aa-e6604a78884b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="importpic\importpic.vcxproj">
+      <Project>{043259e5-5e51-5fc8-6f0a-70cabc556f63}</Project>
+    </ProjectReference>
+    <ProjectReference Include="libaspi\libaspi.vcxproj">
+      <Project>{52dba213-f889-4ccd-8aad-be79a5f62af2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="libbitmap\libbitmap.vcxproj">
+      <Project>{41517175-fad2-4b93-b947-6c4f6b8445ce}</Project>
+    </ProjectReference>
+    <ProjectReference Include="libcomobject\libcomobject.vcxproj">
+      <Project>{da121169-6f3e-4f68-b6bc-2a2975ee7386}</Project>
+    </ProjectReference>
+    <ProjectReference Include="libdialog\libdialog.vcxproj">
+      <Project>{19c8044c-e9f8-4f68-b97c-469b5e5c186c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="LibGpGpu\LibGpGpu.vcxproj">
+      <Project>{9d2494b8-d59a-44e9-80c1-883a69fc24f3}</Project>
+    </ProjectReference>
+    <ProjectReference Include="libopengl\libopengl.vcxproj">
+      <Project>{d4f8ef00-f111-4116-b61f-5514be10ada4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="LibRawDll\LibRawDll.vcxproj">
+      <Project>{4cfefb82-c34d-4d3f-b21d-95f288555b19}</Project>
+    </ProjectReference>
+    <ProjectReference Include="libSqlServerCE\libSqlServerCE.vcxproj">
+      <Project>{a5418a42-6c2c-49d4-8969-8e1212a7a3ee}</Project>
+    </ProjectReference>
+    <ProjectReference Include="libutility\libutility.vcxproj">
+      <Project>{ae074263-e06d-4e09-a9bb-38fbc81cddb1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="libvideo\libvideo.vcxproj">
+      <Project>{fc8a24c6-633b-4f89-ab08-f4383d41ae8d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="libWindow\libWindow.vcxproj">
+      <Project>{b4bd55bc-929e-b58b-1c42-81b400a1fa94}</Project>
+    </ProjectReference>
+    <ProjectReference Include="Matrix\Matrix.vcxproj">
+      <Project>{be636e7e-8de5-ffc8-46a7-4e3f1ae172b1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="mp3\mp3.vcxproj">
+      <Project>{d399662e-db13-93d8-76b5-6dabfc652b1e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="otherlib\jasper\jasper.vcxproj">
+      <Project>{8207fb9a-1da6-3a43-c7da-33fd95ae843f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="otherlib\JpegLib\JpegLib.vcxproj">
+      <Project>{89e70dee-2bf5-4852-9e0c-8f1671f63bbb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="otherlib\libjasper\jasper-1.900.1\src\msvc\libjasper.vcxproj">
+      <Project>{6f9f2876-ce1a-4f94-877c-6eb063cfb3c0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="otherlib\libpng\msvc\libpng.vcxproj">
+      <Project>{4a04d38a-66f0-1257-9452-649a5debe7c6}</Project>
+    </ProjectReference>
+    <ProjectReference Include="otherlib\libpng\msvc\zlib.vcxproj">
+      <Project>{27f7a3de-a542-1fbb-9750-af54b86c9b77}</Project>
+    </ProjectReference>
+    <ProjectReference Include="otherlib\libungif\libungif\libungif.vcxproj">
+      <Project>{7bea582f-69d2-487e-ae37-b3cf399b1734}</Project>
+    </ProjectReference>
+    <ProjectReference Include="otherlib\tiff\Tiff.vcxproj">
+      <Project>{605f4be7-e559-5fd3-c55e-f1a4d6bacd1a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="otherlib\ziplib\ziplib.vcxproj">
+      <Project>{f47e24ad-1976-72f4-efb8-baec4175f080}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
