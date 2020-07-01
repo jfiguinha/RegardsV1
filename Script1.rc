@@ -1178,7 +1178,7 @@ BEGIN
     IDS_PICTUREFORMATMULTIWITHOUTRAW 
                             ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.mpg;.avi;.mp2;.divx;.mpeg;.mv2;.mpv;.3ds;.ppm;.pgm;.md2;.psd;.wmv;.wav;.mov;.mp4"
     IDS_COMPACTDATAREADY    "Compactage de la base de donnée effectuée !"
-    IDS_ADRESSEWEBVERSION   "http://jacques.figuinha.free.fr/regards/zip/version.txt"
+    IDS_ADRESSEWEBVERSION   "https://jfiguinha.pagesperso-orange.fr/versionv1.txt"
     IDS_ADRESSEWEB          "http://www.figuinha.com/regards/index.htm"
     IDS_REGARDSVERSION      "1.6.0.0"
     IDS_VALEURNONVALIDE     "Valeur non valide"
