@@ -52,3 +52,9 @@
 /otherlib/libjasper/jasper-1.900.1/src/msvc/libjasper___Win32_Debug
 /otherlib/ziplib/Release
 /otherlib/ziplib/Debug
+/libSqlEngine/x64
+/libSqlite/Win32
+/libSqlEngine/Win32
+/libSqlite/x64
+/libSqlServerCE/bak
+/Win32
