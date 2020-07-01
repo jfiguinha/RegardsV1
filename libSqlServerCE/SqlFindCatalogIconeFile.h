@@ -6,20 +6,22 @@
 #include <iconefile.h>
 #include "SqlExecuteRequest.h"
 
-namespace LIBSQLSERVERCE
+namespace Regards
 {
-	class CSqlFindCatalogIconeFile : public CSqlExecuteRequest
+	namespace Sqlite
 	{
-	public:
-		CSqlFindCatalogIconeFile(void);
-		~CSqlFindCatalogIconeFile(void);
-		HRESULT SearchIconeFileCatalog(IconeFileVector * iconeFileVector, WCHAR * lpSQLRequest);
+		class CSqlFindCatalogIconeFile : public CSqlExecuteRequest
+		{
+		public:
+			CSqlFindCatalogIconeFile(void);
+			~CSqlFindCatalogIconeFile(void);
+			HRESULT SearchIconeFileCatalog(IconeFileVector * iconeFileVector, TCHAR * lpSQLRequest);
 
-	private:
-
-		virtual HRESULT TraitementResult(IRowset * & pIRowset,HROW * prghRows, HACCESSOR hAccessor, DWORD dwOffset, DBBINDING	*prgBinding);
-		IconeFileVector * m_iconeFileVector;
-	};
+		private:
+			int TraitementResult(CSqlResult * sqlResult);
+			IconeFileVector * m_iconeFileVector;
+		};
+	}
 }
 
 #endif

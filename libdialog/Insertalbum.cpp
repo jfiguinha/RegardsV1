@@ -7,7 +7,7 @@
 #ifdef SQLSERVERCE
 #include <SqlAlbumUtility.h>
 #include <SqlIconeFileAlbum.h>
-using namespace LIBSQLSERVERCE;
+using namespace Regards::Sqlite;
 
 #endif
 
@@ -331,9 +331,7 @@ UINT _stdcall CInsertAlbum::AjoutImageThread(LPVOID parametre)
 	
 				//Mise à jour des attributs pour les images
 				size_t m_sizeTConvert;
-				WCHAR m_wAlbumName[MAX_PATH];
-				mbstowcs_s(&m_sizeTConvert,m_wAlbumName, MAX_PATH, m_LPAjoutImageData->m_Album->m_szAlbumName, MAX_PATH);
-				CSqlAlbumUtility::UpdateFileAttribut(&m_attributVector,m_wAlbumName);
+				CSqlAlbumUtility::UpdateFileAttribut(&m_attributVector, m_LPAjoutImageData->m_Album->m_szAlbumName);
 
 				if(nIdleCount == 1)
 				{

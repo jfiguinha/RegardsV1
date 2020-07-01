@@ -16,7 +16,7 @@
 #include <SqlAlbumAttribut.h>
 #include <SqlIconeFileAlbum.h>
 #include <SqlAlbumIconeFileAttribut.h>
-using namespace LIBSQLSERVERCE;
+using namespace Regards::Sqlite;
 #endif
 
 CListWindowData::CListWindowData(void)
@@ -219,12 +219,13 @@ LRESULT CListWindowData::GestionDesAttributs(HWND hWnd, const char * szFileName,
 
 		CDialogCatalogueData m_dialogData;
 
+		/*
 		size_t m_sizeTConvert;
 		wchar_t _wAlbumName[MAX_PATH];
 		wchar_t _wFileName[MAX_PATH];
 		mbstowcs_s(&m_sizeTConvert,_wAlbumName, MAX_PATH, m_AlbumLocal->m_szAlbumName, MAX_PATH);
 		mbstowcs_s(&m_sizeTConvert,_wFileName, MAX_PATH, szFileName, MAX_PATH);
-
+		*/
 		//Vérifie si l'album existe
 		//On récupère les attributs pour un album
 		AttributVector m_AttributVectorAlbum;
@@ -235,7 +236,7 @@ LRESULT CListWindowData::GestionDesAttributs(HWND hWnd, const char * szFileName,
 		//On récupère les attributs pour l'image
 		AttributVector m_AttributVectorPicture;
 		CSqlAlbumIconeFileAttribut * m_cSqlAlbumIconeFileAttribut = new CSqlAlbumIconeFileAttribut();
-		m_cSqlAlbumIconeFileAttribut->LoadAlbumIconeFileAttribut(&m_AttributVectorPicture,_wAlbumName,_wFileName);
+		m_cSqlAlbumIconeFileAttribut->LoadAlbumIconeFileAttribut(&m_AttributVectorPicture, m_AlbumLocal->m_szAlbumName, (TCHAR *)szFileName);
 		delete m_cSqlAlbumIconeFileAttribut;
 
 		m_dialogData.m_AttributVector = &m_AttributVectorAlbum;
@@ -256,8 +257,8 @@ LRESULT CListWindowData::GestionDesAttributs(HWND hWnd, const char * szFileName,
 			{
 				//On sauvegarde les attributs de l'image
 				CSqlAlbumIconeFileAttribut * m_cSqlAlbumIconeFileAttribut = new CSqlAlbumIconeFileAttribut();
-				m_cSqlAlbumIconeFileAttribut->DeleteAlbumIconeFileAttribut(_wAlbumName,_wFileName);
-				m_cSqlAlbumIconeFileAttribut->SaveAlbumIconeFileAttribut(&m_AttributVectorPicture,_wAlbumName,_wFileName);
+				m_cSqlAlbumIconeFileAttribut->DeleteAlbumIconeFileAttribut(m_AlbumLocal->m_szAlbumName, (TCHAR *)szFileName);
+				m_cSqlAlbumIconeFileAttribut->SaveAlbumIconeFileAttribut(&m_AttributVectorPicture, m_AlbumLocal->m_szAlbumName, (TCHAR *)szFileName);
 				delete m_cSqlAlbumIconeFileAttribut;
 			}
 			
@@ -525,13 +526,10 @@ void CListWindowData::SendInitMessage(const int &iNumAlbum,int iNumTypeDonne, HW
 
 #ifdef SQLSERVERCE		
 
-					WCHAR m_wAlbumName[MAX_PATH];
-					size_t m_sizeTConvert;
-					mbstowcs_s(&m_sizeTConvert,m_wAlbumName, MAX_PATH, m_Album->m_szAlbumName, MAX_PATH);
-					
+
 					m_IconeFileVectorAlbum.clear();
 					CSqlIconeFileAlbum * m_cSqlIconeFileAlbum = new CSqlIconeFileAlbum();
-					m_cSqlIconeFileAlbum->LoadIconeFileAlbum(&m_IconeFileVectorAlbum,m_wAlbumName);
+					m_cSqlIconeFileAlbum->LoadIconeFileAlbum(&m_IconeFileVectorAlbum, m_Album->m_szAlbumName);
 					delete m_cSqlIconeFileAlbum;
 					SendMessage(hWndParent,WM_COMMAND,MAKEWPARAM(IDM_INITALBUM,0),(LPARAM)&m_IconeFileVectorAlbum);
 #else

@@ -15,16 +15,17 @@
     <RootNamespace>libSqlServerCE</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>7.0</WindowsTargetPlatformVersion>
+    <ProjectName>libSqlData</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v141_xp</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v141_xp</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -51,7 +52,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\datastructure;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\libSqlite;..\datastructure;..\libSqlEngine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -64,7 +65,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
-      <AdditionalIncludeDirectories>..\datastructure;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\libSqlite;..\datastructure;..\libSqlEngine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
@@ -85,14 +86,12 @@
     <ClCompile Include="SqlCatalog.cpp" />
     <ClCompile Include="SqlCatalogAttribut.cpp" />
     <ClCompile Include="SqlCatalogIconeFileAttribut.cpp" />
-    <ClCompile Include="SqlEngine.cpp" />
-    <ClCompile Include="SqlExecuteRequest.cpp" />
     <ClCompile Include="SqlFindAlbumIconeFile.cpp" />
     <ClCompile Include="SqlFindCatalogIconeFile.cpp" />
     <ClCompile Include="SqlIconeFileAlbum.cpp" />
     <ClCompile Include="SqlIconeFileCatalogue.cpp" />
     <ClCompile Include="SqlIconeFileFolder.cpp" />
-    <ClCompile Include="SqlLib.cpp" />
+    <ClCompile Include="SqlLibRegards.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -107,14 +106,12 @@
     <ClInclude Include="SqlCatalog.h" />
     <ClInclude Include="SqlCatalogAttribut.h" />
     <ClInclude Include="SqlCatalogIconeFileAttribut.h" />
-    <ClInclude Include="SqlEngine.h" />
-    <ClInclude Include="SqlExecuteRequest.h" />
     <ClInclude Include="SqlFindAlbumIconeFile.h" />
     <ClInclude Include="SqlFindCatalogIconeFile.h" />
     <ClInclude Include="SqlIconeFileAlbum.h" />
     <ClInclude Include="SqlIconeFileCatalogue.h" />
     <ClInclude Include="SqlIconeFileFolder.h" />
-    <ClInclude Include="SqlLib.h" />
+    <ClInclude Include="SqlLibRegards.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>

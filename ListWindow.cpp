@@ -38,7 +38,7 @@
 #include <SqlIconeFileAlbum.h>
 #include <SqlEngine.h>
 #include <SqlLib.h>
-using namespace LIBSQLSERVERCE;
+using namespace Regards::Sqlite;
 #endif
 
 
@@ -801,13 +801,10 @@ LRESULT CListWindow::OnCommand(HWND hWnd, UINT message, WPARAM wParam, LPARAM lP
 				if(m_pListData->m_CAlbumCatalogue->DetermineNumAlbum(m_szAlbumName) != -1)
 				{
 #ifdef SQLSERVERCE
-					WCHAR m_wAlbumName[MAX_PATH];
-					IconeFileVector m_IconeFileVectorAlbum;
-					size_t m_sizeTConvert;	
-					mbstowcs_s(&m_sizeTConvert,m_wAlbumName, MAX_PATH, m_pListData->m_Album->m_szAlbumName, MAX_PATH);
 
+					IconeFileVector m_IconeFileVectorAlbum;
 					CSqlIconeFileAlbum * m_cSqlIconeFileAlbum = new CSqlIconeFileAlbum();
-					m_cSqlIconeFileAlbum->LoadIconeFileAlbum(&m_IconeFileVectorAlbum,m_wAlbumName);
+					m_cSqlIconeFileAlbum->LoadIconeFileAlbum(&m_IconeFileVectorAlbum, m_pListData->m_Album->m_szAlbumName);
 					delete m_cSqlIconeFileAlbum;
 
 					m_cGraveur.CreateAlbumWizard(hWnd,m_stgTemp,3,m_IconeFileVectorAlbum);
@@ -970,9 +967,8 @@ LRESULT CListWindow::OnCommand(HWND hWnd, UINT message, WPARAM wParam, LPARAM lP
 						//On met à jour la valeur des catégories et des attributs
 						CSqlAlbumUtility::UpdateCategorie(m_AttributVector);
 						size_t m_sizeTConvert;
-						WCHAR m_wAlbumName[MAX_PATH];
-						mbstowcs_s(&m_sizeTConvert,m_wAlbumName, MAX_PATH, m_Album->m_szAlbumName, MAX_PATH);						
-						CSqlAlbumUtility::UpdateFileAttribut(&m_attributPicture,m_wAlbumName);
+						
+						CSqlAlbumUtility::UpdateFileAttribut(&m_attributPicture, m_Album->m_szAlbumName);
 
 #endif
 					}
@@ -1050,10 +1046,10 @@ LRESULT CListWindow::OnCommand(HWND hWnd, UINT message, WPARAM wParam, LPARAM lP
 				{
 #ifdef SQLSERVERCE	
 
-					CSqlLib * _sqlLib = CSqlEngine::getInstance();
+					CSqlLib * _sqlLib = CSqlEngine::getInstance("RegardsDB");
 					if(_sqlLib != NULL)
 					{
-						_sqlLib->CompactDatabase();
+						//_sqlLib->CompactDatabase();
 						delete _sqlLib;
 						_sqlLib = NULL;
 					}
@@ -1084,11 +1080,9 @@ LRESULT CListWindow::OnCommand(HWND hWnd, UINT message, WPARAM wParam, LPARAM lP
 				if(iValue != -1)
 				{
 #ifdef SQLSERVERCE
-					WCHAR m_wAlbumName[MAX_PATH];
-					size_t m_sizeTConvert;
-					mbstowcs_s(&m_sizeTConvert,m_wAlbumName, MAX_PATH, m_cSelectAlbum->GetAlbumName(), MAX_PATH);
+
 					CSqlIconeFileAlbum * m_cSqlIconeFileAlbum = new CSqlIconeFileAlbum();
-					m_cSqlIconeFileAlbum->SaveIconeFileAlbum(m_pListData->m_IconeFileVector,m_wAlbumName);
+					m_cSqlIconeFileAlbum->SaveIconeFileAlbum(m_pListData->m_IconeFileVector,(TCHAR *) m_cSelectAlbum->GetAlbumName());
 					delete m_cSqlIconeFileAlbum;
 
 #else
@@ -1113,13 +1107,11 @@ LRESULT CListWindow::OnCommand(HWND hWnd, UINT message, WPARAM wParam, LPARAM lP
 			{
 #ifdef SQLSERVERCE
 
-				WCHAR m_wAlbumName[MAX_PATH];
-				size_t m_sizeTConvert;				
+		
 				m_pListData->m_IconeFileVector = (IconeFileVector *)lParam;
 				CAlbumData * m_cSelectAlbum = m_pListData->m_CAlbumCatalogue->RecupPtAlbum(m_pListData->iNumAlbum);			
-				mbstowcs_s(&m_sizeTConvert,m_wAlbumName, MAX_PATH, m_cSelectAlbum->m_szAlbumName, MAX_PATH);
 				CSqlIconeFileAlbum * m_cSqlIconeFileAlbum = new CSqlIconeFileAlbum();
-				m_cSqlIconeFileAlbum->SaveIconeFileAlbum(m_pListData->m_IconeFileVector,m_wAlbumName);
+				m_cSqlIconeFileAlbum->SaveIconeFileAlbum(m_pListData->m_IconeFileVector, m_cSelectAlbum->m_szAlbumName);
 				delete m_cSqlIconeFileAlbum;
 
 #else
@@ -1663,9 +1655,7 @@ LRESULT CListWindow::OnLButtonUp(HWND hWnd, UINT message, WPARAM wParam, LPARAM 
 
 					CAlbumData * m_cSelectAlbum = m_pListData->m_CAlbumCatalogue->RecupPtAlbum(iNumAlbum);
 					IconeFileVector m_IconeFileVector;
-					WCHAR m_wAlbumName[MAX_PATH];
-					size_t m_sizeTConvert;
-					mbstowcs_s(&m_sizeTConvert,m_wAlbumName, MAX_PATH, m_cSelectAlbum->m_szAlbumName, MAX_PATH);
+
 
 					for (IconeFileVector::const_iterator dit = m_pListData->m_IconeFileVector->begin(); dit!=m_pListData->m_IconeFileVector->end(); dit++)
 					{
@@ -1676,7 +1666,7 @@ LRESULT CListWindow::OnLButtonUp(HWND hWnd, UINT message, WPARAM wParam, LPARAM 
 					}
 
 					CSqlIconeFileAlbum * m_cSqlIconeFileAlbum = new CSqlIconeFileAlbum();
-					m_cSqlIconeFileAlbum->SaveIconeFileAlbum(&m_IconeFileVector,m_wAlbumName);
+					m_cSqlIconeFileAlbum->SaveIconeFileAlbum(&m_IconeFileVector, m_cSelectAlbum->m_szAlbumName);
 					delete m_cSqlIconeFileAlbum;
 
 #else

@@ -84,7 +84,7 @@
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>otherlib\glew-1.13.0\include;C:\Program Files (x86)\Microsoft SQL Server Compact Edition\v3.1\SDK\Includes;$(IncludePath)</IncludePath>
+    <IncludePath>otherlib\glew-1.13.0\include;$(IncludePath)</IncludePath>
     <TargetName>Regards</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -107,7 +107,7 @@
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <AdditionalIncludeDirectories>importpic;include;otherlib\ijl;otherlib\JpegLib;otherlib\libtiff;otherlib\libungif\lib\;otherlib\libpng;otherlib\zlib;tools;otherlib\ziplib;otherlib\skin;mp3;filtreeffet;iexplorer;datastructure;matrix;otherlib\wmp;libopengl;libaspi;libdialog;libvideo;libSqlServerCE;libutility;libbitmap;libcomobject;libwindow;$(CG_INC_PATH);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>libsqlite;libSqlEngine;importpic;include;otherlib\ijl;otherlib\JpegLib;otherlib\libtiff;otherlib\libungif\lib\;otherlib\libpng;otherlib\zlib;tools;otherlib\ziplib;otherlib\skin;mp3;filtreeffet;iexplorer;datastructure;matrix;otherlib\wmp;libopengl;libaspi;libdialog;libvideo;libSqlServerCE;libutility;libbitmap;libcomobject;libwindow;$(CG_INC_PATH);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;WMP9;_WIN32_DCOM;FRENCH;SQLSERVERCE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
       <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
@@ -283,7 +283,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <AdditionalIncludeDirectories>otherlib\glew-1.13.0\include;importpic;include;otherlib\ijl;otherlib\JpegLib;otherlib\libtiff;otherlib\libungif\lib\;otherlib\libpng;otherlib\zlib;tools;otherlib\ziplib;otherlib\skin;mp3;filtreeffet;iexplorer;datastructure;matrix;otherlib\wmp;libopengl;libaspi;libdialog;libvideo;libSqlServerCE;libutility;libbitmap;libcomobject;libwindow;$(CG_INC_PATH);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>libsqlite;libSqlEngine;otherlib\glew-1.13.0\include;importpic;include;otherlib\ijl;otherlib\JpegLib;otherlib\libtiff;otherlib\libungif\lib\;otherlib\libpng;otherlib\zlib;tools;otherlib\ziplib;otherlib\skin;mp3;filtreeffet;iexplorer;datastructure;matrix;otherlib\wmp;libopengl;libaspi;libdialog;libvideo;libSqlServerCE;libutility;libbitmap;libcomobject;libwindow;$(CG_INC_PATH);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;WMP9;_WIN32_DCOM;FRENCH;SQLSERVERCE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
       <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
@@ -625,6 +625,12 @@
     </ProjectReference>
     <ProjectReference Include="LibRawDll\LibRawDll.vcxproj">
       <Project>{4cfefb82-c34d-4d3f-b21d-95f288555b19}</Project>
+    </ProjectReference>
+    <ProjectReference Include="libSqlEngine\libSqlEngine.vcxproj">
+      <Project>{dbdf9029-404c-4c2a-b226-485e21d3e785}</Project>
+    </ProjectReference>
+    <ProjectReference Include="libSqlite\libsqlite.vcxproj">
+      <Project>{c9f9bf26-e1a1-48ed-81db-d1f2144791bb}</Project>
     </ProjectReference>
     <ProjectReference Include="libSqlServerCE\libSqlServerCE.vcxproj">
       <Project>{a5418a42-6c2c-49d4-8969-8e1212a7a3ee}</Project>

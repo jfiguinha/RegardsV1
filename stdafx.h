@@ -72,14 +72,6 @@ extern CComModule _Module;
 
 #include <objbase.h>
 
-#ifdef SQLSERVERCE
-	
-	#include <oledberr.h>
-	#include <ssceoledb30.h>
-
-#endif
-
-
 #include <atlcom.h>
 #include <atlhost.h>
 #include <atlctl.h>

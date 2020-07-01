@@ -6,7 +6,7 @@
 #include "SqlAlbumAttribut.h"
 #include <algorithm>
 
-using namespace LIBSQLSERVERCE;
+using namespace Regards::Sqlite;
 
 CSqlAlbumUtility::CSqlAlbumUtility(void)
 {
@@ -27,7 +27,7 @@ LRESULT CSqlAlbumUtility::SaveAlbum(CAlbumData * pAlbumData)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 //Mise à jour des attributs pour les albums
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-LRESULT CSqlAlbumUtility::UpdateFileAttribut(AttributVector * attributVectorAlbum, WCHAR * albumName)
+LRESULT CSqlAlbumUtility::UpdateFileAttribut(AttributVector * attributVectorAlbum, TCHAR * albumName)
 {
 	//Suppression de l'ensemble des vieux attributs
 	CSqlAlbumIconeFileAttribut * m_cSqlAlbumIconeFileAttribut = new CSqlAlbumIconeFileAttribut();
@@ -40,10 +40,10 @@ LRESULT CSqlAlbumUtility::UpdateFileAttribut(AttributVector * attributVectorAlbu
 	for (IconeFileVector::iterator dit = m_IconeFileFolder.begin(); dit != m_IconeFileFolder.end(); dit++)
 	{
 		CIconeFile m_cIconeFile = *dit;
-		size_t m_sizeTConvert;
-		WCHAR m_wFileName[MAX_PATH];
-		mbstowcs_s(&m_sizeTConvert,m_wFileName, MAX_PATH, m_cIconeFile.m_stgFullPathName, MAX_PATH);
-		m_cSqlAlbumIconeFileAttribut->SaveAlbumIconeFileAttribut(attributVectorAlbum,albumName,m_wFileName);
+		//size_t m_sizeTConvert;
+		//TCHAR m_wFileName[MAX_PATH];
+		//mbstowcs_s(&m_sizeTConvert,m_wFileName, MAX_PATH, m_cIconeFile.m_stgFullPathName, MAX_PATH);
+		m_cSqlAlbumIconeFileAttribut->SaveAlbumIconeFileAttribut(attributVectorAlbum,albumName, m_cIconeFile.m_stgFullPathName);
 	}
 
 	delete m_cSqlAlbumIconeFileAttribut;
@@ -139,7 +139,7 @@ LRESULT CSqlAlbumUtility::UpdateCategorie(AttributVector * attributVectorAlbum)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 //Suppression d'un album
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-LRESULT CSqlAlbumUtility::DeleteAlbum(WCHAR * albumName)
+LRESULT CSqlAlbumUtility::DeleteAlbum(TCHAR * albumName)
 {
 	//On supprime toutes les infos pour cette album
 
@@ -161,7 +161,7 @@ LRESULT CSqlAlbumUtility::DeleteAlbum(WCHAR * albumName)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 //Renommage d'un album
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-LRESULT CSqlAlbumUtility::RenameAlbum(WCHAR * albumOldName,WCHAR * albumNewName)
+LRESULT CSqlAlbumUtility::RenameAlbum(TCHAR * albumOldName,TCHAR * albumNewName)
 {
 	//On met à jour toutes les tables avec le nouveau nom
 	CSqlAlbum * m_cSqlAlbum = new CSqlAlbum();
@@ -181,11 +181,11 @@ LRESULT CSqlAlbumUtility::RenameAlbum(WCHAR * albumOldName,WCHAR * albumNewName)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 //Mises à jour dans la base de données des catégories
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-LRESULT CSqlAlbumUtility::UpdateFileAlbum(IconeFileVector * iconeFileVector, WCHAR * albumName)
+LRESULT CSqlAlbumUtility::UpdateFileAlbum(IconeFileVector * iconeFileVector, TCHAR * albumName)
 {
 	IconeFileVector m_IconeFileAdd;
 	IconeFileVector m_AlbumIconeFile;
-	size_t m_sizeTConvert;	
+	//size_t m_sizeTConvert;	
 	CSqlIconeFileAlbum * m_cSqlIconeFileAlbum = new CSqlIconeFileAlbum();
 	CSqlAlbumIconeFileAttribut * m_SqlAlbumIconeFileAttribut = new CSqlAlbumIconeFileAttribut();
 	m_cSqlIconeFileAlbum->LoadIconeFileAlbum(&m_AlbumIconeFile,albumName);
@@ -203,10 +203,10 @@ LRESULT CSqlAlbumUtility::UpdateFileAlbum(IconeFileVector * iconeFileVector, WCH
 		{
 			//L'image a été supprimé 
 			//On supprime toutes les références
-			WCHAR m_wFileName[MAX_PATH];
-			mbstowcs_s(&m_sizeTConvert,m_wFileName, MAX_PATH, m_IconeFile.m_stgFullPathName, MAX_PATH);
-			m_cSqlIconeFileAlbum->DeleteIconeFileAlbum(albumName,m_wFileName);
-			m_SqlAlbumIconeFileAttribut->DeleteAlbumIconeFileAttribut(albumName,m_wFileName);
+			//TCHAR m_wFileName[MAX_PATH];
+			//mbstowcs_s(&m_sizeTConvert,m_wFileName, MAX_PATH, m_IconeFile.m_stgFullPathName, MAX_PATH);
+			m_cSqlIconeFileAlbum->DeleteIconeFileAlbum(albumName, m_IconeFile.m_stgFullPathName);
+			m_SqlAlbumIconeFileAttribut->DeleteAlbumIconeFileAttribut(albumName, m_IconeFile.m_stgFullPathName);
 		}
 	}
 
@@ -238,7 +238,7 @@ LRESULT CSqlAlbumUtility::UpdateFileAlbum(IconeFileVector * iconeFileVector, WCH
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 //Suppression d'un fichier de l'album
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-LRESULT CSqlAlbumUtility::DeleteAlbumFile(WCHAR * albumName,WCHAR * fileName)
+LRESULT CSqlAlbumUtility::DeleteAlbumFile(TCHAR * albumName,TCHAR * fileName)
 {
 	CSqlAlbumIconeFileAttribut * m_SqlAlbumIconeFileAttribut = new CSqlAlbumIconeFileAttribut();
 	CSqlIconeFileAlbum * m_SqlIconeFileAlbum = new CSqlIconeFileAlbum();

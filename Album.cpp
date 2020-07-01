@@ -13,7 +13,7 @@
 #include <SqlAlbumUtility.h>
 #include <SqlIconeFileAlbum.h>
 #include <SqlAlbumIconeFileAttribut.h>
-using namespace LIBSQLSERVERCE;
+using namespace Regards::Sqlite;
 
 #endif
 
@@ -87,10 +87,8 @@ int CAlbum::DeleteAlbum(const char * szAlbumName)
 {
 #ifdef SQLSERVERCE	
 
-	size_t m_sizeTConvert;
-	WCHAR m_wAlbumName[MAX_PATH];
-	mbstowcs_s(&m_sizeTConvert,m_wAlbumName, MAX_PATH, szAlbumName, MAX_PATH);
-	CSqlAlbumUtility::DeleteAlbum(m_wAlbumName);
+
+	CSqlAlbumUtility::DeleteAlbum((TCHAR *)szAlbumName);
 
 #endif
 	return 0;

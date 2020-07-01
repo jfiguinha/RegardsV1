@@ -18,7 +18,7 @@ using namespace std;
 #include <SqlFindAlbumIconeFile.h>
 #include <SqlIconeFileAlbum.h>
 #include <SqlAlbumUtility.h>
-using namespace LIBSQLSERVERCE;
+using namespace Regards::Sqlite;
 #endif
 
 //////////////////////////////////////////////////////////////////////
@@ -321,10 +321,7 @@ int CCatalogue::SuppAlbum(HWND hWndTree, CTree *m_cTree, const int &iNumAlbum)
 
 #ifdef SQLSERVERCE
 
-	size_t m_sizeTConvert;
-	WCHAR m_wAlbumName[MAX_PATH];
-	mbstowcs_s(&m_sizeTConvert,m_wAlbumName, MAX_PATH, sName.c_str(), MAX_PATH);
-	CSqlAlbumUtility::DeleteAlbum(m_wAlbumName);
+	CSqlAlbumUtility::DeleteAlbum((TCHAR *)sName.c_str());
 
 #endif
 
@@ -392,16 +389,8 @@ int CCatalogue::SuppAlbum(HWND hWndTree, CTree *m_cTree, const int &iNumAlbum)
 int CCatalogue::NewAlbumName(const char *cNewName, const int &iNumAlbum)
 {
 #ifdef SQLSERVERCE
-	
-	//Sauvegarde du nouveau nom de l'album
 
-	size_t m_sizeTConvert;
-	WCHAR m_wAlbumNameNew[MAX_PATH];
-	WCHAR m_wAlbumNameOld[MAX_PATH];
-	mbstowcs_s(&m_sizeTConvert,m_wAlbumNameNew, MAX_PATH, cNewName, MAX_PATH);
-	mbstowcs_s(&m_sizeTConvert,m_wAlbumNameOld, MAX_PATH, m_CatalogueData->m_AlbumDataVector[iNumAlbum].m_szAlbumName, MAX_PATH);
-
-	CSqlAlbumUtility::RenameAlbum(m_wAlbumNameOld,m_wAlbumNameNew);
+	CSqlAlbumUtility::RenameAlbum((TCHAR *)cNewName, (TCHAR *)m_CatalogueData->m_AlbumDataVector[iNumAlbum].m_szAlbumName);
 	
 #endif
 
@@ -715,24 +704,17 @@ int CCatalogue::RechercheImage(IconeFileVector * * m_IconeFileRechercheLocal, co
 
 	ConstructionRequeteSQL(szStringToFind,m_stgRequeteSQLAttribut,m_stgRequeteSQL,m_iNumFormat);
 
-	WCHAR * m_wSQL = new WCHAR[m_stgRequeteSQL.size() + 1];
-	
-	WCHAR * m_wSQLAttribut = new WCHAR[m_stgRequeteSQLAttribut.size() + 1];
-	size_t m_sizeTConvert;
-	mbstowcs_s(&m_sizeTConvert,m_wSQLAttribut, m_stgRequeteSQLAttribut.size()+1, m_stgRequeteSQLAttribut.c_str(), m_stgRequeteSQLAttribut.size());
-	mbstowcs_s(&m_sizeTConvert,m_wSQL, m_stgRequeteSQL.size()+1, m_stgRequeteSQL.c_str(), m_stgRequeteSQL.size());
-
 
 	//Execution de la requete SQL
 	CSqlFindAlbumIconeFile * m_cSqlFindAlbumIconeFile = new CSqlFindAlbumIconeFile();
 	int i = szFind.find("et=1",0);
 	if(i >= 0)
-		m_cSqlFindAlbumIconeFile->SearchIconeFileAlbum(&m_CatalogueData->m_IconeFileRecherche,m_wSQLAttribut,m_wSQL, L"AND");
+		m_cSqlFindAlbumIconeFile->SearchIconeFileAlbum(&m_CatalogueData->m_IconeFileRecherche,(TCHAR *) m_stgRequeteSQLAttribut.c_str(), (TCHAR *)m_stgRequeteSQL.c_str(), "AND");
 	else
-		m_cSqlFindAlbumIconeFile->SearchIconeFileAlbum(&m_CatalogueData->m_IconeFileRecherche,m_wSQLAttribut,m_wSQL, L"OR");
+		m_cSqlFindAlbumIconeFile->SearchIconeFileAlbum(&m_CatalogueData->m_IconeFileRecherche, (TCHAR *)m_stgRequeteSQLAttribut.c_str(), (TCHAR *)m_stgRequeteSQL.c_str(), "OR");
 
 	delete m_cSqlFindAlbumIconeFile;
-	delete[] m_wSQL;
+
 
 	iNbFileFind = m_CatalogueData->m_IconeFileRecherche.size();
 

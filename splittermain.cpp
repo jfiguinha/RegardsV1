@@ -16,7 +16,8 @@
 #include <mferror.h>
 #ifdef SQLSERVERCE
 #include <SqlEngine.h>
-using namespace LIBSQLSERVERCE;
+#include <SqlLibRegards.h>
+using namespace Regards::Sqlite;
 #endif
 
 
@@ -144,14 +145,14 @@ int CreateIntroWindow(CWndIntro * cWndIntro, HINSTANCE hInst)
 
 void InitializeSQLServerDatabase()
 {
+	CSqlLibRegards * libExplorer = new CSqlLibRegards(false, true);
 	size_t m_sizeTConvert;
 	CParameter m_cParameter;
 	char m_szDirectory[MAX_PATH];
-	WCHAR m_wFilePath[MAX_PATH];
 	m_cParameter.GetOptionAlbumDir(m_szDirectory,MAX_PATH);
 	StringCbCat(m_szDirectory,MAX_PATH,"\\regards.sdf");
-	mbstowcs_s(&m_sizeTConvert,m_wFilePath, MAX_PATH, m_szDirectory, MAX_PATH);
-	CSqlEngine::Initialize(m_wFilePath);
+	//CSqlEngine::Initialize(m_wFilePath);
+	CSqlEngine::Initialize(m_szDirectory, "RegardsDB", libExplorer);
 }
 
 #endif
@@ -289,7 +290,7 @@ FIN:
 #endif	
 
 #ifdef SQLSERVERCE
-	CSqlEngine::kill();
+	CSqlEngine::kill("RegardsDB");
 #endif
 
 	TerminateThread(hThread,0);

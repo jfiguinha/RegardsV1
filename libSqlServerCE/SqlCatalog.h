@@ -6,27 +6,29 @@
 #include "SqlExecuteRequest.h"
 #include <AlbumData.h>
 
-namespace LIBSQLSERVERCE
+namespace Regards
 {
-	class CSqlCatalog : public CSqlExecuteRequest
+	namespace Sqlite
 	{
-	public:
-		CSqlCatalog(void);
-		~CSqlCatalog(void);
+		class CSqlCatalog : public CSqlExecuteRequest
+		{
+		public:
+			CSqlCatalog(void);
+			~CSqlCatalog(void);
 
-		HRESULT SaveCatalog(AlbumDataVector * albumDataVector);
-		HRESULT SaveCatalog(WCHAR * lpAlbumName);
-		HRESULT LoadCatalog(AlbumDataVector * albumDataVector);
-		HRESULT DeleteCatalog();
+			HRESULT SaveCatalog(AlbumDataVector * albumDataVector);
+			HRESULT SaveCatalog(TCHAR * lpAlbumName);
+			HRESULT LoadCatalog(AlbumDataVector * albumDataVector);
+			HRESULT DeleteCatalog();
 
-	private:
+		private:
 
-		virtual HRESULT TraitementResult(IRowset * & pIRowset,HROW * prghRows, HACCESSOR hAccessor, DWORD dwOffset, DBBINDING	*prgBinding);
-		virtual HRESULT TraitementInsert(IRowset * & pIRowset,IRowsetChange * & pIRowsetChange, HROW * prghRows, HACCESSOR hAccessor, DWORD dwOffset, DBBINDING	*prgBinding);
+			int TraitementResult(CSqlResult * sqlResult);
 
-		AlbumDataVector * m_AlbumDataVector;
-		WCHAR * m_lpAlbumName;
-	};
+			AlbumDataVector * m_AlbumDataVector;
+			TCHAR * m_lpAlbumName;
+		};
+	}
 }
 
 #endif

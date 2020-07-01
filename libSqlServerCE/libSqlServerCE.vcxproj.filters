@@ -36,12 +36,6 @@
     <ClCompile Include="SqlCatalogIconeFileAttribut.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="SqlEngine.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="SqlExecuteRequest.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="SqlFindAlbumIconeFile.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -57,10 +51,10 @@
     <ClCompile Include="SqlIconeFileFolder.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="SqlLib.cpp">
+    <ClCompile Include="stdafx.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="stdafx.cpp">
+    <ClCompile Include="SqlLibRegards.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -89,12 +83,6 @@
     <ClInclude Include="SqlCatalogIconeFileAttribut.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="SqlEngine.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="SqlExecuteRequest.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="SqlFindAlbumIconeFile.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
@@ -110,10 +98,10 @@
     <ClInclude Include="SqlIconeFileFolder.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="SqlLib.h">
+    <ClInclude Include="stdafx.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="stdafx.h">
+    <ClInclude Include="SqlLibRegards.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

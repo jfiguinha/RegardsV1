@@ -11,7 +11,7 @@
 #ifdef SQLSERVERCE
 
 #include <SqlIconeFileFolder.h>
-using namespace LIBSQLSERVERCE;
+using namespace Regards::Sqlite;
 #endif
 
 CListPreviewData::CListPreviewData(void)
@@ -129,6 +129,7 @@ int CListPreviewData::ChargeThumbmail(const char * Localisation,IconeFileVector 
 
 	wchar_t cFilePath[MAX_PATH];
 	wchar_t cStreamPath[MAX_PATH];
+	TCHAR folder[MAX_PATH];
 	wchar_t cDataPath[MAX_PATH];
 
 	if(strcmp(Localisation,"-1") == 0)
@@ -142,9 +143,9 @@ int CListPreviewData::ChargeThumbmail(const char * Localisation,IconeFileVector 
 	size_t m_sizeTConvert;
 	mbstowcs_s(&m_sizeTConvert,cFilePath,MAX_PATH, cFile, MAX_PATH);
 
-	StringCchPrintf(cFile,MAX_PATH,"Image%sAlbum",Localisation);
+	StringCchPrintf(folder,MAX_PATH,"Image%sAlbum",Localisation);
 
-	mbstowcs_s(&m_sizeTConvert,cStreamPath,MAX_PATH, cFile, MAX_PATH);
+	mbstowcs_s(&m_sizeTConvert,cStreamPath,MAX_PATH, folder, MAX_PATH);
 
 	StringCchPrintf(cFile,MAX_PATH,"Image%sData",Localisation);
 
@@ -174,7 +175,7 @@ int CListPreviewData::ChargeThumbmail(const char * Localisation,IconeFileVector 
 #else
 		StringCchPrintf(m_cFileZip,MAX_PATH,"%s\\Image%sAlbum.db",m_cParameter->GetThumbnailDirectory().c_str(),Localisation);
 		if(CObjet::TestFilePresent(m_cFileZip))
-			return ChargeData(cFilePath, cStreamPath, cStreamPath,cDataPath,1,iconeFileVector);
+			return ChargeData(cFilePath, cStreamPath, folder, cStreamPath,cDataPath,1,iconeFileVector);
 #endif
 
 	}
@@ -197,6 +198,7 @@ int CListPreviewData::SaveThumbmail(const char * Localisation,IconeFileVector &i
 	wchar_t cFilePath[MAX_PATH];
 	wchar_t cStreamPath[MAX_PATH];
 	wchar_t cDataPath[MAX_PATH];
+	TCHAR folder[MAX_PATH];
 
 	if(strcmp(Localisation,"-1") == 0 || iFileDatabase == 33)
 		return -1;
@@ -206,9 +208,9 @@ int CListPreviewData::SaveThumbmail(const char * Localisation,IconeFileVector &i
 	size_t m_sizeTConvert;
 	mbstowcs_s(&m_sizeTConvert,cFilePath,MAX_PATH, m_cFile, MAX_PATH);
 
-	StringCchPrintf(m_cFile,MAX_PATH,"Image%sAlbum",Localisation);
+	StringCchPrintf(folder,MAX_PATH,"Image%sAlbum",Localisation);
 
-	mbstowcs_s(&m_sizeTConvert,cStreamPath,MAX_PATH, m_cFile, MAX_PATH);
+	mbstowcs_s(&m_sizeTConvert,cStreamPath,MAX_PATH, folder, MAX_PATH);
 
 	StringCchPrintf(m_cFile,MAX_PATH,"Image%sData",Localisation);
 
@@ -218,7 +220,7 @@ int CListPreviewData::SaveThumbmail(const char * Localisation,IconeFileVector &i
 
 	if(m_iSaveMiniature)
 	{
-		SaveData(cFilePath, cStreamPath, cStreamPath,cDataPath,1,iconeFileVector);
+		SaveData(cFilePath, cStreamPath, folder, cStreamPath,cDataPath,1,iconeFileVector);
 #ifdef SAVEZIP
 		StringCchPrintf(m_cFileZip,MAX_PATH,"%s\\Image%sAlbum.zip",m_cParameter->GetThumbnailDirectory().c_str(),Localisation);
 		StringCchPrintf(m_cFile,MAX_PATH,"%s\\Image%sAlbum.db",m_cParameter->GetThumbnailDirectory().c_str(),Localisation);
@@ -239,7 +241,7 @@ int CListPreviewData::SaveThumbmail(const char * Localisation,IconeFileVector &i
 //
 ////////////////////////////////////////////////////////////////////////////
 
-int  CListPreviewData::SaveData(const wchar_t * cFilePath, const wchar_t * FolderPath, const wchar_t * m_chStorageName, const wchar_t * m_chStreamName, const int &iTypeData,IconeFileVector &iconeFileVector)
+int  CListPreviewData::SaveData(const wchar_t * cFilePath, const wchar_t * FolderPath, const TCHAR * Folder, const wchar_t * m_chStorageName, const wchar_t * m_chStreamName, const int &iTypeData,IconeFileVector &iconeFileVector)
 {
 
 	IStorage* pStr;
@@ -296,8 +298,8 @@ int  CListPreviewData::SaveData(const wchar_t * cFilePath, const wchar_t * Folde
 #ifdef SQLSERVERCE
 
 		CSqlIconeFileFolder * _sqlIconeFileFolder = new CSqlIconeFileFolder();
-		_sqlIconeFileFolder->DeleteIconeFileFolder((WCHAR *)FolderPath);
-		_sqlIconeFileFolder->SaveIconeFileFolder(&iconeFileVector,(WCHAR *)FolderPath);
+		_sqlIconeFileFolder->DeleteIconeFileFolder((TCHAR *)Folder);
+		_sqlIconeFileFolder->SaveIconeFileFolder(&iconeFileVector, (TCHAR *)Folder);
 		delete _sqlIconeFileFolder;
 
 #endif
@@ -372,7 +374,7 @@ int CListPreviewData::ChargeDatabaseFolder(const char * cDirectory,const char * 
 			m_CFichierZip.Close();
 			m_CFiles.Close();
 #endif
-			m_iReturn = ChargeData(cFilePath,pswFolder,L"imageStream",L"imageData",1,iconeFileVector);
+			m_iReturn = ChargeData(cFilePath,pswFolder,(const TCHAR *)m_stgFolder.c_str(), L"imageStream",L"imageData",1,iconeFileVector);
 #ifdef SAVEZIP
 			remove(m_stgFilename.c_str());
 #endif
@@ -417,7 +419,7 @@ int CListPreviewData::SauverDatabaseFolder(const char * cDirectory,IconeFileVect
 
 		if(m_iSaveMiniature)
 		{
-			SaveData(cFilePath, pswFolder,L"imageStream",L"imageData",1,iconeFileVector);
+			SaveData(cFilePath, pswFolder, cDirectory,L"imageStream",L"imageData",1,iconeFileVector);
 #ifdef SAVEZIP
 			StringCchPrintf(m_cFileZip,MAX_PATH,"%s\\%x.zip",m_cParameter->GetThumbnailDirectory().c_str(),iHashValue);
 			CFiles m_CFiles;
@@ -436,7 +438,7 @@ int CListPreviewData::SauverDatabaseFolder(const char * cDirectory,IconeFileVect
 //
 ////////////////////////////////////////////////////////////////////////////
 
-int CListPreviewData::ChargeData(const wchar_t * FilePath, const wchar_t * FolderPath, const wchar_t * m_chStorageName, const wchar_t * m_chStreamName, const int &iTypeData, IconeFileVector &iconeFileVector)
+int CListPreviewData::ChargeData(const wchar_t * FilePath, const wchar_t * FolderPath, const TCHAR * Folder, const wchar_t * m_chStorageName, const wchar_t * m_chStreamName, const int &iTypeData, IconeFileVector &iconeFileVector)
 {
 
 	IStorage* pStg; 
@@ -549,7 +551,7 @@ int CListPreviewData::ChargeData(const wchar_t * FilePath, const wchar_t * Folde
 
 		iconeFileVector.clear();
 		CSqlIconeFileFolder * _sqlIconeFileFolder = new CSqlIconeFileFolder();
-		_sqlIconeFileFolder->LoadIconeFileFolder(&iconeFileVector,(WCHAR *)FolderPath);
+		_sqlIconeFileFolder->LoadIconeFileFolder(&iconeFileVector,(TCHAR *)FolderPath);
 		delete _sqlIconeFileFolder;
 
 #endif

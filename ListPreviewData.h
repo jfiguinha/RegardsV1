@@ -66,8 +66,8 @@ public:
 
 private:
 
-	int ChargeData(const wchar_t * FilePath, const wchar_t * FolderPath, const wchar_t * m_chStorageName, const wchar_t * m_chStreamName, const int &iTypeData,IconeFileVector &iconeFileVector);
-	int SaveData(const wchar_t * cFilePath, const wchar_t * FolderPath, const wchar_t * m_chStorageName, const wchar_t * m_chStreamName, const int &iTypeData,IconeFileVector &iconeFileVector);
+	int ChargeData(const wchar_t * FilePath, const wchar_t * FolderPath, const TCHAR * Folder, const wchar_t * m_chStorageName, const wchar_t * m_chStreamName, const int &iTypeData,IconeFileVector &iconeFileVector);
+	int SaveData(const wchar_t * cFilePath, const wchar_t * FolderPath, const TCHAR * Folder, const wchar_t * m_chStorageName, const wchar_t * m_chStreamName, const int &iTypeData,IconeFileVector &iconeFileVector);
 
 	bool m_bLoadData;
 	int iLargeur;

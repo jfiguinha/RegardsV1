@@ -8,7 +8,7 @@
 
 #ifdef SQLSERVERCE
 #include <SqlIconeFileAlbum.h>
-using namespace LIBSQLSERVERCE;
+using namespace Regards::Sqlite;
 #endif
 
 CPageModifyAlbumDlg::CPageModifyAlbumDlg(void)
@@ -290,12 +290,9 @@ LRESULT CPageModifyAlbumDlg::OnNotify(HWND hwndDlg, UINT uMsg, WPARAM wParam, LP
 					m_Album = m_cAlbumWizard->RecupPtAlbum();
 #ifdef SQLSERVERCE
 
-					WCHAR m_wAlbumName[MAX_PATH];
-					size_t m_sizeTConvert;
-					mbstowcs_s(&m_sizeTConvert,m_wAlbumName, MAX_PATH, m_Album->m_szAlbumName, MAX_PATH);
 
 					CSqlIconeFileAlbum * m_cSqlIconeFileAlbum = new CSqlIconeFileAlbum();
-					m_cSqlIconeFileAlbum->LoadIconeFileAlbum(&m_IconeFileVector,m_wAlbumName);
+					m_cSqlIconeFileAlbum->LoadIconeFileAlbum(&m_IconeFileVector, m_Album->m_szAlbumName);
 					delete m_cSqlIconeFileAlbum;
 #endif
 

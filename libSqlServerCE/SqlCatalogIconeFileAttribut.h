@@ -6,28 +6,29 @@
 #include <attribut.h>
 #include "SqlExecuteRequest.h"
 
-
-namespace LIBSQLSERVERCE
+namespace Regards
 {
-	class CSqlCatalogIconeFileAttribut : public CSqlExecuteRequest
+	namespace Sqlite
 	{
-	public:
-		CSqlCatalogIconeFileAttribut(void);
-		~CSqlCatalogIconeFileAttribut(void);
+		class CSqlCatalogIconeFileAttribut : public CSqlExecuteRequest
+		{
+		public:
+			CSqlCatalogIconeFileAttribut(void);
+			~CSqlCatalogIconeFileAttribut(void);
 
-		HRESULT SaveCatalogIconeFileAttribut(AttributVector * attributVector, WCHAR * lpCatalogName, int NumFile);
-		HRESULT LoadCatalogIconeFileAttribut(AttributVector * attributVector, WCHAR * lpCatalogName, int NumFile);
-		HRESULT DeleteCatalogIconeFileAttribut(WCHAR * lpAlbumName, int NumFile);
+			HRESULT SaveCatalogIconeFileAttribut(AttributVector * attributVector, TCHAR * lpCatalogName, int NumFile);
+			HRESULT LoadCatalogIconeFileAttribut(AttributVector * attributVector, TCHAR * lpCatalogName, int NumFile);
+			HRESULT DeleteCatalogIconeFileAttribut(TCHAR * lpAlbumName, int NumFile);
 
-	private:
+		private:
 
-		virtual HRESULT TraitementResult(IRowset * & pIRowset,HROW * prghRows, HACCESSOR hAccessor, DWORD dwOffset, DBBINDING	*prgBinding);
-		virtual HRESULT TraitementInsert(IRowset * & pIRowset,IRowsetChange * & pIRowsetChange, HROW * prghRows, HACCESSOR hAccessor, DWORD dwOffset, DBBINDING	*prgBinding);
+			int TraitementResult(CSqlResult * sqlResult);
 
-		AttributVector * m_attributVector;
-		WCHAR * _lpCatalogName;
-		int _iNumFile;
-	};
+			AttributVector * m_attributVector;
+			TCHAR * _lpCatalogName;
+			int _iNumFile;
+		};
+	}
 }
 
 #endif

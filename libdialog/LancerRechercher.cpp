@@ -8,7 +8,7 @@
 #ifdef SQLSERVERCE
 #include <SqlCatalog.h>
 #include <SqlIconeFileCatalogue.h>
-using namespace LIBSQLSERVERCE;
+using namespace Regards::Sqlite;
 #endif
 
 CLancerRechercher::CLancerRechercher(HINSTANCE hInstance)
@@ -42,7 +42,7 @@ ULONG CLancerRechercher::RechercherFichier(void * lParam)
 #ifdef SQLSERVERCE
 	IconeFileVector m_iconeFileVector;
 	size_t m_sizeTConvert;
-	WCHAR m_wAlbumName[MAX_PATH];
+	TCHAR m_wAlbumName[MAX_PATH];
 	CSqlIconeFileCatalogue * m_cIconeFileCatalogue = new CSqlIconeFileCatalogue();
 #endif
 	int i = 0, j = 0;
@@ -81,8 +81,7 @@ ULONG CLancerRechercher::RechercherFichier(void * lParam)
 
 #ifdef SQLSERVERCE
 		m_iconeFileVector.clear();
-		mbstowcs_s(&m_sizeTConvert,m_wAlbumName, MAX_PATH, m_AlbumTemp.m_szAlbumName, MAX_PATH);
-		m_cIconeFileCatalogue->LoadIconeFileCatalog(&m_iconeFileVector,m_wAlbumName);
+		m_cIconeFileCatalogue->LoadIconeFileCatalog(&m_iconeFileVector, m_AlbumTemp.m_szAlbumName);
 		m_IconeFileVectorSrc.insert(m_IconeFileVectorSrc.begin(),m_iconeFileVector.begin(),m_iconeFileVector.end());
 
 #else
@@ -119,8 +118,7 @@ ULONG CLancerRechercher::RechercherFichier(void * lParam)
 #ifdef SQLSERVERCE
 
 		m_iconeFileVector.clear();
-		mbstowcs_s(&m_sizeTConvert,m_wAlbumName, MAX_PATH, m_AlbumTemp.m_szAlbumName, MAX_PATH);
-		m_cIconeFileCatalogue->LoadIconeFileCatalog(&m_iconeFileVector,m_wAlbumName);
+		m_cIconeFileCatalogue->LoadIconeFileCatalog(&m_iconeFileVector, m_AlbumTemp.m_szAlbumName);
 
 		//Boucle sur les fichiers d'index à comparer
 

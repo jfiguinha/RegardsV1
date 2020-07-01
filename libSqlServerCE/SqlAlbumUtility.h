@@ -5,23 +5,25 @@
 
 #include <albumdata.h>
 
-namespace LIBSQLSERVERCE
+namespace Regards
 {
-
-	class CSqlAlbumUtility
+	namespace Sqlite
 	{
-	public:
-		CSqlAlbumUtility(void);
-		~CSqlAlbumUtility(void);
+		class CSqlAlbumUtility
+		{
+		public:
+			CSqlAlbumUtility(void);
+			~CSqlAlbumUtility(void);
 
-		static LRESULT UpdateCategorie(AttributVector * attributVectorAlbum);
-		static LRESULT UpdateFileAlbum(IconeFileVector * iconeFileVector, WCHAR * albumName);
-		static LRESULT UpdateFileAttribut(AttributVector * attributVectorAlbum, WCHAR * albumName);
-		static LRESULT DeleteAlbum(WCHAR * albumName);
-		static LRESULT DeleteAlbumFile(WCHAR * albumName,WCHAR * fileName);
-		static LRESULT SaveAlbum(CAlbumData * pAlbumData);
-		static LRESULT RenameAlbum(WCHAR * albumOldName,WCHAR * albumNewName);
-	};
+			static LRESULT UpdateCategorie(AttributVector * attributVectorAlbum);
+			static LRESULT UpdateFileAlbum(IconeFileVector * iconeFileVector, TCHAR * albumName);
+			static LRESULT UpdateFileAttribut(AttributVector * attributVectorAlbum, TCHAR * albumName);
+			static LRESULT DeleteAlbum(TCHAR * albumName);
+			static LRESULT DeleteAlbumFile(TCHAR * albumName, TCHAR * fileName);
+			static LRESULT SaveAlbum(CAlbumData * pAlbumData);
+			static LRESULT RenameAlbum(TCHAR * albumOldName, TCHAR * albumNewName);
+		};
+	}
 
 }
 

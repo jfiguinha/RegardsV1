@@ -188,7 +188,7 @@
     <ClCompile>
       <AdditionalOptions>/Qwd1684 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>../filtreeffet;../amd;../matrix;../libwindow;../libbitmap;../libaspi;../mp3;../datastructure;../otherlib/ziplib;../libutility;../libSqlServerCE;../importpic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../libSqlEngine;../filtreeffet;../amd;../matrix;../libwindow;../libbitmap;../libaspi;../mp3;../datastructure;../otherlib/ziplib;../libutility;../libSqlServerCE;../importpic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;SQLSERVERCE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -229,7 +229,7 @@
     <ClCompile>
       <AdditionalOptions>/Qwd1684 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>MaxSpeed</Optimization>
-      <AdditionalIncludeDirectories>../filtreeffet;../amd;../matrix;../libwindow;../libbitmap;../libaspi;../mp3;../datastructure;../otherlib/ziplib;../libutility;../libSqlServerCE;../importpic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../libSqlEngine;../filtreeffet;../amd;../matrix;../libwindow;../libbitmap;../libaspi;../mp3;../datastructure;../otherlib/ziplib;../libutility;../libSqlServerCE;../importpic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_LIB;SQLSERVERCE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>

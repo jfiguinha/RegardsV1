@@ -6,26 +6,28 @@
 #include <iconefile.h>
 #include "SqlExecuteRequest.h"
 
-namespace LIBSQLSERVERCE
+namespace Regards
 {
-	class CSqlIconeFileCatalogue : public CSqlExecuteRequest
+	namespace Sqlite
 	{
-	public:
-		CSqlIconeFileCatalogue(void);
-		~CSqlIconeFileCatalogue(void);
+		class CSqlIconeFileCatalogue : public CSqlExecuteRequest
+		{
+		public:
+			CSqlIconeFileCatalogue(void);
+			~CSqlIconeFileCatalogue(void);
 
-		HRESULT SaveIconeFileCatalog(IconeFileVector * iconeFileVector, WCHAR * lpCatalogName);
-		HRESULT LoadIconeFileCatalog(IconeFileVector * iconeFileVector, WCHAR * lpCatalogName);
-		HRESULT DeleteIconeFileCatalog(WCHAR * lpCatalogName);
+			HRESULT SaveIconeFileCatalog(IconeFileVector * iconeFileVector, TCHAR * lpCatalogName);
+			HRESULT LoadIconeFileCatalog(IconeFileVector * iconeFileVector, TCHAR * lpCatalogName);
+			HRESULT DeleteIconeFileCatalog(TCHAR * lpCatalogName);
 
-	private:
+		private:
 
-		virtual HRESULT TraitementResult(IRowset * & pIRowset,HROW * prghRows, HACCESSOR hAccessor, DWORD dwOffset, DBBINDING	*prgBinding);
-		virtual HRESULT TraitementInsert(IRowset * & pIRowset,IRowsetChange * & pIRowsetChange, HROW * prghRows, HACCESSOR hAccessor, DWORD dwOffset, DBBINDING	*prgBinding);
+			int TraitementResult(CSqlResult * sqlResult);
 
-		IconeFileVector * m_iconeFileVector;
-		WCHAR _pwzCatalogName[256];
-	};
+			IconeFileVector * m_iconeFileVector;
+			TCHAR _pwzCatalogName[256];
+		};
+	}
 }
 
 #endif

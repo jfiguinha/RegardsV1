@@ -23,7 +23,7 @@
 #include <SqlAlbumAttribut.h>
 #include <SqlAlbumIconeFileAttribut.h>
 #include <SqlIconeFileAlbum.h>
-using namespace LIBSQLSERVERCE;
+using namespace Regards::Sqlite;
 #endif
 
 CAlbumData * CAlbumWizard::RecupPtAlbum()
@@ -457,14 +457,9 @@ int CAlbumWizard::FinishPageModifyAlbum(HWND hwndDlg,CAlbumData * m_Album,IconeF
 		StringCchCopy(m_Album->m_szAlbumName,255,cTemp);
 
 #ifdef SQLSERVERCE
-		WCHAR m_wAlbumName[MAX_PATH];
 		IconeFileVector m_IconeFileVectorAlbum;
-		size_t m_sizeTConvert;	
-
-		mbstowcs_s(&m_sizeTConvert,m_wAlbumName, MAX_PATH, m_Album->m_szAlbumName, MAX_PATH);
-
 		CSqlIconeFileAlbum * m_cSqlIconeFileAlbum = new CSqlIconeFileAlbum();
-		m_cSqlIconeFileAlbum->LoadIconeFileAlbum(&m_IconeFileVectorAlbum,m_wAlbumName);
+		m_cSqlIconeFileAlbum->LoadIconeFileAlbum(&m_IconeFileVectorAlbum, m_Album->m_szAlbumName);
 		delete m_cSqlIconeFileAlbum;
 #endif
 
@@ -491,7 +486,7 @@ int CAlbumWizard::FinishPageModifyAlbum(HWND hwndDlg,CAlbumData * m_Album,IconeF
 			delete m_cSqlAlbum;
 
 			CSqlIconeFileAlbum * m_cSqlIconeFileAlbum = new CSqlIconeFileAlbum();
-			m_cSqlIconeFileAlbum->SaveIconeFileAlbum(&m_IconeFileVector,m_wAlbumName);
+			m_cSqlIconeFileAlbum->SaveIconeFileAlbum(&m_IconeFileVector, m_Album->m_szAlbumName);
 			delete m_cSqlIconeFileAlbum;
 
 #endif
@@ -500,12 +495,8 @@ int CAlbumWizard::FinishPageModifyAlbum(HWND hwndDlg,CAlbumData * m_Album,IconeF
 		{
 			//Mise à jour de l'album
 #ifdef SQLSERVERCE
-			WCHAR m_wAlbumName[MAX_PATH];
-			size_t m_sizeTConvert;	
-			mbstowcs_s(&m_sizeTConvert,m_wAlbumName, MAX_PATH, m_Album->m_szAlbumName, MAX_PATH);
-
 			//Sauvegarde dans la base de données - Faire une comparaison des éléments
-			CSqlAlbumUtility::UpdateFileAlbum(&m_IconeFileVector,m_wAlbumName);
+			CSqlAlbumUtility::UpdateFileAlbum(&m_IconeFileVector, m_Album->m_szAlbumName);
 
 #endif
 		}

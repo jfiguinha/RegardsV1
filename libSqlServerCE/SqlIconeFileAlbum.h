@@ -6,29 +6,31 @@
 #include <iconefile.h>
 #include "SqlExecuteRequest.h"
 
-namespace LIBSQLSERVERCE
+namespace Regards
 {
-	class CSqlIconeFileAlbum : public CSqlExecuteRequest
+	namespace Sqlite
 	{
-	public:
-		CSqlIconeFileAlbum(void);
-		~CSqlIconeFileAlbum(void);
+		class CSqlIconeFileAlbum : public CSqlExecuteRequest
+		{
+		public:
+			CSqlIconeFileAlbum(void);
+			~CSqlIconeFileAlbum(void);
 
-		HRESULT SaveIconeFileAlbum(IconeFileVector * iconeFileVector, WCHAR * lpAlbumName);
-		HRESULT LoadIconeFileAlbum(IconeFileVector * iconeFileVector, WCHAR * lpAlbumName);
-		HRESULT LoadIconeFileAlbum(IconeFileVector * iconeFileVector);
-		HRESULT DeleteIconeFileAlbum(WCHAR * lpAlbumName);
-		HRESULT DeleteIconeFileAlbum(WCHAR * lpAlbumName, WCHAR * lpFilename);
-		HRESULT UpdateAlbum(WCHAR * lpNewAlbumName,WCHAR * lpOldAlbumName);
+			HRESULT SaveIconeFileAlbum(IconeFileVector * iconeFileVector, TCHAR * lpAlbumName);
+			HRESULT LoadIconeFileAlbum(IconeFileVector * iconeFileVector, TCHAR * lpAlbumName);
+			HRESULT LoadIconeFileAlbum(IconeFileVector * iconeFileVector);
+			HRESULT DeleteIconeFileAlbum(TCHAR * lpAlbumName);
+			HRESULT DeleteIconeFileAlbum(TCHAR * lpAlbumName, TCHAR * lpFilename);
+			HRESULT UpdateAlbum(TCHAR * lpNewAlbumName, TCHAR * lpOldAlbumName);
 
-	private:
+		private:
 
-		virtual HRESULT TraitementResult(IRowset * & pIRowset,HROW * prghRows, HACCESSOR hAccessor, DWORD dwOffset, DBBINDING	*prgBinding);
-		virtual HRESULT TraitementInsert(IRowset * & pIRowset,IRowsetChange * & pIRowsetChange, HROW * prghRows, HACCESSOR hAccessor, DWORD dwOffset, DBBINDING	*prgBinding);
+			int TraitementResult(CSqlResult * sqlResult);
 
-		IconeFileVector * m_iconeFileVector;
-		WCHAR _pwzAlbumName[256];
-	};
+			IconeFileVector * m_iconeFileVector;
+			TCHAR _pwzAlbumName[256];
+		};
+	}
 }
 
 #endif

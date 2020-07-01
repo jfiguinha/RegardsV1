@@ -6,27 +6,28 @@
 #include "SqlExecuteRequest.h"
 #include <Attribut.h>
 
-namespace LIBSQLSERVERCE
+namespace Regards
 {
-	class CSqlAlbumAttribut : public CSqlExecuteRequest
+	namespace Sqlite
 	{
-	public:
-		CSqlAlbumAttribut(void);
-		~CSqlAlbumAttribut(void);
+		class CSqlAlbumAttribut : public CSqlExecuteRequest
+		{
+		public:
+			CSqlAlbumAttribut(void);
+			~CSqlAlbumAttribut(void);
 
-		HRESULT SaveAlbumAttribut(AttributVector * attributVector);
-		HRESULT LoadAlbumAttribut(AttributVector * attributVector);
-		HRESULT DeleteAlbumAttribut();
-		HRESULT DeleteAlbumAttribut(int iNumAttribut);
+			HRESULT SaveAlbumAttribut(AttributVector * attributVector);
+			HRESULT LoadAlbumAttribut(AttributVector * attributVector);
+			HRESULT DeleteAlbumAttribut();
+			HRESULT DeleteAlbumAttribut(int iNumAttribut);
 
-	private:
+		private:
 
-		virtual HRESULT TraitementResult(IRowset * & pIRowset,HROW * prghRows, HACCESSOR hAccessor, DWORD dwOffset, DBBINDING	*prgBinding);
-		virtual HRESULT TraitementInsert(IRowset * & pIRowset,IRowsetChange * & pIRowsetChange, HROW * prghRows, HACCESSOR hAccessor, DWORD dwOffset, DBBINDING	*prgBinding);
+			int TraitementResult(CSqlResult * sqlResult);
+			AttributVector * m_AttributVector;
 
-		AttributVector * m_AttributVector;
-
-	};
+		};
+	}
 }
 
 #endif

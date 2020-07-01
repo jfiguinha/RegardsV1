@@ -19,7 +19,7 @@
 #include <SqlAlbumUtility.h>
 #include <SqlCatalog.h>
 #include <SqlIconeFileCatalogue.h>
-using namespace LIBSQLSERVERCE;
+using namespace Regards::Sqlite;
 #endif
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -64,9 +64,9 @@ int CImageCatalogue::DeleteRechercheFile(HWND hWnd,VECTITEM * m_vectItem)
 
 #ifdef SQLSERVERCE
 
-		WCHAR m_wAlbumName[MAX_PATH];
-		WCHAR m_wFilename[MAX_PATH];
-		size_t m_sizeTConvert;	
+		//WCHAR m_wAlbumName[MAX_PATH];
+		//WCHAR m_wFilename[MAX_PATH];
+		//size_t m_sizeTConvert;	
 #endif
 
 		for(int i = 0;i < iNbCount;i++)
@@ -102,10 +102,10 @@ int CImageCatalogue::DeleteRechercheFile(HWND hWnd,VECTITEM * m_vectItem)
 #ifdef SQLSERVERCE
 
 			
-			mbstowcs_s(&m_sizeTConvert,m_wAlbumName, MAX_PATH, m_IconeFile->szKeyName, MAX_PATH);
-			mbstowcs_s(&m_sizeTConvert,m_wFilename, MAX_PATH, m_IconeFile->m_stgFullPathName, MAX_PATH);
+			//mbstowcs_s(&m_sizeTConvert,m_wAlbumName, MAX_PATH, m_IconeFile->szKeyName, MAX_PATH);
+			//mbstowcs_s(&m_sizeTConvert,m_wFilename, MAX_PATH, m_IconeFile->m_stgFullPathName, MAX_PATH);
 
-			CSqlAlbumUtility::DeleteAlbumFile(m_wAlbumName,m_wFilename);
+			CSqlAlbumUtility::DeleteAlbumFile(m_IconeFile->szKeyName, m_IconeFile->m_stgFullPathName);
 
 #endif
 		}
@@ -278,12 +278,10 @@ int CImageCatalogue::MiseAJour(HWND hWndTree, const int &iNumAlbum)
 	{
 #ifdef SQLSERVERCE
 	
-		WCHAR m_wCatalogName[MAX_PATH];
-		size_t m_sizeTConvert;
-		mbstowcs_s(&m_sizeTConvert,m_wCatalogName, MAX_PATH, m_CatalogueData->m_AlbumDataVector[iNumAlbum].m_szAlbumName, MAX_PATH);
+
 		CSqlIconeFileCatalogue * m_cSqlIconeFileCatalogue = new CSqlIconeFileCatalogue();
-		m_cSqlIconeFileCatalogue->DeleteIconeFileCatalog(m_wCatalogName);
-		m_cSqlIconeFileCatalogue->SaveIconeFileCatalog(&m_iconeFileVector,m_wCatalogName);
+		m_cSqlIconeFileCatalogue->DeleteIconeFileCatalog(m_CatalogueData->m_AlbumDataVector[iNumAlbum].m_szAlbumName);
+		m_cSqlIconeFileCatalogue->SaveIconeFileCatalog(&m_iconeFileVector, m_CatalogueData->m_AlbumDataVector[iNumAlbum].m_szAlbumName);
 		delete m_cSqlIconeFileCatalogue;
 
 #else
@@ -554,8 +552,8 @@ int CImageCatalogue::CreerCatalogue(HWND hWnd, HWND hWndTree)
 
 #ifdef SQLSERVERCE
 	IconeFileVector m_IconeFileVector;
-	WCHAR m_wAlbumName[MAX_PATH];
-	size_t m_sizeTConvert;
+	//WCHAR m_wAlbumName[MAX_PATH];
+	//size_t m_sizeTConvert;
 	CSqlCatalog m_cSqlCatalog;
 	CSqlIconeFileCatalogue m_cSqlIconeFileCatalogue;
 #endif
@@ -613,9 +611,8 @@ int CImageCatalogue::CreerCatalogue(HWND hWnd, HWND hWndTree)
 
 #ifdef SQLSERVERCE
 
-			mbstowcs_s(&m_sizeTConvert,m_wAlbumName, MAX_PATH, m_AlbumTemp.m_szAlbumName, MAX_PATH);
-			m_cSqlCatalog.SaveCatalog(m_wAlbumName);
-			m_cSqlIconeFileCatalogue.SaveIconeFileCatalog(&m_IconeFileVector,m_wAlbumName);
+
+			m_cSqlIconeFileCatalogue.SaveIconeFileCatalog(&m_IconeFileVector, m_AlbumTemp.m_szAlbumName);
 
 #else
 			m_CatalogueData->SauverUnCatalogue(m_AlbumTemp,m_CatalogueData->iNbAlbum);
@@ -637,12 +634,10 @@ int CImageCatalogue::CreerCatalogue(HWND hWnd, HWND hWndTree)
 int CImageCatalogue::RecupPtAlbum(const int &iNumAlbum, IconeFileVector * & lpIconeFileFolder)
 {
 #ifdef SQLSERVERCE
-	WCHAR m_wCatalogName[MAX_PATH];
-	size_t m_sizeTConvert;
-	mbstowcs_s(&m_sizeTConvert,m_wCatalogName, MAX_PATH, m_CatalogueData->m_AlbumDataVector[iNumAlbum].m_szAlbumName, MAX_PATH);
+
 	m_iconeFileFolder.clear();
 	CSqlIconeFileCatalogue * m_cSqlIconeFileCatalogue = new CSqlIconeFileCatalogue();
-	m_cSqlIconeFileCatalogue->LoadIconeFileCatalog(&m_iconeFileFolder,m_wCatalogName);
+	m_cSqlIconeFileCatalogue->LoadIconeFileCatalog(&m_iconeFileFolder, m_CatalogueData->m_AlbumDataVector[iNumAlbum].m_szAlbumName);
 	delete m_cSqlIconeFileCatalogue;
 
 	lpIconeFileFolder = &m_iconeFileFolder;

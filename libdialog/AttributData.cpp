@@ -5,7 +5,7 @@
 #include <dialogcataloguedata.h>
 #ifdef SQLSERVERCE
 #include <SqlAlbumIconeFileAttribut.h>
-using namespace LIBSQLSERVERCE;
+using namespace Regards::Sqlite;
 #endif
 
 CAttributData::CAttributData(HINSTANCE hInstance)

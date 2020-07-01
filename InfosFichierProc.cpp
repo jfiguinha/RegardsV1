@@ -9,7 +9,7 @@
 #ifdef SQLSERVERCE
 #include <SqlAlbumIconeFileAttribut.h>
 #include <SqlAlbumAttribut.h>
-using namespace LIBSQLSERVERCE;
+using namespace Regards::Sqlite;
 #endif
 
 void CInfosFichierProc::SetParam(CPreviewData * pPreviewData)
@@ -140,14 +140,10 @@ LRESULT CInfosFichierProc::OnCommand(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM
 
 						AttributVector m_AttributVector;
 						//Récupération des informations sur le fichier dans la base de données
-						WCHAR m_wAlbumName[MAX_PATH];
-						WCHAR m_wFileName[MAX_PATH];
-						size_t m_sizeTConvert;
-						mbstowcs_s(&m_sizeTConvert,m_wAlbumName,MAX_PATH, m_pPreviewData->IconeFileTemp->szKeyName, MAX_PATH);
-						mbstowcs_s(&m_sizeTConvert,m_wFileName,MAX_PATH, m_pPreviewData->IconeFileTemp->m_stgFullPathName, MAX_PATH);
+
 
 						CSqlAlbumIconeFileAttribut * m_cSqlAlbumIconeFileAttribut = new CSqlAlbumIconeFileAttribut();
-						m_cSqlAlbumIconeFileAttribut->LoadAlbumIconeFileAttribut(&m_AttributVector,m_wAlbumName,m_wFileName);
+						m_cSqlAlbumIconeFileAttribut->LoadAlbumIconeFileAttribut(&m_AttributVector, m_pPreviewData->IconeFileTemp->szKeyName, m_pPreviewData->IconeFileTemp->m_stgFullPathName);
 						delete m_cSqlAlbumIconeFileAttribut;
 						 
 						AttributVector::iterator AttributIt;

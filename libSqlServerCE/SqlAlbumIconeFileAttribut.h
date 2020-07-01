@@ -6,30 +6,32 @@
 #include <attribut.h>
 #include "SqlExecuteRequest.h"
 
-namespace LIBSQLSERVERCE
+namespace Regards
 {
-	class CSqlAlbumIconeFileAttribut : public CSqlExecuteRequest
+	namespace Sqlite
 	{
-	public:
-		CSqlAlbumIconeFileAttribut(void);
-		~CSqlAlbumIconeFileAttribut(void);
+		class CSqlAlbumIconeFileAttribut : public CSqlExecuteRequest
+		{
+		public:
+			CSqlAlbumIconeFileAttribut(void);
+			~CSqlAlbumIconeFileAttribut(void);
 
-		HRESULT SaveAlbumIconeFileAttribut(AttributVector * attributVector, WCHAR * lpAlbumName, WCHAR * lpFileName);
-		HRESULT LoadAlbumIconeFileAttribut(AttributVector * attributVector, WCHAR * lpAlbumName, WCHAR * lpFileName);
-		HRESULT DeleteAlbumIconeFileAttribut(WCHAR * lpAlbumName, WCHAR * lpFileName);
-		HRESULT DeleteAlbumIconeFileAttribut(WCHAR * lpAlbumName);
-		HRESULT DeleteAlbumIconeFileAttribut(int iNumAttribut);
-		HRESULT UpdateAlbum(WCHAR * lpNewAlbumName,WCHAR * lpOldAlbumName);
+			HRESULT SaveAlbumIconeFileAttribut(AttributVector * attributVector, TCHAR * lpAlbumName, TCHAR * lpFileName);
+			HRESULT LoadAlbumIconeFileAttribut(AttributVector * attributVector, TCHAR * lpAlbumName, TCHAR * lpFileName);
+			HRESULT DeleteAlbumIconeFileAttribut(TCHAR * lpAlbumName, TCHAR * lpFileName);
+			HRESULT DeleteAlbumIconeFileAttribut(TCHAR * lpAlbumName);
+			HRESULT DeleteAlbumIconeFileAttribut(int iNumAttribut);
+			HRESULT UpdateAlbum(TCHAR * lpNewAlbumName, TCHAR * lpOldAlbumName);
 
-	private:
+		private:
 
-		virtual HRESULT TraitementResult(IRowset * & pIRowset,HROW * prghRows, HACCESSOR hAccessor, DWORD dwOffset, DBBINDING	*prgBinding);
-		virtual HRESULT TraitementInsert(IRowset * & pIRowset,IRowsetChange * & pIRowsetChange, HROW * prghRows, HACCESSOR hAccessor, DWORD dwOffset, DBBINDING	*prgBinding);
+			int TraitementResult(CSqlResult * sqlResult);
 
-		AttributVector * m_attributVector;
-		WCHAR * _lpAlbumName;
-		WCHAR * _lpFileName;
-	};
+			AttributVector * m_attributVector;
+			TCHAR * _lpAlbumName;
+			TCHAR * _lpFileName;
+		};
+	}
 
 }
 #endif

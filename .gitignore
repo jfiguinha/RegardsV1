@@ -46,3 +46,9 @@
 /importpic/Release
 /importpic/debug
 /libSqlServerCE/Release
+/otherlib/libjasper/jasper-1.900.1/src/msvc/Win32_Release
+/otherlib/libjasper/jasper-1.900.1/src/msvc/Win32_Debug
+/otherlib/libjasper/jasper-1.900.1/src/msvc/libjasper___Win32_Release
+/otherlib/libjasper/jasper-1.900.1/src/msvc/libjasper___Win32_Debug
+/otherlib/ziplib/Release
+/otherlib/ziplib/Debug
