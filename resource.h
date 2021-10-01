@@ -728,6 +728,15 @@
 #define ID_STTEXTCOPYRIGHT              65535
 #define IDC_STTRAITEMENT                -1
 
+#define ID_FILE_NEW						40246
+#define ID_FILE_OPEN					40247
+#define ID_FILE_SAVE					40248
+#define ID_EDIT_CUT						40249
+#define ID_EDIT_COPY					40250	
+#define ID_EDIT_PASTE					40251
+#define ID_FILE_PRINT					40252
+#define ID_APP_ABOUT					40253
+
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
@@ -738,4 +747,8 @@
 #define _APS_NEXT_CONTROL_VALUE         1302
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
+#endif
+
+#ifndef IDC_STATIC
+#define IDC_STATIC				-1
 #endif

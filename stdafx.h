@@ -75,7 +75,7 @@ extern CComModule _Module;
 #include <atlcom.h>
 #include <atlhost.h>
 #include <atlctl.h>
-#include <afxres.h>
+//#include <afxres.h>
 #include <comdef.h>
 
 
