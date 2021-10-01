@@ -70,8 +70,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release en-US|Win32'">.\ReleaseUs\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release en-US|Win32'">.\ReleaseUs\</IntDir>
@@ -79,8 +79,8 @@
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release es-ES|Win32'">.\ReleaseEs\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release es-ES|Win32'">.\ReleaseEs\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release es-ES|Win32'">false</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -283,8 +283,8 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <OmitFramePointers>true</OmitFramePointers>
-      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <OmitFramePointers>false</OmitFramePointers>
+      <EnableFiberSafeOptimizations>false</EnableFiberSafeOptimizations>
       <AdditionalIncludeDirectories>libsqlite;libSqlEngine;otherlib\glew-1.13.0\include;importpic;include;otherlib\ijl;otherlib\JpegLib;otherlib\libtiff;otherlib\libungif\lib\;otherlib\libpng;otherlib\zlib;tools;otherlib\ziplib;otherlib\skin;mp3;filtreeffet;iexplorer;datastructure;matrix;otherlib\wmp;libopengl;libaspi;libdialog;libvideo;libSqlServerCE;libutility;libbitmap;libcomobject;libwindow;$(CG_INC_PATH);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;WMP9;_WIN32_DCOM;FRENCH;SQLSERVERCE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>

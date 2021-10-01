@@ -481,6 +481,7 @@ BOOL CTree::InitTree(LPCTSTR strRoot, BOOL bFiles)
 
 	HTREEITEM hParent;
     pimpl_->pTreeData.m_bFiles = bFiles;  // if TRUE, Display Path- and Filenames 
+
 	if (strRoot == NULL || strRoot[0] == '\0' )
 	{
 		if ( !pimpl_->DisplayDrives(m_hWnd) )
@@ -489,14 +490,16 @@ BOOL CTree::InitTree(LPCTSTR strRoot, BOOL bFiles)
 	}
     else
 	{
+
 		pimpl_->pTreeData.m_strRoot = strRoot;
+
 		if (strcmp(pimpl_->pTreeData.m_strRoot.substr(1,pimpl_->pTreeData.m_strRoot.length() - 1).c_str(),"\\") == 0)
 			pimpl_->pTreeData.m_strRoot += "\\";
-
+					
 		hParent = AddItem(TVI_ROOT, pimpl_->pTreeData.m_strRoot.c_str() );
+
 		Tree_DisplayFolder(hParent, strRoot );
 	}
-
 
 	TreeView_SetScrollTime(m_hWnd, 100);
 

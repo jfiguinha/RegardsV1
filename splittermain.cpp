@@ -53,7 +53,7 @@ ULONG __stdcall ShowIntro(LPVOID parametre)
 /////////////////////////////////////////////////////////////////////////////////////////
 ULONG __stdcall VerifNewVersion(LPVOID parametre)
 {
-	CoInitialize(NULL);
+	//CoInitialize(NULL);
 	CIEFunction * m_cIEFunction = new CIEFunction();
 
 	char m_Version[255];
@@ -76,7 +76,7 @@ ULONG __stdcall VerifNewVersion(LPVOID parametre)
 		}
 	}
 	delete m_cIEFunction;
-	::CoUninitialize();
+	//::CoUninitialize();
 	return 0;
 
 }
@@ -188,10 +188,6 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmdLine, int nShowC
 	CWndIntro * m_cWndIntro = new CWndIntro();
 	hInstance = hInst;
 
-    // Initialize COM library
-    OleInitialize(NULL);
-
-
 	// Initialize COM
 	HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
 
@@ -296,7 +292,7 @@ FIN:
 	TerminateThread(hThread,0);
 	delete m_cWndIntro;
 
-	OleUninitialize();
+	//OleUninitialize();
 
 	CVideo::Cleanup();
 
