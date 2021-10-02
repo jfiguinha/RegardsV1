@@ -7,7 +7,7 @@
 //
 // Generated from the TEXTINCLUDE 2 resource.
 //
-#include<windows.h>
+#include "windows.h"
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS
 
@@ -1218,6 +1218,490 @@ BEGIN
 END
 
 #endif    // Neutre resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Anglais resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_FIRSTCOLUMN         "Name"
+    IDS_SECONDCOLUMN        "Site"
+    IDS_THIRDCOLUMN         "Date"
+    IDS_4COLUMN             "Size"
+    IDS_5COLUMN2            "Directory"
+    IDS_APP_TITLE1          "Regards"
+    IDS_CDRDAO              "external\\cdrdao.exe"
+    IDS_CDRECORD            "external\\cdrecord.exe"
+    IDS_MKISOFS             "external\\mkisofs.exe"
+    IDS_STGERASECD          "Do you want to erase your CD ?"
+    IDS_STGCHGCD            "No enough space available in this CD. Do you want to change your CD ?"
+    IDS_STGCONTINUE         "Our CD is not compatible.\nDo you want to go next ?"
+    IDS_STGPBGRAVE          "Some files cannot be burned.\nDo you want continue ?"
+    IDS_STGISOCREATION      "ISO File  in creation ..."
+    IDS_STGENDTHE           "Creation finished the : "
+END
+
+STRINGTABLE
+BEGIN
+    IDC_AFFICHAGEBITMAP     "View Bitmap"
+    IDC_TRTBITMAP           "Processing Picture"
+    IDS_TITLE_TRTBITMAP     "Processing Picture module"
+    IDS_ICONELARGE          "Large Icon"
+    IDS_ICONEPETITE         "Small Icon"
+    IDS_ICONELIST           "Icon List"
+    IDS_ICONEDETAIL         "Details"
+    IDS_ICONEMINI           "Thumbnail"
+    IDS_REPERTOIRESUP       "Directory Up"
+    IDS_AFFICHAGEIMAGE      "View Picture"
+    IDS_TRAITEMENTIMAGE     "Picture processing"
+    IDS_IMGSUIVANTE         "Next Picture"
+    IDS_IMGPRECEDENTE       "Forward Picture"
+    IDS_IMGPREMIER          "First Picture"
+    IDS_IMGDERNIER          "Last Picture"
+    IDS_REVERT              "Refresh Picture"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_PLEINECRAN          "FullScreen"
+    IDS_ROTATE90CW          "Rotate to 90°"
+    IDS_ROTATE90CCW         "Rotate to 270°"
+    IDS_FLIPVERT            "Flip Vertical"
+    IDS_FLIPHORZ            "Flip Horizontal"
+    IDS_AFFICHAGEDOSSIER    "Directory view"
+    IDS_AFFICHAGERECHERCHE  "Search view"
+    IDS_WIZARD              "Wizard mode"
+    IDS_TITREWIZARD         "Welcome"
+    IDS_LIBELLEWIZARD       "This mode can create, modify"
+    IDS_MENUGESTIONALBUM    "Album manager menu"
+    IDS_ASSOCIATION         "Association successful !"
+    IDS_INFOS               "Information"
+    IDS_ZIPAJOUT            "Add a file"
+    IDS_ZIPSUP              "Delete a file"
+    IDS_ZIPEXTRAIRE         "Extract file(s)"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_ZIPVOIR             "View this file"
+    IDS_ZIPSELECTALL        "Select all"
+    IDS_ALBUMNAME           "You must give a name to your album"
+    IDS_SUPPALBUM           "Are you sure to delete this album ?"
+    IDS_ALBUMEXISTANT       "Album name already exist"
+    IDS_ALBUMCRITERE        "You must create at least a criteria !"
+    IDS_ALBUMIMAGECRITERE   "No picture found"
+    IDS_SUPPIMAGE           "Do you want to delete this %d files from this album ?"
+    IDS_SUPPFILE            "Do you want to delete this %d files ?"
+    IDS_ERRORIMPRIMANTE     "Impossible to print in this printer !"
+    IDS_ERRORFICHIER        "You must select a file !"
+    IDS_ERREUR              "Error"
+    IDS_ERRORVIDEO          "Video File not readable"
+    IDS_MODIFREDEMARRAGE    "You must restart to apply modification !"
+    IDS_HELPFILENAME        "help.pdf"
+    IDS_SUPPONEFILE         "Do you want delete this file ?"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_MENUPHOTONUMERIQUE  "Manage digital camera"
+    IDS_RENSFORM            "You must complete correctly this form !"
+    IDS_VERSION             "Regards Version 1.5.2.0 SSE - MMX"
+    IDS_AUTEUR              "Figuinha Jacques"
+    IDS_COPYRIGHT           "Copyright (C) 2002 - 2008"
+    IDS_CANCEL              "Cancel"
+    IDS_ZIPFILE             "Zip File"
+    IDS_COMPRESSSIZE        "Compression Size"
+    IDS_MODIFYTHE           "Modification date"
+    IDS_PATH                "Directory"
+    IDS_FILE                "File"
+    IDS_CATEGORYVALEUR      "Value"
+    IDS_CATEGORYNUMERO      "Number"
+    IDS_CATEGORYATTRIBUT    "Criteria"
+    IDS_ATTRIBUTPICTUREREP  "Directory Picture criteria"
+    IDS_NEWCRITERE          "Put a value"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_CATEGORYLIBELLE     "Name"
+    IDS_HANDTOOLS           "Move Picture"
+    IDS_CROPTOOLS           "Cut picture"
+    IDS_ZOOMTOOLS           "Zoom in Picture"
+    IDS_CDRWARNING          "Burning is support only in Windows XP !"
+    IDS_GRAVUREMENU         "CD Creation processing ..."
+    IDS_GRAVUREINIT         "Welcome to the Burning Wizard."
+    IDS_SELECTIONALBUM      "Burner Selection ..."
+    IDS_DRIVENOTAVAILABLE   "Drive not available !"
+    IDS_PICTUREFORMAT       ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.ppm;.crw;.pgm;.nef;.raf;.orf;.mrw;.dcr;.mos;.pef;.srf;.dng;.x3f;.cr2;.erf;.sr2;.kdc;.mfw;.mef;.arw;"
+    IDS_IMPNONDISPO         "Printer not available !"
+    IDS_SUPPCATALOGUE       "Are you sure to delete this catalogue ?"
+    IDS_FICHIERNONTROUVE    "No file find !"
+    IDS_UPDATECATALOGUE     "Do you want to update this catalogue ?"
+    IDS_COMPACTCATALOGUE    "Do you want to compact the database of catalogues ?"
+    IDS_CATALOGUENAME       "Catalogue Name"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_CRITERELIST         "Criteria List"
+    IDS_CRITERECATALOGUE    "File name;Date;Size;Hash file;Width and Height;Format;"
+    IDS_CRITEREPRESENT      "Criteria already exist !"
+    IDS_CRITEREERREUR       "You must verify the search criteria !"
+    IDS_WINDOWCATCREATE     "File Creation"
+    IDS_ENTETEHTMLCATALGOUE "<html>\n\n<head>\n<meta http-equiv=""Content-Language"" content=""fr"">\n<meta name=""GENERATOR"" content=""Microsoft FrontPage 5.0"">\n<meta name=""ProgId"" content=""FrontPage.Editor.Document"">\n<meta http-equiv=""Content-Type"" content=""text/html; charset=windows-1252"">\n<title>Rapport sur les résultats de recherche</title>\n</head>\n\n<style>\nbody\n{\n\tfont-family: Verdana, Arial, Helvetica;\n\tfont-size: 10pt;\n\tbackground-color: rgb(255,255,255);\n\tcolor: rgb(0,0,0);\n}\n</style>\n\n<body>\n\n<p style=""text-align: center""><b>Rapport sur les résultats de recherche :</b></p>\n<p><b>Liste des fichiers trouvés :</b></p>"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STGINITBURNING      "Burning initialisation ..."
+    IDS_STGBURNBEGIN        "Burning start in %d seconds."
+    IDS_STGENDBURN          "End burning ..."
+    IDS_STGBURNON           "Burning ..."
+    IDS_STGSECONDES         "%d seconds"
+    IDS_STGOPENRAWFILE      "Raw file opening"
+    IDS_STGORGCOLOR         "Color organisation"
+    IDS_STGVNGINTERPOL      "VNG interpolation"
+    IDS_STGCONVERTRGB       "Convert in RGB"
+    IDS_STGBITMAPCREATION   "Bitmap File in creation"
+    IDS_STGIMPORTIMAGE      "Picture importation ..."
+    IDS_STGSUPFILE          "Do you want to delete all this files ?"
+    IDS_STGSELECTBURNER     "Select a burner to erase this CD."
+    IDS_STGSELBURN          "Select a burner :"
+    IDS_STGCDNORW           "CD not writable"
+    IDS_STGHEADINFOFILE     "<html><head><title>File information</title></head><body><table border=""0"" cellpadding=""2"" bordercolor=""#111111"" width=""100%"">"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STGAFFINFOFILE      "<tr><td width=""150""><font face=""Verdana"" size=""2"">%s</font></td><td><font face=""Verdana"" size=""2"">%s</font></td></tr>"
+    IDS_STGNOMFICHIER       "File Name :"
+    IDS_STGDATECREATION     "Create Date :"
+    IDS_STGDATEMODIFICATION "Modification Date :"
+    IDS_STGFORMATIMAGE      "Picture format :"
+    IDS_STGLARGEUR          "Width :"
+    IDS_STGHAUTEUR          "Height :"
+    IDS_STGTAILLE           "Size :"
+    IDS_STGKEYWORD          "Key Word :"
+    IDS_STGFORMINFOFILE     "<form method=""get"" name=""formulaire""><button id=""idRecherche"" value=""Rechercher"" name=""recherche"">Key Word</button></form>"
+    IDS_STGTABLEINFOFILE    "<table border=""1"" cellpadding=""0"" bordercolor=""#111111"" width=""100%""><tr><td width=""50%"" bgcolor=""#EBEBEB""><font face=""Verdana"" size=""2"">Name :</font></td><td width=""50%"" bgcolor=""#EBEBEB""><font face=""Verdana"" size=""2"">Value :</font></td></tr>"
+    IDS_STGAFFKEYWORD       "<tr><td width=""50%""><font face=""Verdana"" size=""2"">%s</font></td><td width=""50%""><font face=""Verdana"" size=""2"">%s</font></td></tr>"
+    IDS_STGENDINFOFILE      "</table></body></html>"
+    IDS_STGMEMORYERROR      "Memory allocation error"
+    IDS_STGINITENCOURS      "Loading Regards ..."
+    IDS_STGCREATIONFENETRE  "Window in creation"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STGCREATIONMENU     "Menu in creation"
+    IDS_SGINITPARAM         "Parameter Initialisation"
+    IDS_STGTOTALFICHIER     "Total %d Files"
+    IDS_STGTOTALFICHIERFREE "Total %d files (%.2f Mo)"
+    IDS_STGINFOSDOWNLOAD    "A new version is available.\nDo you want download it ?"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STGIMPORTPICTURE    ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.mpg;.avi;.mp2;.divx;.mpeg;.mv2;.mpv;.3ds;.ppm;.crw;.pgm;.md2;.nef;.raf;.orf;.mrw;.dcr;.mos;.pef;.srf;.dng;.x3f;.cr2;.erf;.sr2;.kdc;.mfw;.mef;.arw;.psd;.wmv;.wav;"
+    IDS_STGRAWFILE          ".nef;.raf;.orf;.mrw;.dcr;.mos;.pef;.srf;.dng;.x3f;.cr2;.erf;.sr2;.kdc;.mfw;.mef;.arw;.crw;"
+    IDS_PICTUREFORMATWITHOUTRAW 
+                            ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.ppm;.pgm;"
+    IDS_PICTUREFORMATMULTIWITHOUTRAW 
+                            ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.mpg;.avi;.mp2;.divx;.mpeg;.mv2;.mpv;.3ds;.ppm;.pgm;.md2;.wav;"
+    IDS_COMPACTDATAREADY    "Compactage de la base de donnée effectuée !"
+    IDS_ADRESSEWEBVERSION   "http://jacques.figuinha.free.fr/regards/zip/version.txt"
+    IDS_ADRESSEWEB          "http://www.figuinha.com/regards/english/"
+    IDS_REGARDSVERSION      "1.5.2.0"
+    IDS_VALEURNONVALIDE     "Value not valid"
+    IDS_DOSSIER             "Directory"
+    IDS_PREVIEW             "Preview :"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SAVEPICTURE         "Do you want to save the modification ?"
+    IDS_VIDEOFORMAT         ".avi;.mpg;.wmv;.divx;"
+    IDS_MESSAGEDISKGO       "Drive %s has %.2f Go of free space"
+    IDS_MESSAGEDISKMO       "Drive %s has %.2f Mo of free space"
+    IDS_MSGERRORWIENER      "Picture not compatible with the Wiener filter  !"
+    IDS_MSGWIENERNBFLOT     "You must enter a float number between 0 and 1 !"
+    IDS_MSGREDIMSPACE       "Veuillez insérer une valeur supérieur à 0"
+    IDS_OU                  "OR"
+    IDS_ET                  "AND"
+    IDS_RUNSEARCHMSG1       "Data Source Insertion"
+    IDS_RUNSEARCHMSG2       "Data comparison"
+    IDS_RUNSEARCHMSG3       "HTML File generation"
+    IDS_RUNSEARCHMSG4       "Catalog loading"
+    IDS_RUNSEARCHMSG5       "Catalog processing"
+    IDS_SADEARMSG1          "Folder acquisition"
+    IDS_SADEARMSG2          "Files acquisition"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_INSERTALBUMMSG1     "Insert picture into the album"
+    IDS_INSERTALBUMMSG2     "Select all picture"
+    IDS_INSERTALBUMMSG3     "Import select picture"
+    IDS_INSERTALBUMMSG4     "Criteria Updating"
+    IDS_SELECTDIR           "Select a folder"
+    IDS_MINIATURELIST       "Thumbnail list"
+    IDS_MODTRAITEMENT       "Processing Picture module"
+END
+
+#endif    // Anglais resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Espagnol resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ESN)
+LANGUAGE LANG_SPANISH, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_FIRSTCOLUMN         "Apellido"
+    IDS_SECONDCOLUMN        "Tamaño"
+    IDS_THIRDCOLUMN         "Fetcha"
+    IDS_4COLUMN             "Dimension"
+    IDS_5COLUMN2            "Directorio"
+    IDS_APP_TITLE1          "Regards"
+    IDS_CDRDAO              "external\\cdrdao.exe"
+    IDS_CDRECORD            "external\\cdrecord.exe"
+    IDS_MKISOFS             "external\\mkisofs.exe"
+    IDS_STGERASECD          "Quiere usted borrar su CD ?"
+    IDS_STGCHGCD            "No hay bastante espacio en el CD. Usted Quiere cambiar de CD ?"
+    IDS_STGCONTINUE         "Su CD no es compatible\nUsted quiere seguir ?"
+    IDS_STGPBGRAVE          "Algunos archivos no se pueden grabar.\nUsted quiere seguir ?"
+    IDS_STGISOCREATION      "Créacion del archivo ISO ... "
+    IDS_STGENDTHE           "Créacion acabado el : "
+END
+
+STRINGTABLE
+BEGIN
+    IDC_AFFICHAGEBITMAP     "Visualizacion del Bitmap"
+    IDC_TRTBITMAP           "Tratamiento del imagen"
+    IDS_TITLE_TRTBITMAP     "Modulo de tratamiento de imagen"
+    IDS_ICONELARGE          "Icono Larga"
+    IDS_ICONEPETITE         "Icono Pequena"
+    IDS_ICONELIST           "Lista de icono"
+    IDS_ICONEDETAIL         "Detalles"
+    IDS_ICONEMINI           "Miniatura"
+    IDS_REPERTOIRESUP       "Directorio Superior"
+    IDS_AFFICHAGEIMAGE      "Visualizacion del Imagen"
+    IDS_TRAITEMENTIMAGE     "Tratamiento del imagen"
+    IDS_IMGSUIVANTE         "Imagen Siguante"
+    IDS_IMGPRECEDENTE       "Imagen Precedente"
+    IDS_IMGPREMIER          "Primera Imagen"
+    IDS_IMGDERNIER          "Ultima Imagen"
+    IDS_REVERT              "Recargar la imagen"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_PLEINECRAN          "Imagen sobre la pantalla"
+    IDS_ROTATE90CW          "Rotacion a 90°"
+    IDS_ROTATE90CCW         "Rotacion a 270°"
+    IDS_FLIPVERT            "Flip Vertical"
+    IDS_FLIPHORZ            "Flip Horizontal"
+    IDS_AFFICHAGEDOSSIER    "Visualizacion de la vista directorio"
+    IDS_AFFICHAGERECHERCHE  "Visualizacion de la vista Buscar"
+    IDS_WIZARD              "Visualizacion de la vista Wizard"
+    IDS_TITREWIZARD         "Bienvenido"
+    IDS_LIBELLEWIZARD       "Este modo permite de creer, de modificar"
+    IDS_MENUGESTIONALBUM    "Menu de administracion de los albumes"
+    IDS_ASSOCIATION         "Asociacion efectuada con succés !"
+    IDS_INFOS               "Informationes"
+    IDS_ZIPAJOUT            "Añadir un nuevo archivo"
+    IDS_ZIPSUP              "Suprimir el archivo"
+    IDS_ZIPEXTRAIRE         "Extraer los archivos"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_ZIPVOIR             "Ver el archivo"
+    IDS_ZIPSELECTALL        "Selectionar todo"
+    IDS_ALBUMNAME           "Usted tiene que dar un nombre a su album"
+    IDS_SUPPALBUM           "Usted esta seguro de suprimir este album ?"
+    IDS_ALBUMEXISTANT       "El nombre de este album ya existe"
+    IDS_ALBUMCRITERE        "Usted tiene que informar al menos un criteria !"
+    IDS_ALBUMIMAGECRITERE   "Ninguna imagen corresponde a sus criterias"
+    IDS_SUPPIMAGE           "Usted esta seguro de suprimir los %d archivos de este album ?"
+    IDS_SUPPFILE            "Usted esta seguro de suprimir los %d archivos ?"
+    IDS_ERRORIMPRIMANTE     "Imposible de imprimir en el periferico !"
+    IDS_ERRORFICHIER        "Usted tiene que elejir un archivo !"
+    IDS_ERREUR              "Error"
+    IDS_ERRORVIDEO          "Imposible de leer el archivo video"
+    IDS_MODIFREDEMARRAGE    "¡Modificación necesita de salir y de volver en Regards !"
+    IDS_HELPFILENAME        "ayuda.pdf"
+    IDS_SUPPONEFILE         "Usted esta seguro de suprimir este archivo ?"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_MENUPHOTONUMERIQUE  "Gestion de las cameras digitales"
+    IDS_RENSFORM            "Usted tiene que informar correctamente el formulario !"
+    IDS_VERSION             "Regards Version 1.5.2.0 SSE - MMX"
+    IDS_AUTEUR              "Figuinha Jacques"
+    IDS_COPYRIGHT           "Copyright (C) 2002 - 2008"
+    IDS_CANCEL              "Cancelar"
+    IDS_ZIPFILE             "Archivo Zip"
+    IDS_COMPRESSSIZE        "Tamano de compresion"
+    IDS_MODIFYTHE           "Modificado el"
+    IDS_PATH                "Directorio"
+    IDS_FILE                "Archivo"
+    IDS_CATEGORYVALEUR      "Valor"
+    IDS_CATEGORYNUMERO      "Codigo"
+    IDS_CATEGORYATTRIBUT    "Attribut"
+    IDS_ATTRIBUTPICTUREREP  "Criterias de las imagenes del directorio"
+    IDS_NEWCRITERE          "Entrar una valor"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_CATEGORYLIBELLE     "Apelido"
+    IDS_HANDTOOLS           "Mover la imagen"
+    IDS_CROPTOOLS           "Cortar la imagen"
+    IDS_ZOOMTOOLS           "Zumbido sobre la imagen"
+    IDS_CDRWARNING          "Grabacion unicamente para windows XP !"
+    IDS_GRAVUREMENU         "Creacion del CD-R en curso ..."
+    IDS_GRAVUREINIT         "Bienvenido en el ayudante de grabacion de Regards."
+    IDS_SELECTIONALBUM      "Seleccion en curso ..."
+    IDS_DRIVENOTAVAILABLE   "El lector no esta disponible !"
+    IDS_PICTUREFORMAT       ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.ppm;.crw;.pgm;.nef;.raf;.orf;.mrw;.dcr;.mos;.pef;.srf;.dng;.x3f;.cr2;.erf;.sr2;.kdc;.mfw;.mef;.arw;"
+    IDS_IMPNONDISPO         "Imprimante non disponible !"
+    IDS_SUPPCATALOGUE       "Esta seguro de desear suprimir este catalogo ?"
+    IDS_FICHIERNONTROUVE    "¡Ningún fichero corresponde a su investigación!"
+    IDS_UPDATECATALOGUE     "¿Desea usted poner al día este catálogo?"
+    IDS_COMPACTCATALOGUE    "¿Desea usted condensar la base de los catálogos?"
+    IDS_CATALOGUENAME       "Nombre del Catalogo"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_CRITERELIST         "Lista de los criterios"
+    IDS_CRITERECATALOGUE    "Nombre del archivo;Fetcha;Tamano;Firma del archivo;altura y anchura;Format;"
+    IDS_CRITEREPRESENT      "Criteria ya existe !"
+    IDS_CRITEREERREUR       "Tiene que comprobar los datos !"
+    IDS_WINDOWCATCREATE     "Recuperacion de los archivos"
+    IDS_ENTETEHTMLCATALGOUE "<html>\n\n<head>\n<meta http-equiv=""Content-Language"" content=""fr"">\n<meta name=""GENERATOR"" content=""Microsoft FrontPage 5.0"">\n<meta name=""ProgId"" content=""FrontPage.Editor.Document"">\n<meta http-equiv=""Content-Type"" content=""text/html; charset=windows-1252"">\n<title>Rapport sur les résultats de recherche</title>\n</head>\n\n<style>\nbody\n{\n\tfont-family: Verdana, Arial, Helvetica;\n\tfont-size: 10pt;\n\tbackground-color: rgb(255,255,255);\n\tcolor: rgb(0,0,0);\n}\n</style>\n\n<body>\n\n<p style=""text-align: center""><b>Rapport sur les résultats de recherche :</b></p>\n<p><b>Liste des fichiers trouvés :</b></p>"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STGINITBURNING      "Inicialisacion del grabadore ..."
+    IDS_STGBURNBEGIN        "Inicio de la grabado desde %d secundos."
+    IDS_STGENDBURN          "Acabado de la grabado ..."
+    IDS_STGBURNON           "Grabado en curso ..."
+    IDS_STGSECONDES         "%d secundos"
+    IDS_STGOPENRAWFILE      "Obiertura del archivo Raw"
+    IDS_STGORGCOLOR         "Organisacion de los colores"
+    IDS_STGVNGINTERPOL      "VNG interpolation"
+    IDS_STGCONVERTRGB       "Convercion en RGB"
+    IDS_STGBITMAPCREATION   "Creacion del Bitmap"
+    IDS_STGIMPORTIMAGE      "Importacion de los imagenes ..."
+    IDS_STGSUPFILE          "Usted quiere suprimier todos los archivos ?"
+    IDS_STGSELECTBURNER     "Selección de un grabador para borrar el CD."
+    IDS_STGSELBURN          "Séleccion de un grabador :"
+    IDS_STGCDNORW           "CD no sobre-escribe"
+    IDS_STGHEADINFOFILE     "<html><head><title>Informaciones sobre el archivo</title></head><body><table border=""0"" cellpadding=""2"" bordercolor=""#111111"" width=""100%"">"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STGAFFINFOFILE      "<tr><td width=""150""><font face=""Verdana"" size=""2"">%s</font></td><td><font face=""Verdana"" size=""2"">%s</font></td></tr>"
+    IDS_STGNOMFICHIER       "Nombre del archivo"
+    IDS_STGDATECREATION     "Fetcha del créacion :"
+    IDS_STGDATEMODIFICATION "Fetcha de modificacion :"
+    IDS_STGFORMATIMAGE      "Formato del imagen :"
+    IDS_STGLARGEUR          "Anchura :"
+    IDS_STGHAUTEUR          "Altura :"
+    IDS_STGTAILLE           "Tamano :"
+    IDS_STGKEYWORD          "Palabras clave :"
+    IDS_STGFORMINFOFILE     "<form method=""get"" name=""formulaire""><button id=""idRecherche"" value=""Rechercher"" name=""recherche"">Palabra clave</button></form>"
+    IDS_STGTABLEINFOFILE    "<table border=""1"" cellpadding=""0"" bordercolor=""#111111"" width=""100%""><tr><td width=""50%"" bgcolor=""#EBEBEB""><font face=""Verdana"" size=""2"">Nombre del campo :</font></td><td width=""50%"" bgcolor=""#EBEBEB""><font face=""Verdana"" size=""2"">Valor del campo :</font></td></tr>"
+    IDS_STGAFFKEYWORD       "<tr><td width=""50%""><font face=""Verdana"" size=""2"">%s</font></td><td width=""50%""><font face=""Verdana"" size=""2"">%s</font></td></tr>"
+    IDS_STGENDINFOFILE      "</table></body></html>"
+    IDS_STGMEMORYERROR      "Error del alocacion de la memoria"
+    IDS_STGINITENCOURS      "Initialisacion en curso"
+    IDS_STGCREATIONFENETRE  "Creacion de las ventanas"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STGCREATIONMENU     "Creacion de los menus"
+    IDS_SGINITPARAM         "Initialisacion de los parametros"
+    IDS_STGTOTALFICHIER     "Total %d archivos"
+    IDS_STGTOTALFICHIERFREE "Total %d archivos (%.2f Mo)"
+    IDS_STGINFOSDOWNLOAD    "Una nueva version esta disponible.\n Quiere usted descargar-la ?"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_STGIMPORTPICTURE    ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.mpg;.avi;.mp2;.divx;.mpeg;.mv2;.mpv;.3ds;.ppm;.crw;.pgm;.md2;.nef;.raf;.orf;.mrw;.dcr;.mos;.pef;.srf;.dng;.x3f;.cr2;.erf;.sr2;.kdc;.mfw;.mef;.arw;.psd;.wmv;.wav;"
+    IDS_STGRAWFILE          ".nef;.raf;.orf;.mrw;.dcr;.mos;.pef;.srf;.dng;.x3f;.cr2;.erf;.sr2;.kdc;.mfw;.mef;.arw;.crw;"
+    IDS_PICTUREFORMATWITHOUTRAW 
+                            ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.ppm;.pgm;"
+    IDS_PICTUREFORMATMULTIWITHOUTRAW 
+                            ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.mpg;.avi;.mp2;.divx;.mpeg;.mv2;.mpv;.3ds;.ppm;.pgm;.md2;.psd;.wmv;.wav;"
+    IDS_COMPACTDATAREADY    "¡Apisonamiento de la base de datos efectuados!"
+    IDS_ADRESSEWEBVERSION   "http://jacques.figuinha.free.fr/regards/zip/version.txt"
+    IDS_ADRESSEWEB          "http://www.figuinha.com/regards/espanol/"
+    IDS_REGARDSVERSION      "1.5.2.0"
+    IDS_VALEURNONVALIDE     "Valor no posible"
+    IDS_DOSSIER             "Directorio"
+    IDS_PREVIEW             "Previsualisacion :"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SAVEPICTURE         "Quiere salvar las modificaciones ?"
+    IDS_VIDEOFORMAT         ".avi;.mpg;.wmv;.divx;"
+    IDS_MESSAGEDISKGO       "El lector %s tiene %.2f Go de espacio libre"
+    IDS_MESSAGEDISKMO       "El lector %s tiene %.2f Mo de espacio libre"
+    IDS_MSGERRORWIENER      "El imagen no esta compatible con el filtro de Wiener  !"
+    IDS_MSGWIENERNBFLOT     "Usted tiene que entrar un número entre 0 et 1 !"
+    IDS_MSGREDIMSPACE       "Veuillez insérer une valeur supérieur à 0"
+    IDS_OU                  "O"
+    IDS_ET                  "Y"
+    IDS_RUNSEARCHMSG1       "Insercion de los datos"
+    IDS_RUNSEARCHMSG2       "Comparacion de los datos"
+    IDS_RUNSEARCHMSG3       "Generacion del archivo HTML"
+    IDS_RUNSEARCHMSG4       "Cargamento del catalogo"
+    IDS_RUNSEARCHMSG5       "Tratamiento del catálogo"
+    IDS_SADEARMSG1          "Adquisición de los directorios"
+    IDS_SADEARMSG2          "Adquisición de los archivos"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_INSERTALBUMMSG1     "Inserción de las imágenes en el álbum"
+    IDS_INSERTALBUMMSG2     "Selección de todas las imágenes"
+    IDS_INSERTALBUMMSG3     "Importación de las imágenes seleccionadas"
+    IDS_INSERTALBUMMSG4     "Actualizaciones de los atributos para las imágenes"
+    IDS_SELECTDIR           "Seleccionar un directorio"
+    IDS_MINIATURELIST       "Listo de las Miniaturas"
+    IDS_MODTRAITEMENT       "Módulo de Tratamiento del imagen"
+END
+
+#endif    // Espagnol resources
 /////////////////////////////////////////////////////////////////////////////
 
 
@@ -7042,490 +7526,6 @@ IDR_HTML_EXIF_ES        HTML                    "res\\html\\es\\htmlexif2.htm"
 #endif
 #endif
 #endif    // Espagnol (International) resources
-/////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////
-// Anglais (Afrique du Sud) resources
-
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENS)
-LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_SOUTH_AFRICA
-#pragma code_page(1252)
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// String Table
-//
-
-STRINGTABLE
-BEGIN
-    IDS_FIRSTCOLUMN         "Name"
-    IDS_SECONDCOLUMN        "Site"
-    IDS_THIRDCOLUMN         "Date"
-    IDS_4COLUMN             "Size"
-    IDS_5COLUMN2            "Directory"
-    IDS_APP_TITLE1          "Regards"
-    IDS_CDRDAO              "external\\cdrdao.exe"
-    IDS_CDRECORD            "external\\cdrecord.exe"
-    IDS_MKISOFS             "external\\mkisofs.exe"
-    IDS_STGERASECD          "Do you want to erase your CD ?"
-    IDS_STGCHGCD            "No enough space available in this CD. Do you want to change your CD ?"
-    IDS_STGCONTINUE         "Our CD is not compatible.\nDo you want to go next ?"
-    IDS_STGPBGRAVE          "Some files cannot be burned.\nDo you want continue ?"
-    IDS_STGISOCREATION      "ISO File  in creation ..."
-    IDS_STGENDTHE           "Creation finished the : "
-END
-
-STRINGTABLE
-BEGIN
-    IDC_AFFICHAGEBITMAP     "View Bitmap"
-    IDC_TRTBITMAP           "Processing Picture"
-    IDS_TITLE_TRTBITMAP     "Processing Picture module"
-    IDS_ICONELARGE          "Large Icon"
-    IDS_ICONEPETITE         "Small Icon"
-    IDS_ICONELIST           "Icon List"
-    IDS_ICONEDETAIL         "Details"
-    IDS_ICONEMINI           "Thumbnail"
-    IDS_REPERTOIRESUP       "Directory Up"
-    IDS_AFFICHAGEIMAGE      "View Picture"
-    IDS_TRAITEMENTIMAGE     "Picture processing"
-    IDS_IMGSUIVANTE         "Next Picture"
-    IDS_IMGPRECEDENTE       "Forward Picture"
-    IDS_IMGPREMIER          "First Picture"
-    IDS_IMGDERNIER          "Last Picture"
-    IDS_REVERT              "Refresh Picture"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_PLEINECRAN          "FullScreen"
-    IDS_ROTATE90CW          "Rotate to 90°"
-    IDS_ROTATE90CCW         "Rotate to 270°"
-    IDS_FLIPVERT            "Flip Vertical"
-    IDS_FLIPHORZ            "Flip Horizontal"
-    IDS_AFFICHAGEDOSSIER    "Directory view"
-    IDS_AFFICHAGERECHERCHE  "Search view"
-    IDS_WIZARD              "Wizard mode"
-    IDS_TITREWIZARD         "Welcome"
-    IDS_LIBELLEWIZARD       "This mode can create, modify"
-    IDS_MENUGESTIONALBUM    "Album manager menu"
-    IDS_ASSOCIATION         "Association successful !"
-    IDS_INFOS               "Information"
-    IDS_ZIPAJOUT            "Add a file"
-    IDS_ZIPSUP              "Delete a file"
-    IDS_ZIPEXTRAIRE         "Extract file(s)"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_ZIPVOIR             "View this file"
-    IDS_ZIPSELECTALL        "Select all"
-    IDS_ALBUMNAME           "You must give a name to your album"
-    IDS_SUPPALBUM           "Are you sure to delete this album ?"
-    IDS_ALBUMEXISTANT       "Album name already exist"
-    IDS_ALBUMCRITERE        "You must create at least a criteria !"
-    IDS_ALBUMIMAGECRITERE   "No picture found"
-    IDS_SUPPIMAGE           "Do you want to delete this %d files from this album ?"
-    IDS_SUPPFILE            "Do you want to delete this %d files ?"
-    IDS_ERRORIMPRIMANTE     "Impossible to print in this printer !"
-    IDS_ERRORFICHIER        "You must select a file !"
-    IDS_ERREUR              "Error"
-    IDS_ERRORVIDEO          "Video File not readable"
-    IDS_MODIFREDEMARRAGE    "You must restart to apply modification !"
-    IDS_HELPFILENAME        "help.pdf"
-    IDS_SUPPONEFILE         "Do you want delete this file ?"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_MENUPHOTONUMERIQUE  "Manage digital camera"
-    IDS_RENSFORM            "You must complete correctly this form !"
-    IDS_VERSION             "Regards Version 1.5.2.0 SSE - MMX"
-    IDS_AUTEUR              "Figuinha Jacques"
-    IDS_COPYRIGHT           "Copyright (C) 2002 - 2008"
-    IDS_CANCEL              "Cancel"
-    IDS_ZIPFILE             "Zip File"
-    IDS_COMPRESSSIZE        "Compression Size"
-    IDS_MODIFYTHE           "Modification date"
-    IDS_PATH                "Directory"
-    IDS_FILE                "File"
-    IDS_CATEGORYVALEUR      "Value"
-    IDS_CATEGORYNUMERO      "Number"
-    IDS_CATEGORYATTRIBUT    "Criteria"
-    IDS_ATTRIBUTPICTUREREP  "Directory Picture criteria"
-    IDS_NEWCRITERE          "Put a value"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_CATEGORYLIBELLE     "Name"
-    IDS_HANDTOOLS           "Move Picture"
-    IDS_CROPTOOLS           "Cut picture"
-    IDS_ZOOMTOOLS           "Zoom in Picture"
-    IDS_CDRWARNING          "Burning is support only in Windows XP !"
-    IDS_GRAVUREMENU         "CD Creation processing ..."
-    IDS_GRAVUREINIT         "Welcome to the Burning Wizard."
-    IDS_SELECTIONALBUM      "Burner Selection ..."
-    IDS_DRIVENOTAVAILABLE   "Drive not available !"
-    IDS_PICTUREFORMAT       ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.ppm;.crw;.pgm;.nef;.raf;.orf;.mrw;.dcr;.mos;.pef;.srf;.dng;.x3f;.cr2;.erf;.sr2;.kdc;.mfw;.mef;.arw;"
-    IDS_IMPNONDISPO         "Printer not available !"
-    IDS_SUPPCATALOGUE       "Are you sure to delete this catalogue ?"
-    IDS_FICHIERNONTROUVE    "No file find !"
-    IDS_UPDATECATALOGUE     "Do you want to update this catalogue ?"
-    IDS_COMPACTCATALOGUE    "Do you want to compact the database of catalogues ?"
-    IDS_CATALOGUENAME       "Catalogue Name"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_CRITERELIST         "Criteria List"
-    IDS_CRITERECATALOGUE    "File name;Date;Size;Hash file;Width and Height;Format;"
-    IDS_CRITEREPRESENT      "Criteria already exist !"
-    IDS_CRITEREERREUR       "You must verify the search criteria !"
-    IDS_WINDOWCATCREATE     "File Creation"
-    IDS_ENTETEHTMLCATALGOUE "<html>\n\n<head>\n<meta http-equiv=""Content-Language"" content=""fr"">\n<meta name=""GENERATOR"" content=""Microsoft FrontPage 5.0"">\n<meta name=""ProgId"" content=""FrontPage.Editor.Document"">\n<meta http-equiv=""Content-Type"" content=""text/html; charset=windows-1252"">\n<title>Rapport sur les résultats de recherche</title>\n</head>\n\n<style>\nbody\n{\n\tfont-family: Verdana, Arial, Helvetica;\n\tfont-size: 10pt;\n\tbackground-color: rgb(255,255,255);\n\tcolor: rgb(0,0,0);\n}\n</style>\n\n<body>\n\n<p style=""text-align: center""><b>Rapport sur les résultats de recherche :</b></p>\n<p><b>Liste des fichiers trouvés :</b></p>"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_STGINITBURNING      "Burning initialisation ..."
-    IDS_STGBURNBEGIN        "Burning start in %d seconds."
-    IDS_STGENDBURN          "End burning ..."
-    IDS_STGBURNON           "Burning ..."
-    IDS_STGSECONDES         "%d seconds"
-    IDS_STGOPENRAWFILE      "Raw file opening"
-    IDS_STGORGCOLOR         "Color organisation"
-    IDS_STGVNGINTERPOL      "VNG interpolation"
-    IDS_STGCONVERTRGB       "Convert in RGB"
-    IDS_STGBITMAPCREATION   "Bitmap File in creation"
-    IDS_STGIMPORTIMAGE      "Picture importation ..."
-    IDS_STGSUPFILE          "Do you want to delete all this files ?"
-    IDS_STGSELECTBURNER     "Select a burner to erase this CD."
-    IDS_STGSELBURN          "Select a burner :"
-    IDS_STGCDNORW           "CD not writable"
-    IDS_STGHEADINFOFILE     "<html><head><title>File information</title></head><body><table border=""0"" cellpadding=""2"" bordercolor=""#111111"" width=""100%"">"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_STGAFFINFOFILE      "<tr><td width=""150""><font face=""Verdana"" size=""2"">%s</font></td><td><font face=""Verdana"" size=""2"">%s</font></td></tr>"
-    IDS_STGNOMFICHIER       "File Name :"
-    IDS_STGDATECREATION     "Create Date :"
-    IDS_STGDATEMODIFICATION "Modification Date :"
-    IDS_STGFORMATIMAGE      "Picture format :"
-    IDS_STGLARGEUR          "Width :"
-    IDS_STGHAUTEUR          "Height :"
-    IDS_STGTAILLE           "Size :"
-    IDS_STGKEYWORD          "Key Word :"
-    IDS_STGFORMINFOFILE     "<form method=""get"" name=""formulaire""><button id=""idRecherche"" value=""Rechercher"" name=""recherche"">Key Word</button></form>"
-    IDS_STGTABLEINFOFILE    "<table border=""1"" cellpadding=""0"" bordercolor=""#111111"" width=""100%""><tr><td width=""50%"" bgcolor=""#EBEBEB""><font face=""Verdana"" size=""2"">Name :</font></td><td width=""50%"" bgcolor=""#EBEBEB""><font face=""Verdana"" size=""2"">Value :</font></td></tr>"
-    IDS_STGAFFKEYWORD       "<tr><td width=""50%""><font face=""Verdana"" size=""2"">%s</font></td><td width=""50%""><font face=""Verdana"" size=""2"">%s</font></td></tr>"
-    IDS_STGENDINFOFILE      "</table></body></html>"
-    IDS_STGMEMORYERROR      "Memory allocation error"
-    IDS_STGINITENCOURS      "Loading Regards ..."
-    IDS_STGCREATIONFENETRE  "Window in creation"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_STGCREATIONMENU     "Menu in creation"
-    IDS_SGINITPARAM         "Parameter Initialisation"
-    IDS_STGTOTALFICHIER     "Total %d Files"
-    IDS_STGTOTALFICHIERFREE "Total %d files (%.2f Mo)"
-    IDS_STGINFOSDOWNLOAD    "A new version is available.\nDo you want download it ?"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_STGIMPORTPICTURE    ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.mpg;.avi;.mp2;.divx;.mpeg;.mv2;.mpv;.3ds;.ppm;.crw;.pgm;.md2;.nef;.raf;.orf;.mrw;.dcr;.mos;.pef;.srf;.dng;.x3f;.cr2;.erf;.sr2;.kdc;.mfw;.mef;.arw;.psd;.wmv;.wav;"
-    IDS_STGRAWFILE          ".nef;.raf;.orf;.mrw;.dcr;.mos;.pef;.srf;.dng;.x3f;.cr2;.erf;.sr2;.kdc;.mfw;.mef;.arw;.crw;"
-    IDS_PICTUREFORMATWITHOUTRAW 
-                            ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.ppm;.pgm;"
-    IDS_PICTUREFORMATMULTIWITHOUTRAW 
-                            ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.mpg;.avi;.mp2;.divx;.mpeg;.mv2;.mpv;.3ds;.ppm;.pgm;.md2;.wav;"
-    IDS_COMPACTDATAREADY    "Compactage de la base de donnée effectuée !"
-    IDS_ADRESSEWEBVERSION   "http://jacques.figuinha.free.fr/regards/zip/version.txt"
-    IDS_ADRESSEWEB          "http://www.figuinha.com/regards/english/"
-    IDS_REGARDSVERSION      "1.5.2.0"
-    IDS_VALEURNONVALIDE     "Value not valid"
-    IDS_DOSSIER             "Directory"
-    IDS_PREVIEW             "Preview :"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_SAVEPICTURE         "Do you want to save the modification ?"
-    IDS_VIDEOFORMAT         ".avi;.mpg;.wmv;.divx;"
-    IDS_MESSAGEDISKGO       "Drive %s has %.2f Go of free space"
-    IDS_MESSAGEDISKMO       "Drive %s has %.2f Mo of free space"
-    IDS_MSGERRORWIENER      "Picture not compatible with the Wiener filter  !"
-    IDS_MSGWIENERNBFLOT     "You must enter a float number between 0 and 1 !"
-    IDS_MSGREDIMSPACE       "Veuillez insérer une valeur supérieur à 0"
-    IDS_OU                  "OR"
-    IDS_ET                  "AND"
-    IDS_RUNSEARCHMSG1       "Data Source Insertion"
-    IDS_RUNSEARCHMSG2       "Data comparison"
-    IDS_RUNSEARCHMSG3       "HTML File generation"
-    IDS_RUNSEARCHMSG4       "Catalog loading"
-    IDS_RUNSEARCHMSG5       "Catalog processing"
-    IDS_SADEARMSG1          "Folder acquisition"
-    IDS_SADEARMSG2          "Files acquisition"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_INSERTALBUMMSG1     "Insert picture into the album"
-    IDS_INSERTALBUMMSG2     "Select all picture"
-    IDS_INSERTALBUMMSG3     "Import select picture"
-    IDS_INSERTALBUMMSG4     "Criteria Updating"
-    IDS_SELECTDIR           "Select a folder"
-    IDS_MINIATURELIST       "Thumbnail list"
-    IDS_MODTRAITEMENT       "Processing Picture module"
-END
-
-#endif    // Anglais (Afrique du Sud) resources
-/////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////
-// Espagnol (Argentine) resources
-
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ESS)
-LANGUAGE LANG_SPANISH, SUBLANG_SPANISH_ARGENTINA
-#pragma code_page(1252)
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// String Table
-//
-
-STRINGTABLE
-BEGIN
-    IDS_FIRSTCOLUMN         "Apellido"
-    IDS_SECONDCOLUMN        "Tamaño"
-    IDS_THIRDCOLUMN         "Fetcha"
-    IDS_4COLUMN             "Dimension"
-    IDS_5COLUMN2            "Directorio"
-    IDS_APP_TITLE1          "Regards"
-    IDS_CDRDAO              "external\\cdrdao.exe"
-    IDS_CDRECORD            "external\\cdrecord.exe"
-    IDS_MKISOFS             "external\\mkisofs.exe"
-    IDS_STGERASECD          "Quiere usted borrar su CD ?"
-    IDS_STGCHGCD            "No hay bastante espacio en el CD. Usted Quiere cambiar de CD ?"
-    IDS_STGCONTINUE         "Su CD no es compatible\nUsted quiere seguir ?"
-    IDS_STGPBGRAVE          "Algunos archivos no se pueden grabar.\nUsted quiere seguir ?"
-    IDS_STGISOCREATION      "Créacion del archivo ISO ... "
-    IDS_STGENDTHE           "Créacion acabado el : "
-END
-
-STRINGTABLE
-BEGIN
-    IDC_AFFICHAGEBITMAP     "Visualizacion del Bitmap"
-    IDC_TRTBITMAP           "Tratamiento del imagen"
-    IDS_TITLE_TRTBITMAP     "Modulo de tratamiento de imagen"
-    IDS_ICONELARGE          "Icono Larga"
-    IDS_ICONEPETITE         "Icono Pequena"
-    IDS_ICONELIST           "Lista de icono"
-    IDS_ICONEDETAIL         "Detalles"
-    IDS_ICONEMINI           "Miniatura"
-    IDS_REPERTOIRESUP       "Directorio Superior"
-    IDS_AFFICHAGEIMAGE      "Visualizacion del Imagen"
-    IDS_TRAITEMENTIMAGE     "Tratamiento del imagen"
-    IDS_IMGSUIVANTE         "Imagen Siguante"
-    IDS_IMGPRECEDENTE       "Imagen Precedente"
-    IDS_IMGPREMIER          "Primera Imagen"
-    IDS_IMGDERNIER          "Ultima Imagen"
-    IDS_REVERT              "Recargar la imagen"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_PLEINECRAN          "Imagen sobre la pantalla"
-    IDS_ROTATE90CW          "Rotacion a 90°"
-    IDS_ROTATE90CCW         "Rotacion a 270°"
-    IDS_FLIPVERT            "Flip Vertical"
-    IDS_FLIPHORZ            "Flip Horizontal"
-    IDS_AFFICHAGEDOSSIER    "Visualizacion de la vista directorio"
-    IDS_AFFICHAGERECHERCHE  "Visualizacion de la vista Buscar"
-    IDS_WIZARD              "Visualizacion de la vista Wizard"
-    IDS_TITREWIZARD         "Bienvenido"
-    IDS_LIBELLEWIZARD       "Este modo permite de creer, de modificar"
-    IDS_MENUGESTIONALBUM    "Menu de administracion de los albumes"
-    IDS_ASSOCIATION         "Asociacion efectuada con succés !"
-    IDS_INFOS               "Informationes"
-    IDS_ZIPAJOUT            "Añadir un nuevo archivo"
-    IDS_ZIPSUP              "Suprimir el archivo"
-    IDS_ZIPEXTRAIRE         "Extraer los archivos"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_ZIPVOIR             "Ver el archivo"
-    IDS_ZIPSELECTALL        "Selectionar todo"
-    IDS_ALBUMNAME           "Usted tiene que dar un nombre a su album"
-    IDS_SUPPALBUM           "Usted esta seguro de suprimir este album ?"
-    IDS_ALBUMEXISTANT       "El nombre de este album ya existe"
-    IDS_ALBUMCRITERE        "Usted tiene que informar al menos un criteria !"
-    IDS_ALBUMIMAGECRITERE   "Ninguna imagen corresponde a sus criterias"
-    IDS_SUPPIMAGE           "Usted esta seguro de suprimir los %d archivos de este album ?"
-    IDS_SUPPFILE            "Usted esta seguro de suprimir los %d archivos ?"
-    IDS_ERRORIMPRIMANTE     "Imposible de imprimir en el periferico !"
-    IDS_ERRORFICHIER        "Usted tiene que elejir un archivo !"
-    IDS_ERREUR              "Error"
-    IDS_ERRORVIDEO          "Imposible de leer el archivo video"
-    IDS_MODIFREDEMARRAGE    "¡Modificación necesita de salir y de volver en Regards !"
-    IDS_HELPFILENAME        "ayuda.pdf"
-    IDS_SUPPONEFILE         "Usted esta seguro de suprimir este archivo ?"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_MENUPHOTONUMERIQUE  "Gestion de las cameras digitales"
-    IDS_RENSFORM            "Usted tiene que informar correctamente el formulario !"
-    IDS_VERSION             "Regards Version 1.5.2.0 SSE - MMX"
-    IDS_AUTEUR              "Figuinha Jacques"
-    IDS_COPYRIGHT           "Copyright (C) 2002 - 2008"
-    IDS_CANCEL              "Cancelar"
-    IDS_ZIPFILE             "Archivo Zip"
-    IDS_COMPRESSSIZE        "Tamano de compresion"
-    IDS_MODIFYTHE           "Modificado el"
-    IDS_PATH                "Directorio"
-    IDS_FILE                "Archivo"
-    IDS_CATEGORYVALEUR      "Valor"
-    IDS_CATEGORYNUMERO      "Codigo"
-    IDS_CATEGORYATTRIBUT    "Attribut"
-    IDS_ATTRIBUTPICTUREREP  "Criterias de las imagenes del directorio"
-    IDS_NEWCRITERE          "Entrar una valor"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_CATEGORYLIBELLE     "Apelido"
-    IDS_HANDTOOLS           "Mover la imagen"
-    IDS_CROPTOOLS           "Cortar la imagen"
-    IDS_ZOOMTOOLS           "Zumbido sobre la imagen"
-    IDS_CDRWARNING          "Grabacion unicamente para windows XP !"
-    IDS_GRAVUREMENU         "Creacion del CD-R en curso ..."
-    IDS_GRAVUREINIT         "Bienvenido en el ayudante de grabacion de Regards."
-    IDS_SELECTIONALBUM      "Seleccion en curso ..."
-    IDS_DRIVENOTAVAILABLE   "El lector no esta disponible !"
-    IDS_PICTUREFORMAT       ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.ppm;.crw;.pgm;.nef;.raf;.orf;.mrw;.dcr;.mos;.pef;.srf;.dng;.x3f;.cr2;.erf;.sr2;.kdc;.mfw;.mef;.arw;"
-    IDS_IMPNONDISPO         "Imprimante non disponible !"
-    IDS_SUPPCATALOGUE       "Esta seguro de desear suprimir este catalogo ?"
-    IDS_FICHIERNONTROUVE    "¡Ningún fichero corresponde a su investigación!"
-    IDS_UPDATECATALOGUE     "¿Desea usted poner al día este catálogo?"
-    IDS_COMPACTCATALOGUE    "¿Desea usted condensar la base de los catálogos?"
-    IDS_CATALOGUENAME       "Nombre del Catalogo"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_CRITERELIST         "Lista de los criterios"
-    IDS_CRITERECATALOGUE    "Nombre del archivo;Fetcha;Tamano;Firma del archivo;altura y anchura;Format;"
-    IDS_CRITEREPRESENT      "Criteria ya existe !"
-    IDS_CRITEREERREUR       "Tiene que comprobar los datos !"
-    IDS_WINDOWCATCREATE     "Recuperacion de los archivos"
-    IDS_ENTETEHTMLCATALGOUE "<html>\n\n<head>\n<meta http-equiv=""Content-Language"" content=""fr"">\n<meta name=""GENERATOR"" content=""Microsoft FrontPage 5.0"">\n<meta name=""ProgId"" content=""FrontPage.Editor.Document"">\n<meta http-equiv=""Content-Type"" content=""text/html; charset=windows-1252"">\n<title>Rapport sur les résultats de recherche</title>\n</head>\n\n<style>\nbody\n{\n\tfont-family: Verdana, Arial, Helvetica;\n\tfont-size: 10pt;\n\tbackground-color: rgb(255,255,255);\n\tcolor: rgb(0,0,0);\n}\n</style>\n\n<body>\n\n<p style=""text-align: center""><b>Rapport sur les résultats de recherche :</b></p>\n<p><b>Liste des fichiers trouvés :</b></p>"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_STGINITBURNING      "Inicialisacion del grabadore ..."
-    IDS_STGBURNBEGIN        "Inicio de la grabado desde %d secundos."
-    IDS_STGENDBURN          "Acabado de la grabado ..."
-    IDS_STGBURNON           "Grabado en curso ..."
-    IDS_STGSECONDES         "%d secundos"
-    IDS_STGOPENRAWFILE      "Obiertura del archivo Raw"
-    IDS_STGORGCOLOR         "Organisacion de los colores"
-    IDS_STGVNGINTERPOL      "VNG interpolation"
-    IDS_STGCONVERTRGB       "Convercion en RGB"
-    IDS_STGBITMAPCREATION   "Creacion del Bitmap"
-    IDS_STGIMPORTIMAGE      "Importacion de los imagenes ..."
-    IDS_STGSUPFILE          "Usted quiere suprimier todos los archivos ?"
-    IDS_STGSELECTBURNER     "Selección de un grabador para borrar el CD."
-    IDS_STGSELBURN          "Séleccion de un grabador :"
-    IDS_STGCDNORW           "CD no sobre-escribe"
-    IDS_STGHEADINFOFILE     "<html><head><title>Informaciones sobre el archivo</title></head><body><table border=""0"" cellpadding=""2"" bordercolor=""#111111"" width=""100%"">"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_STGAFFINFOFILE      "<tr><td width=""150""><font face=""Verdana"" size=""2"">%s</font></td><td><font face=""Verdana"" size=""2"">%s</font></td></tr>"
-    IDS_STGNOMFICHIER       "Nombre del archivo"
-    IDS_STGDATECREATION     "Fetcha del créacion :"
-    IDS_STGDATEMODIFICATION "Fetcha de modificacion :"
-    IDS_STGFORMATIMAGE      "Formato del imagen :"
-    IDS_STGLARGEUR          "Anchura :"
-    IDS_STGHAUTEUR          "Altura :"
-    IDS_STGTAILLE           "Tamano :"
-    IDS_STGKEYWORD          "Palabras clave :"
-    IDS_STGFORMINFOFILE     "<form method=""get"" name=""formulaire""><button id=""idRecherche"" value=""Rechercher"" name=""recherche"">Palabra clave</button></form>"
-    IDS_STGTABLEINFOFILE    "<table border=""1"" cellpadding=""0"" bordercolor=""#111111"" width=""100%""><tr><td width=""50%"" bgcolor=""#EBEBEB""><font face=""Verdana"" size=""2"">Nombre del campo :</font></td><td width=""50%"" bgcolor=""#EBEBEB""><font face=""Verdana"" size=""2"">Valor del campo :</font></td></tr>"
-    IDS_STGAFFKEYWORD       "<tr><td width=""50%""><font face=""Verdana"" size=""2"">%s</font></td><td width=""50%""><font face=""Verdana"" size=""2"">%s</font></td></tr>"
-    IDS_STGENDINFOFILE      "</table></body></html>"
-    IDS_STGMEMORYERROR      "Error del alocacion de la memoria"
-    IDS_STGINITENCOURS      "Initialisacion en curso"
-    IDS_STGCREATIONFENETRE  "Creacion de las ventanas"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_STGCREATIONMENU     "Creacion de los menus"
-    IDS_SGINITPARAM         "Initialisacion de los parametros"
-    IDS_STGTOTALFICHIER     "Total %d archivos"
-    IDS_STGTOTALFICHIERFREE "Total %d archivos (%.2f Mo)"
-    IDS_STGINFOSDOWNLOAD    "Una nueva version esta disponible.\n Quiere usted descargar-la ?"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_STGIMPORTPICTURE    ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.mpg;.avi;.mp2;.divx;.mpeg;.mv2;.mpv;.3ds;.ppm;.crw;.pgm;.md2;.nef;.raf;.orf;.mrw;.dcr;.mos;.pef;.srf;.dng;.x3f;.cr2;.erf;.sr2;.kdc;.mfw;.mef;.arw;.psd;.wmv;.wav;"
-    IDS_STGRAWFILE          ".nef;.raf;.orf;.mrw;.dcr;.mos;.pef;.srf;.dng;.x3f;.cr2;.erf;.sr2;.kdc;.mfw;.mef;.arw;.crw;"
-    IDS_PICTUREFORMATWITHOUTRAW 
-                            ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.ppm;.pgm;"
-    IDS_PICTUREFORMATMULTIWITHOUTRAW 
-                            ".jpg;.jpe;.jpeg;.jif;.jfif;.gif;.tif;.bmp;.png;.tga;.pcx;.pcd;.pdd;.jp2;.jpc;.mpg;.avi;.mp2;.divx;.mpeg;.mv2;.mpv;.3ds;.ppm;.pgm;.md2;.psd;.wmv;.wav;"
-    IDS_COMPACTDATAREADY    "¡Apisonamiento de la base de datos efectuados!"
-    IDS_ADRESSEWEBVERSION   "http://jacques.figuinha.free.fr/regards/zip/version.txt"
-    IDS_ADRESSEWEB          "http://www.figuinha.com/regards/espanol/"
-    IDS_REGARDSVERSION      "1.5.2.0"
-    IDS_VALEURNONVALIDE     "Valor no posible"
-    IDS_DOSSIER             "Directorio"
-    IDS_PREVIEW             "Previsualisacion :"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_SAVEPICTURE         "Quiere salvar las modificaciones ?"
-    IDS_VIDEOFORMAT         ".avi;.mpg;.wmv;.divx;"
-    IDS_MESSAGEDISKGO       "El lector %s tiene %.2f Go de espacio libre"
-    IDS_MESSAGEDISKMO       "El lector %s tiene %.2f Mo de espacio libre"
-    IDS_MSGERRORWIENER      "El imagen no esta compatible con el filtro de Wiener  !"
-    IDS_MSGWIENERNBFLOT     "Usted tiene que entrar un número entre 0 et 1 !"
-    IDS_MSGREDIMSPACE       "Veuillez insérer une valeur supérieur à 0"
-    IDS_OU                  "O"
-    IDS_ET                  "Y"
-    IDS_RUNSEARCHMSG1       "Insercion de los datos"
-    IDS_RUNSEARCHMSG2       "Comparacion de los datos"
-    IDS_RUNSEARCHMSG3       "Generacion del archivo HTML"
-    IDS_RUNSEARCHMSG4       "Cargamento del catalogo"
-    IDS_RUNSEARCHMSG5       "Tratamiento del catálogo"
-    IDS_SADEARMSG1          "Adquisición de los directorios"
-    IDS_SADEARMSG2          "Adquisición de los archivos"
-END
-
-STRINGTABLE
-BEGIN
-    IDS_INSERTALBUMMSG1     "Inserción de las imágenes en el álbum"
-    IDS_INSERTALBUMMSG2     "Selección de todas las imágenes"
-    IDS_INSERTALBUMMSG3     "Importación de las imágenes seleccionadas"
-    IDS_INSERTALBUMMSG4     "Actualizaciones de los atributos para las imágenes"
-    IDS_SELECTDIR           "Seleccionar un directorio"
-    IDS_MINIATURELIST       "Listo de las Miniaturas"
-    IDS_MODTRAITEMENT       "Módulo de Tratamiento del imagen"
-END
-
-#endif    // Espagnol (Argentine) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

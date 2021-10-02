@@ -84,6 +84,8 @@
     <ExcludePath>$(VC_IncludePath);$(VC_ExecutablePath_x86);$(WindowsSdk_71A_ExecutablePath);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(MSBuild_ExecutablePath);$(VC_LibraryPath_x86);$(SystemRoot)</ExcludePath>
     <IncludePath>..\libSqlEngine;..\libSqlServerCE;..\filtreeffet;..\importpic;..\iexplorer;..\libbitmap;..\libvideo;..\include;..\libsqlite;..\otherlib\JpegLib;..\libWindow;..\libControl;$(VC_IncludePath);$(WindowsSdk_71A_IncludePath)</IncludePath>
     <LibraryPath>..\otherlib\glew-1.13.0\lib\Release\Win32;$(VC_LibraryPath_x86);$(WindowsSdk_71A_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -178,6 +180,41 @@
     <ResourceCompile Include="Script1.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="res\cursor\arrow.cur" />
+    <None Include="res\cursor\cur00001.cur" />
+    <None Include="res\cursor\cur00002.cur" />
+    <None Include="res\cursor\cursor2.cur" />
+    <None Include="res\cursor\hmove.cur" />
+    <None Include="res\cursor\nodrop.cur" />
+    <None Include="res\cursor\pointer.cur" />
+    <None Include="res\html\en\htmlexif2.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="res\html\en\recherche.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="res\html\es\htmlexif2.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="res\html\es\recherche.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="res\html\htmlexif2.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="res\html\htmlinfos.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="res\html\recherche.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="res\js\agent.js" />
+    <None Include="res\js\en\agent.js" />
+    <None Include="res\js\en\gs_date.js" />
+    <None Include="res\js\es\agent.js" />
+    <None Include="res\js\es\gs_date.js" />
+    <None Include="res\js\gst_date.js" />
+    <None Include="res\xptheme.bin" />
     <None Include="xptheme.bin" />
   </ItemGroup>
   <ItemGroup>
@@ -264,6 +301,39 @@
     <Library Include="..\lib\ijl15l.lib" />
     <Library Include="..\lib\mp3dec.lib" />
     <Library Include="..\lib\zlib.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bitmap\album.bmp" />
+    <Image Include="res\bitmap\album2.bmp" />
+    <Image Include="res\bitmap\appareilphoto.bmp" />
+    <Image Include="res\bitmap\baner256.bmp" />
+    <Image Include="res\bitmap\bitmap1.bmp" />
+    <Image Include="res\bitmap\bitmap_gauche.bmp" />
+    <Image Include="res\bitmap\bmp00001.bmp" />
+    <Image Include="res\bitmap\bmp00002.bmp" />
+    <Image Include="res\bitmap\bmp00003.bmp" />
+    <Image Include="res\bitmap\bmp00004.bmp" />
+    <Image Include="res\bitmap\bmp00005.bmp" />
+    <Image Include="res\bitmap\catalogue.bmp" />
+    <Image Include="res\bitmap\folder.bmp" />
+    <Image Include="res\bitmap\Font.bmp" />
+    <Image Include="res\bitmap\iconezip.bmp" />
+    <Image Include="res\bitmap\mainfram.bmp" />
+    <Image Include="res\bitmap\main_hot.bmp" />
+    <Image Include="res\bitmap\picture.bmp" />
+    <Image Include="res\bitmap\propriete.bmp" />
+    <Image Include="res\bitmap\recherche.bmp" />
+    <Image Include="res\bitmap\regards intro.bmp" />
+    <Image Include="res\bitmap\traitement2.bmp" />
+    <Image Include="res\gif\onglet.gif" />
+    <Image Include="res\ico\album.ico" />
+    <Image Include="res\ico\catalogue.ico" />
+    <Image Include="res\ico\logoregard.ico" />
+    <Image Include="res\ico\logoregard_small.ico" />
+    <Image Include="res\player\icone_player.bmp" />
+    <Image Include="res\skin\Main.bmp" />
+    <Image Include="res\skin\Mask.bmp" />
+    <Image Include="res\skin\Selected.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
