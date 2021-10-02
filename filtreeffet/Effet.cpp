@@ -6,8 +6,8 @@
 #include "ibitmap.h"
 #include "dessin.h"
 #include "ImageScale.h"
-#include "../fichier.h"
-#include "../objet.h"
+#include "fichier.h"
+#include "objet.h"
 #include <loadpicture.h>
 
 #define F_DELTA	0.0001f

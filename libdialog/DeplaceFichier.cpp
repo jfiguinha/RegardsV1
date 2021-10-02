@@ -1,10 +1,10 @@
 #include "stdafx.h"
 #include ".\deplacefichier.h"
-#include "..\objet.h"
+#include "objet.h"
 #include <DeplaceFile.h>
 #include <IconeFile.h>
 #include <SADirRead.h>
-#include "..\resource.h"
+#include "resource.h"
 
 CDeplaceFichier::CDeplaceFichier(void)
 {

@@ -6,13 +6,13 @@
 #include "OpenGLDiaporama.h"
 #include <strsafe.h>
 //#include "ATIExtensions.h"
-#include "../resource.h"
-#include "../parameter.h"
-#include "../fichier.h"
-#include "../include/global.h"
+#include "resource.h"
+#include "parameter.h"
+#include "fichier.h"
+#include "global.h"
 #include <effet.h>
 #include <IBitmap.h>
-#include "../LoadImage.h"
+#include "LoadImage.h"
 #ifndef WM_MOUSEWHEEL
 #include "zmouse.h"
 #endif

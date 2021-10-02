@@ -2,7 +2,7 @@
 #ifndef __RECHERCHERCATALOG__H__
 #define __RECHERCHERCATALOG__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CCatalogueData;
 

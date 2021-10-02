@@ -2,7 +2,7 @@
 #ifndef __ABOUTDIALOG__H__
 #define __ABOUTDIALOG__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CIBitmap;
 class CMatrix;

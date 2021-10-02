@@ -9,12 +9,13 @@
 #define STRICT
 #endif
 
-#ifndef _WIN32_WINNT
-#define _WIN32_WINNT 0x0400
-#endif
-
-#define _WIN32_WINNT 0x0400
 #define _ATL_APARTMENT_THREADED
+
+#include <atlbase.h>
+//You may derive a class from CComModule and use it if you want to override
+//something, but do not change the name of _Module
+extern CComModule _Module;
+#include <atlcom.h>
 
 #include <windows.h>
 #include <commctrl.h>
@@ -27,8 +28,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <strsafe.h>
-#include "../include/global.h"
-#include "../resource.h"
+#include <global.h>
+#include "resource.h"
 
 
 #include <vector>

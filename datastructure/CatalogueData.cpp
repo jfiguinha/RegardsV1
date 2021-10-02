@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include ".\cataloguedata.h"
-#include "..\objet.h"
+#include "objet.h"
 #include <security.h>
-#include "..\parameter.h"
+#include "parameter.h"
 
 CCatalogueData::CCatalogueData(void)
 {

@@ -1,9 +1,9 @@
 #include "stdafx.h"
 #include ".\zipfiledialog.h"
-#include "..\toolbar.h"
-#include "..\coolmenu.h"
+#include "toolbar.h"
+#include "coolmenu.h"
 #include <files.h>
-#include "..\resource.h"
+#include "resource.h"
 #include "aboutdialog.h"
 #include <Commdlg.h>
 #include <shellapi.h>

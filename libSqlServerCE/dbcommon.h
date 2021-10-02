@@ -6,7 +6,7 @@ All Rights Reserved.
 #ifndef NORTHWIND_OLEDB_SAMPLE_QUERY_INCLUDED
 #define NORTHWIND_OLEDB_SAMPLE_QUERY_INCLUDED	
 
-#include "..\resource.h"
+#include "resource.h"
 
 // Database REGARDS table name
 //

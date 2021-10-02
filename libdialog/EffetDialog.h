@@ -2,7 +2,7 @@
 #ifndef __EFFETDIALOG__H__
 #define __EFFETDIALOG__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CFiltreEffet;
 

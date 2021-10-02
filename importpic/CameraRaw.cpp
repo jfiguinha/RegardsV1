@@ -4,7 +4,8 @@
 
 #include "stdafx.h"
 #include "CameraRaw.h"
-#include "..\objet.h"
+#include <objet.h>
+#include <resource.h>
 //#include "raw.h"
 typedef int (*GetDimensionsRaw)(const char * ,UINT *,UINT *);
 typedef int (*WriteIBitmap)(const char * ,HWND, BYTE * *);

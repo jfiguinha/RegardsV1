@@ -2,7 +2,7 @@
 #ifndef __ATTRIBUTFICHIER__H__
 #define __ATTRIBUTFICHIER__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 #include ".\attributdata.h"
 
 class CAlbumCritereNotify;

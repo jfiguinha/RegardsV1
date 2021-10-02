@@ -2,7 +2,7 @@
 #ifndef __DEPLACEFICHIER__H__
 #define __DEPLACEFICHIER__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CDeplaceFile;
 

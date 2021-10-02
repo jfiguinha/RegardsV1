@@ -5,7 +5,7 @@
 #include <filtre.h>
 #include <color.h>
 #include ".\lensflaredata.h"
-#include "..\resource.h"
+#include "resource.h"
 #include <ibitmap.h>
 
 CLensFlare::CLensFlare(HINSTANCE hInstance)

@@ -3,7 +3,7 @@
 #ifndef __CONVERTRENAME__H__
 #define __CONVERTRENAME__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CConvertData;
 

@@ -1,6 +1,6 @@
 #include "StdAfx.h"
 #include ".\motionblur.h"
-#include "..\resource.h"
+#include "resource.h"
 #include <IBitmap.h>
 #include <Filtre.h>
 #include <Effet.h>

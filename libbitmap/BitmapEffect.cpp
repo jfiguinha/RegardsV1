@@ -6,8 +6,8 @@
 #include <ibitmap.h>
 #include <color.h>
 #include "DialogFiltreEffet.h"
-#include "..\objet.h"
-#include "..\resource.h"
+#include "objet.h"
+#include "resource.h"
 #include <CloudsBox.h>
 #include <lensflare.h>
 #include <RedimWorkSpace.h>

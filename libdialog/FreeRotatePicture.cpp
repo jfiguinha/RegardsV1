@@ -1,6 +1,6 @@
 #include "StdAfx.h"
 #include ".\freerotatepicture.h"
-#include "..\resource.h"
+#include "resource.h"
 #include <IBitmap.h>
 #include <Effet.h>
 

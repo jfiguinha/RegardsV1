@@ -33,7 +33,7 @@
 
 #include "stdafx.h"
 #include "SADirRead.h"
-#include "..\resource.h"
+#include "resource.h"
 #include <algorithm>
 #include "time.h"
 extern HINSTANCE hInstance;

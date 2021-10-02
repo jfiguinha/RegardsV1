@@ -2,7 +2,7 @@
 #ifndef __DEFINESIZEICONE__H__
 #define __DEFINESIZEICONE__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CDefineSizeIcone : public CLocalDialog
 {

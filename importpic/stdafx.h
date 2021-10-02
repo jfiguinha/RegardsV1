@@ -27,6 +27,6 @@
 using namespace std;
 
 
-#include "..\resource.h"
+#include <resource.h>
 
 #endif

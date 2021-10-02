@@ -2,7 +2,7 @@
 #ifndef __HISTOGRAMMEDIALOG__H__
 #define __HISTOGRAMMEDIALOG__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CIBitmap;
 
@@ -19,7 +19,7 @@ public:
 
 private:
 
-	void CHistorgrammeDialog::AddToList(HWND hDlg);
+	void AddToList(HWND hDlg);
 	LRESULT OnInitDialog(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lParam);
 	LRESULT OnCommand(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lParam);
 	LRESULT OnPaint(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lParam);

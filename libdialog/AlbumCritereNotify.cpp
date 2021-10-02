@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include ".\albumcriterenotify.h"
-#include "..\resource.h"
+#include "resource.h"
 #include <EditWndProc.h>
 
 CAlbumCritereNotify::EDITDATA CAlbumCritereNotify::m_EditData;

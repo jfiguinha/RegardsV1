@@ -1,5 +1,5 @@
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 #ifndef __BRIGHTCONTDIALOG__H__
 #define __BRIGHTCONTDIALOG__H__

@@ -10,8 +10,8 @@
 #include <ibitmap.h>
 #include <color.h>
 #include "DialogFiltreEffet.h"
-#include "..\objet.h"
-#include "..\resource.h"
+#include <objet.h>
+#include <resource.h>
 #include <RedimWorkSpace.h>
 #include <EffetDialog.h>
 #include <FiltreDialog.h>

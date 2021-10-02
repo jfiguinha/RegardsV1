@@ -1,6 +1,6 @@
 #include "StdAfx.h"
 #include ".\newalbum.h"
-#include "..\resource.h"
+#include "resource.h"
 
 CNewAlbum::CNewAlbum(void)
 {

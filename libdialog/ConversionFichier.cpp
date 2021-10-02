@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include ".\conversionfichier.h"
-#include "..\resource.h"
-#include "..\LoadImage.h"
+#include "resource.h"
+#include "LoadImage.h"
 #include <sadirread.h>
 #include <convertdata.h>
 #include <safileentry.h>

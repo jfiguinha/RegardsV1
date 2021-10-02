@@ -2,7 +2,7 @@
 #include ".\attributfichier.h"
 #include ".\albumcriterenotify.h"
 #include <dialogcataloguedata.h>
-#include "../resource.h"
+#include "resource.h"
 #include <attribut.h>
 
 CAttributFichier::CAttributFichier(HINSTANCE hInstance)

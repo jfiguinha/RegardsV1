@@ -18,7 +18,7 @@
 #include <tchar.h>
 #include <objbase.h>
 #include <oledberr.h>
-#include <ssceoledb30.h>
+
 // TODO : faites référence ici aux en-têtes supplémentaires nécessaires au programme
 #define _ATL_CSTRING_EXPLICIT_CONSTRUCTORS	// certains constructeurs CString seront explicites
 

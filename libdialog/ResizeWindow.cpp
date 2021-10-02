@@ -2,8 +2,8 @@
 #include ".\resizewindow.h"
 #include <Fast2PassScale.h>
 #include <ibitmap.h>
-#include "../resource.h"
-#include "../parameter.h"
+#include "resource.h"
+#include "parameter.h"
 
 CResizeWindow::CResizeWindow(void)
 {

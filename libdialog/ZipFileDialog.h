@@ -4,7 +4,7 @@
 #define __ZIPFILEDIALOG__H__
 
 #include <vector>
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CFiles;
 #ifdef COOLMENU

@@ -36,7 +36,7 @@ public:
 	HRESULT GetMessageStoresTable();
 	HRESULT SetDefaultMessagingStore(char * sMailbox);
 	void CloseMapi();*/
-	HRESULT CMapi::SendEmail(const char * m_szBody,VectorAttachment * m_VectorAttachment);
+	HRESULT SendEmail(const char * m_szBody,VectorAttachment * m_VectorAttachment);
 
 private:
 	/*

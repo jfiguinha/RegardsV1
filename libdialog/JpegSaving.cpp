@@ -1,6 +1,6 @@
 #include "StdAfx.h"
 #include ".\jpegsaving.h"
-#include "..\resource.h"
+#include "resource.h"
 
 CJpegSaving::CJpegSaving(void)
 {

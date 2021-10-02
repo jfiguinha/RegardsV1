@@ -3,7 +3,7 @@
 #ifndef __SELECTBURNER__H__
 #define __SELECTBURNER__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CAspiDriver;
 

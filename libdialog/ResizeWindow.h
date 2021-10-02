@@ -1,5 +1,5 @@
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 #ifndef __RESIZEWINDOW__H__
 #define __RESIZEWINDOW__H__

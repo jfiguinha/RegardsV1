@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include ".\association.h"
 #include <registryaccess.h>
-#include "..\resource.h"
-#include "..\objet.h"
+#include "resource.h"
+#include "objet.h"
 
 CAssociation::CAssociation(HINSTANCE hInstance)
 {
@@ -29,9 +29,9 @@ int CAssociation::AssociateRegards()
 	//the command line to execute or other shell
 	//statements necessary.
 
-	m_cRegistryAccess->CreateNewKey("Regards.Document", HKEY_CLASSES_ROOT);
-	m_cRegistryAccess->CreateNewKey("Regards.Document\\shell\\open\\command", HKEY_CLASSES_ROOT);
-	m_cRegistryAccess->CreateNewKey("Regards.Document\\DefaultIcon", HKEY_CLASSES_ROOT);
+	m_cRegistryAccess->CreateNewKey((LPTSTR)"Regards.Document", HKEY_CLASSES_ROOT);
+	m_cRegistryAccess->CreateNewKey((LPTSTR)"Regards.Document\\shell\\open\\command", HKEY_CLASSES_ROOT);
+	m_cRegistryAccess->CreateNewKey((LPTSTR)"Regards.Document\\DefaultIcon", HKEY_CLASSES_ROOT);
 
 
 	m_cRegistryAccess->SetKeyValue(HKEY_CLASSES_ROOT,"Regards.Document", "", "Regards Document");
@@ -51,9 +51,9 @@ int CAssociation::AssociateRegards()
 	
 
 
-	m_cRegistryAccess->CreateNewKey("Applications\\regards.exe", HKEY_CLASSES_ROOT);
-	m_cRegistryAccess->CreateNewKey("Applications\\regards.exe\\shell\\open\\command", HKEY_CLASSES_ROOT);
-	m_cRegistryAccess->CreateNewKey("Applications\\regards.exe\\DefaultIcon", HKEY_CLASSES_ROOT);
+	m_cRegistryAccess->CreateNewKey((LPTSTR)"Applications\\regards.exe", HKEY_CLASSES_ROOT);
+	m_cRegistryAccess->CreateNewKey((LPTSTR)"Applications\\regards.exe\\shell\\open\\command", HKEY_CLASSES_ROOT);
+	m_cRegistryAccess->CreateNewKey((LPTSTR)"Applications\\regards.exe\\DefaultIcon", HKEY_CLASSES_ROOT);
 
 	m_cRegistryAccess->SetKeyValue(HKEY_CLASSES_ROOT,"Applications\\regards.exe", "", "Regards Document");
 
@@ -185,73 +185,73 @@ LRESULT CAssociation::OnCommand(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lPar
 			{
 				AssociateRegards();
 				if(IsDlgButtonChecked(hDlg,IDC_CKGIF) == BST_CHECKED)
-					AssociateFileExt("gif");
+					AssociateFileExt((LPTSTR)"gif");
 
 				if(IsDlgButtonChecked(hDlg,IDC_CKPCX) == BST_CHECKED)
-					AssociateFileExt("pcx");
+					AssociateFileExt((LPTSTR)"pcx");
 
 				if(IsDlgButtonChecked(hDlg,IDC_CKPNG) == BST_CHECKED)
-					AssociateFileExt("png");
+					AssociateFileExt((LPTSTR)"png");
 
 				if(IsDlgButtonChecked(hDlg,IDC_CKTGA) == BST_CHECKED)
-					AssociateFileExt("tga");
+					AssociateFileExt((LPTSTR)"tga");
 
 				if(IsDlgButtonChecked(hDlg,IDC_CKJPEG) == BST_CHECKED)
 				{
-					AssociateFileExt("jpe");
-					AssociateFileExt("jpeg");
-					AssociateFileExt("jpg");
+					AssociateFileExt((LPTSTR)"jpe");
+					AssociateFileExt((LPTSTR)"jpeg");
+					AssociateFileExt((LPTSTR)"jpg");
 				}
 
 				if(IsDlgButtonChecked(hDlg,IDC_CKTIFF) == BST_CHECKED)
 				{
-					AssociateFileExt("tif");
-					AssociateFileExt("tiff");
+					AssociateFileExt((LPTSTR)"tif");
+					AssociateFileExt((LPTSTR)"tiff");
 				}
 
 				if(IsDlgButtonChecked(hDlg,IDC_CKBMP) == BST_CHECKED)
-					AssociateFileExt("bmp");
+					AssociateFileExt((LPTSTR)"bmp");
 
 				if(IsDlgButtonChecked(hDlg,IDC_CKPCD) == BST_CHECKED)
-					AssociateFileExt("pcd");
+					AssociateFileExt((LPTSTR)"pcd");
 
 				if(IsDlgButtonChecked(hDlg,IDC_CKPSD) == BST_CHECKED)
 				{
-					AssociateFileExt("psd");
-					AssociateFileExt("pdd");
+					AssociateFileExt((LPTSTR)"psd");
+					AssociateFileExt((LPTSTR)"pdd");
 				}
 
 				if(IsDlgButtonChecked(hDlg,IDC_CKJP2) == BST_CHECKED)
 				{
-					AssociateFileExt("jp2");
-					AssociateFileExt("jpc");
+					AssociateFileExt((LPTSTR)"jp2");
+					AssociateFileExt((LPTSTR)"jpc");
 				}
 
 				if(IsDlgButtonChecked(hDlg,IDC_CKMPG) == BST_CHECKED)
 				{
-					AssociateFileExt("mpg");
-					AssociateFileExt("mpv");
-					AssociateFileExt("mv2");
+					AssociateFileExt((LPTSTR)"mpg");
+					AssociateFileExt((LPTSTR)"mpv");
+					AssociateFileExt((LPTSTR)"mv2");
 				}
 
 				if(IsDlgButtonChecked(hDlg,IDC_CKAVI) == BST_CHECKED)
 				{
-					AssociateFileExt("avi");
+					AssociateFileExt((LPTSTR)"avi");
 				}
 
 				if(IsDlgButtonChecked(hDlg,IDC_CK3DS) == BST_CHECKED)
 				{
-					AssociateFileExt("3ds");
+					AssociateFileExt((LPTSTR)"3ds");
 				}
 
 				if(IsDlgButtonChecked(hDlg,IDC_CKPPM) == BST_CHECKED)
 				{
-					AssociateFileExt("ppm");
+					AssociateFileExt((LPTSTR)"ppm");
 				}
 
 				if(IsDlgButtonChecked(hDlg,IDC_CKPGM) == BST_CHECKED)
 				{
-					AssociateFileExt("pgm");
+					AssociateFileExt((LPTSTR)"pgm");
 				}
 
 				if(IsDlgButtonChecked(hDlg,IDC_CKCRW) == BST_CHECKED)

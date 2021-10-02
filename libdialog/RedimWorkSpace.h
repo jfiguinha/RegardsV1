@@ -3,7 +3,7 @@
 #ifndef __REDIMWORKSPACE__H__
 #define __REDIMWORKSPACE__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CRedimWorkSpace : public CLocalDialog
 {

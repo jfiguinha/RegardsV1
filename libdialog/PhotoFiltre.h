@@ -4,7 +4,7 @@
 #ifndef __PHOTOFILTREDIALOG__H__
 #define __PHOTOFILTREDIALOG__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CIBitmap;
 

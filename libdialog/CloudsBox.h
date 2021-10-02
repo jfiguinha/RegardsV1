@@ -1,7 +1,7 @@
 #ifndef __CLOUDBOX__H__
 #define __CLOUDBOX__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CIBitmap;
 
@@ -55,7 +55,7 @@ private:
 	LRESULT OnPaint(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lParam);
 	LRESULT OnActivate(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lParam);
 	LRESULT OnDblClick(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lParam);
-	LRESULT CCloudsBox::CallColorPicker(HWND hDlg,COLORREF &clValue);
+	LRESULT CallColorPicker(HWND hDlg,COLORREF &clValue);
 
 	CIBitmap * m_ciBitmapTestBitmap;
 	CIBitmap * m_ciBitmapColorBox1;

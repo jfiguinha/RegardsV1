@@ -3,7 +3,7 @@
 #ifndef __LANCERRECHERCHE__H__
 #define __LANCERRECHERCHE__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CImageCalalogueRecherche;
 

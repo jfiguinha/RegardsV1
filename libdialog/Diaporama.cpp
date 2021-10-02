@@ -1,7 +1,7 @@
 #include <stdafx.h>
 #include "diaporama.h"
-#include "../resource.h"
-#include "../parameter.h"
+#include "resource.h"
+#include "parameter.h"
 
 CDiaporama::CDiaporama(HINSTANCE hInstance)
 {

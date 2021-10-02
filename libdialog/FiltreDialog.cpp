@@ -1,7 +1,7 @@
 #include "StdAfx.h"
 #include ".\filtredialog.h"
 #include <dialogfiltreeffet.h>
-#include "..\resource.h"
+#include "resource.h"
 #include <filtre.h>
 #include <process.h>
 

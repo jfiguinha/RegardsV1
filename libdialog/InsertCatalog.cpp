@@ -1,14 +1,14 @@
 #include "StdAfx.h"
 #include ".\insertcatalog.h"
 #include <SADirRead.h>
-#include "../loadimage.h"
+#include "loadimage.h"
 #include <ibitmap.h>
 #include <security.h>
 #include <filtre.h>
-#include "../objet.h"
+#include "objet.h"
 #include <CatalogueData.h>
 #include <ItemInfo.h>
-#include "../resource.h"
+#include "resource.h"
 
 class CSADirReadLocal : public CSADirRead
 {

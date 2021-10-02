@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include ".\attributdata.h"
-#include "..\resource.h"
+#include "resource.h"
 #include <attribut.h>
 #include <dialogcataloguedata.h>
 #ifdef SQLSERVERCE
@@ -144,7 +144,7 @@ void CAttributData::InitAttributDialog(HWND &hDlg, const int &iDataType, int &iN
 				lvItem.mask = LVIF_TEXT;
 				lvItem.iItem = iNumItem;
 				lvItem.iSubItem = 0;
-				lvItem.pszText = "";
+				lvItem.pszText = (LPTSTR)"";
 				m_iIndex = SendDlgItemMessage(hDlg, IDC_LISTATTRIBUT, LVM_INSERTITEM , (WPARAM)iNumItem, (LPARAM) (const LPLVITEM)&lvItem);
 		}
 

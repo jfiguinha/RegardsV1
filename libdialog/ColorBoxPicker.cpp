@@ -2,7 +2,7 @@
 #include ".\colorboxpicker.h"
 #include <ibitmap.h>
 #include <dessin.h>
-#include "..\resource.h"
+#include "resource.h"
 
 #define IDM_DESSINCOLOR 0x025
 

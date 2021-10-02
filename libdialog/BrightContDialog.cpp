@@ -1,6 +1,6 @@
 #include "StdAfx.h"
 #include ".\brightcontdialog.h"
-#include "..\resource.h"
+#include "resource.h"
 #include <Regardsbitmap.h>
 #include <ibitmap.h>
 #include <filtre.h>

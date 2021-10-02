@@ -4,8 +4,8 @@
 
 #include "OpenGL.h"
 #include <strsafe.h>
-#include "../resource.h"
-#include "../parameter.h"
+#include "resource.h"
+#include "parameter.h"
 #ifndef WM_MOUSEWHEEL
 #include "zmouse.h"
 #endif

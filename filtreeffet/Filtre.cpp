@@ -60,7 +60,7 @@ void qsort(T begin, T end)
 {
   if (begin != end)
 	{
-	  T middle = partition(begin, end, bind2nd(less<iterator_traits<T>::value_type>(), *begin))
+	  T middle = partition(begin, end, bind2nd(less<iterator_traits<T>::value_type>(), *begin));
 	  qsort(begin, middle);
 	  qsort(max(begin + 1, middle), end);
 	}
@@ -821,7 +821,7 @@ void CFiltre::Dilate(HWND hwnd, CIBitmap * m_ciBitmap,const long &Ksize)
 
 bool CFiltre::Filter2Pass(HWND hwnd, CIBitmap * m_ciBitmap, short * kernel,const short &Ksize,const short &Kfactor,const short &Koffset)
 {
-#if DEBUG
+#ifdef _DEBUG
 	DWORD tickCount = GetTickCount ();
 #endif
 	if (m_ciBitmap->GetPtBitmap() != NULL)
@@ -1040,7 +1040,7 @@ bool CFiltre::Filter2Pass(HWND hwnd, CIBitmap * m_ciBitmap, short * kernel,const
 		delete[] m_KernelValue;
 	}
 
-#if DEBUG
+#ifdef DEBUG
 	DWORD LasttickCount = GetTickCount();				// Get The Tick Count
 	DWORD Result = LasttickCount - tickCount;
 
@@ -1247,7 +1247,7 @@ bool CFiltre::SimpleFilter(HWND hwnd, CIBitmap * m_ciBitmap, short * kernel,cons
 
 bool CFiltre::Filter(HWND hwnd, CIBitmap * m_ciBitmap, short * kernel,const short &Ksize,const short &Kfactor,const short &Koffset)
 {
-#if DEBUG
+#ifdef DEBUG
 	DWORD tickCount = GetTickCount();
 #endif
 

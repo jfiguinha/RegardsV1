@@ -1,7 +1,7 @@
 #ifndef __DIAPORAMA__H__
 #define __DIAPORAMA__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CParameter;
 

@@ -87,7 +87,7 @@ const double pi = 3.14159265358979323846264338327950288419716939937510;
 #define IDM_GETHWNDPRGBAR 141
 #define IDM_CONTEXTHANDLE 142
 #define FILTRE_BLACKANDWHITE 143
-#define MAX_LOADSTRING 100
+#define MAX_LOADSTRING 255
 #define IDM_INITCATALOGUE 400
 #define IDM_CATALOGUENAME 401
 #define EFFET_CROP 402
@@ -176,10 +176,6 @@ struct COLORLONG
 	long blue;
 };
 
-#ifdef ARRAYSIZE(A) 
-#undef ARRAYSIZE(A)
-#define ARRAYSIZE(a)    (sizeof(a)/sizeof(a[0]))
-#endif
 
 #endif
 

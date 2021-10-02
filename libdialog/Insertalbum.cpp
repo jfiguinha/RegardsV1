@@ -1,8 +1,8 @@
 #include "StdAfx.h"
 #include ".\insertalbum.h"
 #include <AlbumData.h>
-#include "..\resource.h"
-#include "..\objet.h"
+#include "resource.h"
+#include "objet.h"
 #include "attributdata.h"
 #ifdef SQLSERVERCE
 #include <SqlAlbumUtility.h>

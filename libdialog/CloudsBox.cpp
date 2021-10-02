@@ -1,7 +1,7 @@
 #include "StdAfx.h"
 #include ".\cloudsbox.h"
 #include ".\colorboxpicker.h"
-#include "..\resource.h"
+#include "resource.h"
 #include <IBitmap.h>
 #include <filtre.h>
 #include <color.h>

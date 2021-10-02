@@ -1,6 +1,6 @@
 #include "StdAfx.h"
 #include ".\gestioncategorie.h"
-#include "..\resource.h"
+#include "resource.h"
 #include <dialogcataloguedata.h>
 #include ".\albumcriterenotify.h"
 

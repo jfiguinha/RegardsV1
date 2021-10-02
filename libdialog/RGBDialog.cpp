@@ -1,6 +1,6 @@
 #include "StdAfx.h"
 #include ".\rgbdialog.h"
-#include "..\resource.h"
+#include "resource.h"
 #include <IBitmap.h>
 #include <effet.h>
 #include <Regardsbitmap.h>

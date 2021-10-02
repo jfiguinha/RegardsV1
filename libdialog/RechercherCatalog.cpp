@@ -2,9 +2,9 @@
 #include ".\recherchercatalog.h"
 #include <CatalogueData.h>
 #include <ItemInfo.h>
-#include "..\resource.h"
-#include "..\objet.h"
-#include "..\ImageCalalogueRecherche.h"
+#include "resource.h"
+#include "objet.h"
+#include "ImageCalalogueRecherche.h"
 #include "lancerrechercher.h"
 
 CRechercherCatalog::CRechercherCatalog(HINSTANCE hInstance)

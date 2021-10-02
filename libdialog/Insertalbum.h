@@ -3,7 +3,7 @@
 #ifndef __CInsertAlbum__H__
 #define __CInsertAlbum__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 #include <IconeFile.h>
 #include <Attribut.h>
 #include <SAFileEntry.h>

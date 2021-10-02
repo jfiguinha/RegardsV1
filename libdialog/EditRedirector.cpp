@@ -2,10 +2,10 @@
 #include ".\editredirector.h"
 #include <AspiDriver.h>
 #include <Edit.h>
-#include "../resource.h"
-#include "../objet.h"
+#include "resource.h"
+#include "objet.h"
 #include <sadirread.h>
-#include "../parameter.h"
+#include "parameter.h"
 
 CEditRedirector::CEditRedirector(void)
 {

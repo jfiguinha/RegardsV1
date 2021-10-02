@@ -2,7 +2,7 @@
 #ifndef __MOTIONBLUR__H__
 #define __MOTIONBLUR__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CIBitmap;
 

@@ -29,13 +29,10 @@
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys\stat.H>
-#include "..\include\global.h"
+#include "global.h"
 #include <string>
 using namespace std;
 
-#include <objbase.h>
-#include <oledberr.h>
-#include <ssceoledb30.h>
 
 const unsigned int cuStackSize = 128 * 1024;
 

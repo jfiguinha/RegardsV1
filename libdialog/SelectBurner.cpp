@@ -1,6 +1,6 @@
 #include "StdAfx.h"
 #include ".\selectburner.h"
-#include "..\resource.h"
+#include "resource.h"
 #include <aspidriver.h>
 
 CSelectBurner::CSelectBurner(HINSTANCE hInstance)

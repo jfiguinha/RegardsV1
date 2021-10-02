@@ -1,7 +1,7 @@
 #include <stdafx.h>
 #include "AboutDialog.h"
-#include "../resource.h"
-#include "../objet.h"
+#include "resource.h"
+#include "objet.h"
 
 //////////////////////////////////////////////////////////////////////////////////////
 //

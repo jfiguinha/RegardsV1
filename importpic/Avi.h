@@ -17,8 +17,8 @@ public:
 	DWORD ckSize;
 	DWORD ckDataSize;
 	void *ckData;
-	CHUNKHEADER::CHUNKHEADER() : ckID(0), ckSize(0), ckData(0), ckDataSize(0) {};
-	CHUNKHEADER::~CHUNKHEADER() { if (ckData) free(ckData); }
+	CHUNKHEADER() : ckID(0), ckSize(0), ckData(0), ckDataSize(0) {};
+	~CHUNKHEADER() { if (ckData) free(ckData); }
 };
 
 class LISTHEADER
@@ -28,9 +28,9 @@ public:
 	DWORD lstSize;
 	FOURCC lstType;
 	CHUNKHEADER *chkHd;
-	LISTHEADER::LISTHEADER() : lstID(0), lstSize(0), lstType(0), chkHd(0) {};
-	LISTHEADER::~LISTHEADER() { if (chkHd) delete chkHd; }
-	LISTHEADER& LISTHEADER::operator=(LISTHEADER& ob2)
+	LISTHEADER() : lstID(0), lstSize(0), lstType(0), chkHd(0) {};
+	~LISTHEADER() { if (chkHd) delete chkHd; }
+	LISTHEADER& operator=(LISTHEADER& ob2)
 	{
 		lstID = ob2.lstID;
 		lstSize = ob2.lstSize;

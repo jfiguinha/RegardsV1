@@ -1,7 +1,7 @@
 #include "StdAfx.h"
 #include ".\definesizeicone.h"
-#include "..\resource.h"
-#include "..\objet.h"
+#include "resource.h"
+#include "objet.h"
 
 CDefineSizeIcone::CDefineSizeIcone(void)
 {

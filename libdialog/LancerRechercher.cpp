@@ -1,7 +1,7 @@
 #include "StdAfx.h"
 #include ".\lancerrechercher.h"
-#include "..\imagecalaloguerecherche.h"
-#include "..\resource.h"
+#include "imagecalaloguerecherche.h"
+#include "resource.h"
 #include <AlbumData.h>
 #include <CatalogueData.h>
 

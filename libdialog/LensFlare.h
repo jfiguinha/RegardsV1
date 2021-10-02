@@ -1,5 +1,5 @@
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 #ifndef __LENSFLARE__H__
 #define __LENSFLARE__H__

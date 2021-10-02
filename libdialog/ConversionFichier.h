@@ -2,7 +2,7 @@
 #ifndef __CONVERSIONFICHIER__H__
 #define __CONVERSIONFICHIER__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CConvertData;
 

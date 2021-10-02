@@ -1,5 +1,5 @@
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 #ifndef __RGBDIALOG__H__
 #define __RGBDIALOG__H__

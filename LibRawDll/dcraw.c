@@ -2,7 +2,7 @@
 #include <windows.h>
 #include <stdio.h>
 #include <commctrl.h>
-#include "../resource.h"
+#include "../RegardsViewer/resource.h"
 
 #define DllExport __declspec(dllexport)
 

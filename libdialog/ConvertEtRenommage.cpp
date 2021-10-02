@@ -1,7 +1,7 @@
 #include "StdAfx.h"
 #include ".\convertetrenommage.h"
-#include "..\objet.h"
-#include "..\resource.h"
+#include "objet.h"
+#include "resource.h"
 #include ".\conversionfichier.h"
 #include <convertdata.h>
 

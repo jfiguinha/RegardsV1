@@ -2,7 +2,7 @@
 #include ".\attributrepertoire.h"
 #include ".\albumcriterenotify.h"
 #include <dialogcataloguedata.h>
-#include "../resource.h"
+#include "resource.h"
 #include <attribut.h>
 
 CAttributRepertoire::CAttributRepertoire(HINSTANCE hInstance)

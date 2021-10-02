@@ -1,5 +1,5 @@
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 #include <color.h>
 
 #ifndef __COLORBOXPICKER__H__

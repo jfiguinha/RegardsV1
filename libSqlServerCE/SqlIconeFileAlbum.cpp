@@ -1,6 +1,6 @@
 #include "StdAfx.h"
 #include "SqlIconeFileAlbum.h"
-#include "../loadimage.h"
+#include "loadimage.h"
 using namespace Regards::Sqlite;
 
 CSqlIconeFileAlbum::CSqlIconeFileAlbum(void)

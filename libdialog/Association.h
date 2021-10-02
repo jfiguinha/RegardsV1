@@ -3,7 +3,7 @@
 #ifndef __ASSOCIATION__H__
 #define __ASSOCIATION__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CAssociation : public CLocalDialog
 {

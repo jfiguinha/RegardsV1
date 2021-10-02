@@ -10,8 +10,8 @@ DWORD CAvi::MAKE_FOURCC(char* fourCC)
 bool CAvi::checkRiffHeader(FILE *f, FILE *o, RIFFHEADER *rh, bool write)
 {
 	if (!fread(rh,1,12,f)) return false;
-	if (rh->riff != MAKE_FOURCC("RIFF")) return false;
-	if (rh->fileType != MAKE_FOURCC("AVI ")) return false;
+	if (rh->riff != MAKE_FOURCC((char *)"RIFF")) return false;
+	if (rh->fileType != MAKE_FOURCC((char*)"AVI ")) return false;
 	if (write) { wpos += 12; if (!fwrite(rh,1,12,o)) return false; }
 	return true;
 }
@@ -108,7 +108,7 @@ bool CAvi::GetDimensionAvi(const char * szFilename, int &iWidth, int &iHeight)
 	/* Scan until first "LIST" fourcc.  The first one should be "hdrl" type. */
 	LISTHEADER hdrl;
 	bool stop;
-	if (!scanForList(file_pointer, NULL, &hdrl, "hdrl", "FFFF", true, false, stop))
+	if (!scanForList(file_pointer, NULL, &hdrl, (char*)"hdrl", (char*)"FFFF", true, false, stop))
 	{
 		return false;
 	}

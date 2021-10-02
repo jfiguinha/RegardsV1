@@ -1,9 +1,9 @@
 #include "StdAfx.h"
 #include ".\dialogfindproc.h"
-#include "..\treewindowdata.h"
-#include "..\resource.h"
-#include "..\objet.h"
-#include "..\list.h"
+#include "treewindowdata.h"
+#include "resource.h"
+#include "objet.h"
+#include "list.h"
 
 CDialogFindProc::CDialogFindProc(void)
 {

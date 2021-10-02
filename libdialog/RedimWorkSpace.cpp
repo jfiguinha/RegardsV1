@@ -1,7 +1,7 @@
 #include "StdAfx.h"
 #include ".\redimworkspace.h"
-#include "..\resource.h"
-#include "..\objet.h"
+#include "resource.h"
+#include "objet.h"
 
 CRedimWorkSpace::CRedimWorkSpace(long lWidth, long lHeight)
 {

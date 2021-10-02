@@ -213,13 +213,13 @@ private:
 	tsize_t t2p_write_pdf_xobject_cs(T2P* t2p, TIFF* output);
 	tsize_t t2p_write_pdf_xobject_decode(T2P* t2p, TIFF* output);
 	tsize_t t2p_write_pdf_xobject_stream_filter(ttile_t tile, T2P* t2p, TIFF* output);
-	tsize_t CPdf::t2p_sample_rgba_to_rgb(tdata_t data, uint32 samplecount);
+	tsize_t t2p_sample_rgba_to_rgb(tdata_t data, uint32 samplecount);
 
 	tsize_t  t2p_write_pdf_xobject_palettecs_stream(T2P* t2p, TIFF* output);
 	tsize_t t2p_write_pdf_transfer(T2P* t2p, TIFF* output);
 	tsize_t t2p_write_pdf_transfer_dict(T2P* t2p, TIFF* output, uint16 i);
-	tsize_t CPdf::t2p_write_pdf_transfer_stream(T2P* t2p, TIFF* output, uint16 i);
-	int CPdf::ConvertTiffToPdf(CIBitmap &m_ciBitmap, const char * cFileOut);
-	T2P* CPdf::t2p_init();
+	tsize_t t2p_write_pdf_transfer_stream(T2P* t2p, TIFF* output, uint16 i);
+	int ConvertTiffToPdf(CIBitmap &m_ciBitmap, const char * cFileOut);
+	T2P* t2p_init();
 
 };

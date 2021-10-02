@@ -43,7 +43,7 @@ int CSecurity::HashData(BYTE *pbBuffer,const DWORD &dwBufferLen, string &pHashBa
 	rgpbToBeHashed[0] = pbBuffer;
 	rgcbToBeHashed[0] = dwBufferLen;
 
-	AlgId.pszObjId=szOID_OIWSEC_sha1;
+	AlgId.pszObjId= (LPTSTR)szOID_OIWSEC_sha1;
 	AlgId.Parameters.cbData=0;
 
 	//--------------------------------------------------------------------

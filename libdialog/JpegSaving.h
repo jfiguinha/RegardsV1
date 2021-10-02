@@ -2,7 +2,7 @@
 #ifndef __JPEGSAVING__H__
 #define __JPEGSAVING__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CJpegSaving : public CLocalDialog
 {

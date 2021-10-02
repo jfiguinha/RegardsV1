@@ -2,7 +2,7 @@
 #ifndef __NEWALBUM__H__
 #define __NEWALBUM__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CNewAlbum : public CLocalDialog
 {

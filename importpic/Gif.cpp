@@ -49,7 +49,7 @@ void CGif::DumpScreen2RGB(BYTE * Buffer,
 	for (long i = 0; i < ScreenHeight; i++) 
 	{
 		GifRow = *ScreenBuffer;ScreenBuffer++;
-		GifQprintf("\b\b\b\b%-4d", ScreenHeight - i);
+		GifQprintf((char *)"\b\b\b\b%-4d", ScreenHeight - i);
 		for (long j = 0; j < ScreenWidth; j++) 
 		{
 			ColorMapEntry = &ColorMap->Colors[GifRow[j]];
@@ -156,7 +156,7 @@ int CGif::ReadGif(CIBitmap * m_ciBitmap,const char * szFileName)
 				Col = GifFile->Image.Left;
 				Width = GifFile->Image.Width;
 				Height = GifFile->Image.Height;
-				GifQprintf("\n%s: Image %d at (%d, %d) [%dx%d]:     ",
+				GifQprintf((char*)"\n%s: Image %d at (%d, %d) [%dx%d]:     ",
 					"toto", ++ImageNum, Col, Row, Width, Height);
 				if (GifFile->Image.Left + GifFile->Image.Width > GifFile->SWidth ||
 				   GifFile->Image.Top + GifFile->Image.Height > GifFile->SHeight) {
@@ -168,7 +168,7 @@ int CGif::ReadGif(CIBitmap * m_ciBitmap,const char * szFileName)
 					for (Count = i = 0; i < 4; i++)
 					for (j = Row + InterlacedOffset[i]; j < Row + Height;
 								 j += InterlacedJumps[i]) {
-						GifQprintf("\b\b\b\b%-4d", Count++);
+						GifQprintf((char*)"\b\b\b\b%-4d", Count++);
 						if (DGifGetLine(GifFile, &ScreenBuffer[j][Col],
 						Width) == GIF_ERROR) {
 						//PrintGifError();
@@ -178,7 +178,7 @@ int CGif::ReadGif(CIBitmap * m_ciBitmap,const char * szFileName)
 				}
 				else {
 					for (i = 0; i < Height; i++) {
-					GifQprintf("\b\b\b\b%-4d", i);
+					GifQprintf((char*)"\b\b\b\b%-4d", i);
 					if (DGifGetLine(GifFile, &ScreenBuffer[Row++][Col],
 						Width) == GIF_ERROR) {
 						//PrintGifError();

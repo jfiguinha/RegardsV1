@@ -4,7 +4,7 @@
 #define __SELECTALBUM__H__
 #include <albumdata.h>
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CSelectAlbum : public CLocalDialog
 {

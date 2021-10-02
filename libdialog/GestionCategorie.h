@@ -2,7 +2,7 @@
 #ifndef __GESTIONCATEGORIE__H__
 #define __GESTIONCATEGORIE__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CDialogCatalogueData;
 class CAlbumCritereNotify;

@@ -2,7 +2,7 @@
 #ifndef __DIALOGFINDPROC__H__
 #define __DIALOGFINDPROC__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 
 class CTreeWindowData;
 

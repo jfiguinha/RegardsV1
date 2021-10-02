@@ -3,7 +3,7 @@
 #ifndef __INSERTCATALOG__H__
 #define __INSERTCATALOG__H__
 
-#include "../libWindow/LocalDialog.h"
+#include "LocalDialog.h"
 #include <IconeFile.h>
 class CAlbumData;
 

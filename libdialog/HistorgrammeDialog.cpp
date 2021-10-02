@@ -1,6 +1,6 @@
 #include "StdAfx.h"
 #include "HistorgrammeDialog.h"
-#include "../resource.h"
+#include "resource.h"
 #include <IBitmap.h>
 #include <histogramme.h>
 #include <color.h>

@@ -1,11 +1,11 @@
 #include "StdAfx.h"
 #include ".\wienerfilter.h"
-#include "..\resource.h"
+#include "resource.h"
 #include <IBitmap.h>
 #include <Filtre.h>
 #include <Effet.h>
 #include <Matrix.h>
-#include "..\objet.h"
+#include "objet.h"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //

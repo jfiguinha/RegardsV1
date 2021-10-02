@@ -1,6 +1,6 @@
 #include "StdAfx.h"
 #include ".\selectalbum.h"
-#include "..\resource.h"
+#include "resource.h"
 
 CSelectAlbum::CSelectAlbum(void)
 {
