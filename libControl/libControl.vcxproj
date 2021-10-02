@@ -72,7 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\include;..\otherlib\glew-1.13.0\include;..\mp3;..\libsqlite;..\libopengl;..\libaspi;..\otherlib\ziplib;..\libgpgpu;..\otherlib\JpegLib;..\libVideo;..\libcomobject;..\libutility;..\libdialog;..\libbitmap;..\importpic;..\datastructure;..\libWindow;..\RegardsViewer;$(VC_IncludePath);$(WindowsSdk_71A_IncludePath);$(WindowsSdk_71A_IncludePath)</IncludePath>
+    <IncludePath>..\include;..\otherlib\glew-1.13.0\include;..\mp3;..\libsqlite;..\libopengl;..\libaspi;..\otherlib\ziplib;..\libgpgpu;..\otherlib\JpegLib;..\libVideo;..\libcomobject;..\libutility;..\libdialog;..\libbitmap;..\importpic;..\datastructure;..\libWindow;..\;$(VC_IncludePath);$(WindowsSdk_71A_IncludePath)</IncludePath>
     <ExcludePath>$(VC_IncludePath);$(VC_ExecutablePath_x86);$(WindowsSdk_71A_ExecutablePath);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(MSBuild_ExecutablePath);$(VC_LibraryPath_x86);$(SystemRoot)</ExcludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -89,7 +89,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>false</SDLCheck>
-      <PreprocessorDefinitions>WMP9;ENGLISH;SQLSERVERCE;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;WMP9;_WIN32_DCOM;FRENCH;SQLSERVERCE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
@@ -117,7 +117,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>false</IntrinsicFunctions>
       <SDLCheck>false</SDLCheck>
-      <PreprocessorDefinitions>WMP9;ENGLISH;SQLSERVERCE;_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;WMP9;_WIN32_DCOM;FRENCH;SQLSERVERCE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>

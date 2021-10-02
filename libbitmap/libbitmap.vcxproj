@@ -181,7 +181,7 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release test|x64'">$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>..\libWindow;..\libControl;..\RegardsViewer;$(VC_IncludePath);$(WindowsSDK_IncludePath);;$(WindowsSdk_71A_IncludePath)</IncludePath>
+    <IncludePath>..\libWindow;..\libControl;..\;$(VC_IncludePath);$(WindowsSDK_IncludePath);;$(WindowsSdk_71A_IncludePath)</IncludePath>
     <ExcludePath>$(VC_IncludePath);$(VC_ExecutablePath_x86);$(WindowsSdk_71A_ExecutablePath);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(MSBuild_ExecutablePath);$(VC_LibraryPath_x86);$(SystemRoot)</ExcludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
