@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
-<Properties><Property Name="Solution" Value="splitter">
-</Property><Property Name="Fichier solution" Value="C:\developpement\regards\splitter.sln">
-</Property><Property Name="Date" Value="lundi 14 juin 2010">
-</Property><Property Name="Time" Value="11:05">
-</Property><Property Name="Numéro de journal" Value="2">
-</Property></Properties><Event ErrorLevel="0" Project="" Source="splitter.sln" Description="Solution correctement convertie">
-</Event><Event ErrorLevel="3" Project="" Source="splitter.sln" Description="Converted">
-</Event></UpgradeLog>

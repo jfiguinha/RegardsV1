@@ -6,7 +6,7 @@
 #include "Pane.h"
 #include "static.h"
 #include "tooltip.h"
-#include "../resource.h"
+#include "resource.h"
 
 #define BOLD 1
 #define ITALIC 2

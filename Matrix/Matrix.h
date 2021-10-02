@@ -19,7 +19,7 @@ public:
 	CMatrix();
 	virtual ~CMatrix();
 
-	void CMatrix::moins();
+	void moins();
 
 	const double GetValuePos(const int &y, const int &x);
 
@@ -180,8 +180,8 @@ private:
 	void DesAllocationMemoire();
 
 
-	void CMatrix::ludcmp(CMatrix &m_MatrixSource, int * &indx, double &d);
-	void CMatrix::lubksb(CMatrix &m_MatrixSource, int * indx, double * b);
+	void ludcmp(CMatrix &m_MatrixSource, int * &indx, double &d);
+	void lubksb(CMatrix &m_MatrixSource, int * indx, double * b);
 
 	void inverse(double * & data,const int &iRow, const int &iCol);
 	inline void deplacement(double * & data,const int &iPosDepart,const int &iPosFin);
