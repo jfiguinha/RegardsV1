@@ -89,7 +89,7 @@
     <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\Program Files (x86)\Microsoft SQL Server Compact Edition\v3.1\SDK\Includes;$(VC_IncludePath);$(WindowsSdk_71A_IncludePath);</IncludePath>
+    <IncludePath>libControl;otherlib\glew-1.13.0\include;$(VC_IncludePath);$(WindowsSdk_71A_IncludePath)</IncludePath>
     <TargetName>Regards</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

@@ -179,7 +179,7 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release es-ES|x64'">$(Platform)\$(Configuration)\</IntDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release test|x64'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release test|x64'">$(Platform)\$(Configuration)\</IntDir>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\include;..\libControl;..\RegardsViewer;$(VC_IncludePath);$(WindowsSdk_71A_IncludePath);;$(WindowsSdk_71A_IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\include;..\libControl;..\;$(VC_IncludePath);$(WindowsSdk_71A_IncludePath);;$(WindowsSdk_71A_IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>..\include;..\libControl;..\;$(VC_IncludePath);$(WindowsSdk_71A_IncludePath);;$(WindowsSdk_71A_IncludePath)</IncludePath>
